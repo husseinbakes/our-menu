@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hussein Bakes | Menu</title>
+
+  <!-- SEO -->
+  <meta name="description" content="Elegant custom cake menu from Hussein Bakes. View flavors, photos, prices & order online." />
+  <meta name="keywords" content="cakes Nairobi, custom cakes Kenya, Hussein Bakes menu, order cake online" />
+  <meta name="author" content="Hussein Bakes" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" type="image/webp" href="images/logo.webp" />
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cinzel:wght@700&family=Montserrat&display=swap" rel="stylesheet" />
+
+  <!-- Animate on Scroll -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+</head>
+<body class="dark-mode">
+
+  <!-- Header -->
+  <header class="sticky-header">
+    <div class="logo"><img src="images/logo.webp" alt="Hussein Bakes Logo" /></div>
+    <nav>
+      <a href="#signature">Signature</a>
+      <a href="#specialty">Specialty</a>
+      <a href="#favorites">Favorites</a>
+      <a href="#celebration">Celebration</a>
+      <a href="#mini">Mini Treats</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <button class="toggle-mode" onclick="toggleMode()">🌙</button>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero" style="background-image: url('images/herohero.webp');">
+    <h1 data-aos="fade-up">Discover Our Cakes</h1>
+    <p data-aos="fade-up" data-aos-delay="100">Crafted with elegance. Baked with love.</p>
+  </section>
+
+  <!-- Menu Sections -->
+  <main>
+    <section id="signature" class="menu-category">
+      <h2>🍰 Signature Cakes</h2>
+      <div class="cake-grid">
+        <!-- Example Cake -->
+        <div class="cake-card" data-aos="fade-up">
+          <img src="images/Very-vanilla.webp" alt="Very Vanilla" />
+          <h3>Very Vanilla Cake</h3>
+          <p>Moist vanilla sponge, silky buttercream, and confetti sprinkles.</p>
+          <span class="price">KES 2,000</span>
+          <button onclick="openModal('Very Vanilla Cake')">Order Now</button>
+        </div>
+        <!-- Add other signature cakes here -->
+      </div>
+    </section>
+
+    <!-- Repeat this structure for each category: Specialty, Favorites, Celebration, Mini, etc. -->
+    
+    <section id="favorites" class="menu-category">
+      <h2>🌟 All-Time Favorites</h2>
+      <div class="cake-grid">
+        <div class="cake-card" data-aos="fade-up">
+          <img src="images/Black-forest.webp" alt="Black Forest Cake" />
+          <h3>Black Forest Cake</h3>
+          <p>Chocolate sponge with cherry compote and whipped cream.</p>
+          <span class="price">KES 3,000</span>
+          <button onclick="openModal('Black Forest Cake')">Order Now</button>
+        </div>
+        <!-- Add others like Red Velvet, Blueberry, etc. -->
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="reviews" class="reviews" data-aos="fade-in">
+      <h2>💬 What Our Clients Say</h2>
+      <blockquote>"The best cakes in Nairobi. Stunning design and incredible taste!"</blockquote>
+      <blockquote>"My wedding cake was perfect – thank you Hussein Bakes!"</blockquote>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="contact">
+      <h2>📞 Contact & Orders</h2>
+      <p>WhatsApp: <a href="https://wa.me/254710975805" target="_blank">+254 710 975 805</a></p>
+      <p>Instagram: <a href="https://instagram.com/husseinbakes" target="_blank">@husseinbakes</a></p>
+      <p>Email: <a href="mailto:2025salimh@gmail.com">2025salimh@gmail.com</a></p>
+    </section>
+  </main>
+
+  <!-- Order Modal -->
+  <div id="orderModal" class="modal">
+    <div class="modal-content">
+      <span onclick="closeModal()" class="close">&times;</span>
+      <h2>Order: <span id="modalCakeName"></span></h2>
+      <form>
+        <input type="text" placeholder="Your Name" required />
+        <input type="tel" placeholder="Phone Number" required />
+        <input type="date" placeholder="Pickup Date" required />
+        <textarea placeholder="Any custom requests..."></textarea>
+        <button type="submit">Send Order</button>
+      </form>
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2025 Hussein Bakes. All rights reserved.</p>
+    <a href="#" class="back-to-top">↑ Back to Top</a>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>AOS.init();</script>
+  <script src="script.js"></script>
+</body>
+</html>
