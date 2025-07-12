@@ -703,7 +703,6 @@ footer a:hover {
   to { opacity: 1; }
 }
 
-/* Media Queries for Responsiveness */
 @media (max-width: 768px) {
   nav h1 {
     font-size: 1.8rem;
@@ -789,6 +788,9 @@ footer a:hover {
       max-width: 100%; /* Take full width on small screens */
       margin-left: 1rem;
       margin-right: 1rem;
+      display: flex; /* KEEP THIS LINE */
+      /* REMOVED: flex-direction: column; */
+      /* REMOVED: align-items: center; */
   }
   .image-slide img {
       height: 300px; /* Shorter image height on small screens */
@@ -798,11 +800,7 @@ footer a:hover {
     transform: none;
     margin: 1rem 0.5rem;
   }
-  .image-slider {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
+  /* The image-wrapper doesn't need a specific flex-direction here as it relies on the non-mobile default */
   .image-wrapper {
     width: 100%; /* Ensure wrapper takes full width */
   }
@@ -812,6 +810,7 @@ footer a:hover {
       padding-top: 0;
   }
 }
+
 
 @media (max-width: 480px) {
   nav .nav-container {
