@@ -3,117 +3,209 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hussein Bakes | Menu</title>
+  <title>Menu | Hussein Bakes</title>
 
-  <!-- SEO -->
-  <meta name="description" content="Elegant custom cake menu from Hussein Bakes. View flavors, photos, prices & order online." />
-  <meta name="keywords" content="cakes Nairobi, custom cakes Kenya, Hussein Bakes menu, order cake online" />
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Custom cake menu by Hussein Bakes – Signature cakes, wedding cakes, mini treats, and more in Nairobi & Kitui." />
+  <meta name="keywords" content="cakes Nairobi, custom cakes Kenya, birthday cake menu, wedding cake" />
   <meta name="author" content="Hussein Bakes" />
   <meta name="robots" content="index, follow" />
 
   <!-- Styles -->
-  <link rel="stylesheet" href="styles.css" />
-  <link rel="icon" type="image/webp" href="images/logo.webp" />
+  <link rel="stylesheet" href="styles/styles.css" />
+  <link rel="icon" href="images/logo.webp" type="image/webp" />
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cinzel:wght@700&family=Montserrat&display=swap" rel="stylesheet" />
-
-  <!-- Animate on Scroll -->
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 </head>
-<body class="dark-mode">
 
-  <!-- Header -->
+<body class="dark-mode">
   <header class="sticky-header">
-    <div class="logo"><img src="images/logo.webp" alt="Hussein Bakes Logo" /></div>
+    <div class="logo"><a href="index.html"><img src="images/logo.webp" alt="Logo" /></a></div>
     <nav>
       <a href="#signature">Signature</a>
       <a href="#specialty">Specialty</a>
       <a href="#favorites">Favorites</a>
       <a href="#celebration">Celebration</a>
       <a href="#mini">Mini Treats</a>
+      <a href="#extras">Extras</a>
       <a href="#reviews">Reviews</a>
       <a href="#contact">Contact</a>
     </nav>
     <button class="toggle-mode" onclick="toggleMode()">🌙</button>
   </header>
 
-  <!-- Hero -->
   <section class="hero" style="background-image: url('images/herohero.webp');">
-    <h1 data-aos="fade-up">Discover Our Cakes</h1>
-    <p data-aos="fade-up" data-aos-delay="100">Crafted with elegance. Baked with love.</p>
+    <h1 data-aos="fade-up">Our Cake Menu</h1>
+    <p data-aos="fade-up" data-aos-delay="100">Elegance. Taste. Craft.</p>
   </section>
 
-  <!-- Menu Sections -->
   <main>
-    <section id="signature" class="menu-category">
+    <!-- Signature Cakes -->
+    <section id="signature" class="menu-section" data-aos="fade-up">
       <h2>🍰 Signature Cakes</h2>
-      <div class="cake-grid">
-        <!-- Example Cake -->
-        <div class="cake-card" data-aos="fade-up">
+      <div class="menu-grid">
+        <!-- Repeat this block for each cake -->
+        <div class="cake-card">
           <img src="images/Very-vanilla.webp" alt="Very Vanilla" />
           <h3>Very Vanilla Cake</h3>
           <p>Moist vanilla sponge, silky buttercream, and confetti sprinkles.</p>
-          <span class="price">KES 2,000</span>
+          <span>KES 2,000</span>
           <button onclick="openModal('Very Vanilla Cake')">Order Now</button>
         </div>
-        <!-- Add other signature cakes here -->
-      </div>
-    </section>
-
-    <!-- Repeat this structure for each category: Specialty, Favorites, Celebration, Mini, etc. -->
-    
-    <section id="favorites" class="menu-category">
-      <h2>🌟 All-Time Favorites</h2>
-      <div class="cake-grid">
-        <div class="cake-card" data-aos="fade-up">
-          <img src="images/Black-forest.webp" alt="Black Forest Cake" />
-          <h3>Black Forest Cake</h3>
-          <p>Chocolate sponge with cherry compote and whipped cream.</p>
-          <span class="price">KES 3,000</span>
-          <button onclick="openModal('Black Forest Cake')">Order Now</button>
+        <div class="cake-card">
+          <img src="images/Chocolate-obsession.webp" alt="Chocolate Obsession" />
+          <h3>Chocolate Obsession</h3>
+          <p>Deep chocolate sponge, dark buttercream, chocolate drip.</p>
+          <span>KES 3,000</span>
+          <button onclick="openModal('Chocolate Obsession')">Order Now</button>
         </div>
-        <!-- Add others like Red Velvet, Blueberry, etc. -->
+        <div class="cake-card">
+          <img src="images/tuxedo.webp" alt="Tuxedo Cake" />
+          <h3>Tuxedo Cake</h3>
+          <p>Vanilla and chocolate layers with silky dual-tone icing.</p>
+          <span>KES 3,000</span>
+          <button onclick="openModal('Tuxedo Cake')">Order Now</button>
+        </div>
+        <div class="cake-card">
+          <img src="images/Black-on-white.webp" alt="Black on White" />
+          <h3>Black on White</h3>
+          <p>Chocolate & vanilla cake with classy swirl frosting.</p>
+          <span>KES 3,500</span>
+          <button onclick="openModal('Black on White')">Order Now</button>
+        </div>
+        <div class="cake-card">
+          <img src="images/Funfetti.webp" alt="Funfetti Delight" />
+          <h3>Funfetti Delight</h3>
+          <p>Rainbow sprinkle cake with playful vanilla frosting.</p>
+          <span>KES 3,000</span>
+          <button onclick="openModal('Funfetti Delight')">Order Now</button>
+        </div>
       </div>
     </section>
 
-    <!-- Testimonials -->
-    <section id="reviews" class="reviews" data-aos="fade-in">
-      <h2>💬 What Our Clients Say</h2>
-      <blockquote>"The best cakes in Nairobi. Stunning design and incredible taste!"</blockquote>
-      <blockquote>"My wedding cake was perfect – thank you Hussein Bakes!"</blockquote>
+    <!-- Specialty Cakes -->
+    <section id="specialty" class="menu-section" data-aos="fade-up">
+      <h2>🍓 Specialty Cakes</h2>
+      <div class="menu-grid">
+        <div class="cake-card"><img src="images/Salted-caramel.webp" alt="Salted Caramel Dream"><h3>Salted Caramel Dream</h3><p>Caramel buttercream & sea salt on chocolate sponge.</p><span>KES 3,000</span><button onclick="openModal('Salted Caramel Dream')">Order Now</button></div>
+        <div class="cake-card"><img src="images/Cookie-dough.webp" alt="Cookie Dough Crumble"><h3>Cookie Dough Crumble</h3><p>Layers of cake + cookie dough filling with cookie bites.</p><span>KES 3,000</span><button onclick="openModal('Cookie Dough Crumble')">Order Now</button></div>
+        <div class="cake-card"><img src="images/Chocolate-Oreo.webp" alt="Chocolate Oreo Fantasy"><h3>Chocolate Oreo Fantasy</h3><p>Oreo-stuffed chocolate cake with whipped Oreo cream.</p><span>KES 3,500</span><button onclick="openModal('Chocolate Oreo Fantasy')">Order Now</button></div>
+        <div class="cake-card"><img src="images/White-chocolate-raspberry.webp" alt="White Chocolate Raspberry"><h3>White Chocolate Raspberry</h3><p>Vanilla sponge with raspberry jam & white ganache.</p><span>KES 3,500</span><button onclick="openModal('White Chocolate Raspberry')">Order Now</button></div>
+        <div class="cake-card"><img src="images/Carrot-cake.webp" alt="Carrot Spice Cake"><h3>Carrot Spice Cake</h3><p>Carrot, cinnamon, nutmeg with cream cheese frosting.</p><span>KES 3,500</span><button onclick="openModal('Carrot Spice Cake')">Order Now</button></div>
+        <div class="cake-card"><img src="images/Strawberry-cream.webp" alt="Strawberries & Cream"><h3>Strawberries & Cream</h3><p>Classic vanilla sponge with whipped strawberry frosting.</p><span>KES 3,000</span><button onclick="openModal('Strawberries & Cream')">Order Now</button></div>
+        <div class="cake-card"><img src="images/Chocolate-raspberry.webp" alt="Chocolate Raspberry Fudge"><h3>Chocolate Raspberry Fudge</h3><p>Fudge cake with raspberry glaze & fresh berries.</p><span>KES 3,500</span><button onclick="openModal('Chocolate Raspberry Fudge')">Order Now</button></div>
+      </div>
+    </section>
+
+        <!-- All-Time Favorites -->
+    <section id="favorites" class="menu-section" data-aos="fade-up">
+      <h2>🌟 All-Time Favorites</h2>
+      <div class="menu-grid">
+        <div class="cake-card"><img src="images/Black-forest.webp" alt="Black Forest"><h3>Black Forest Cake</h3><p>Rich chocolate sponge with cherry filling and whipped cream.</p><span>KES 3,000</span><button onclick="openModal('Black Forest Cake')">Order Now</button></div>
+        <div class="cake-card"><img src="images/Red-velvet.webp" alt="Red Velvet"><h3>Red Velvet Cake</h3><p>Signature red cocoa cake with smooth cream cheese frosting.</p><span>KES 3,000</span><button onclick="openModal('Red Velvet Cake')">Order Now</button></div>
+        <div class="cake-card"><img src="images/Blueberry.webp" alt="Blueberry"><h3>Blueberry Cake</h3><p>Vanilla sponge with blueberry jam and buttercream.</p><span>KES 3,200</span><button onclick="openModal('Blueberry Cake')">Order Now</button></div>
+        <div class="cake-card"><img src="images/Sponge.webp" alt="Sponge"><h3>Classic Sponge Cake</h3><p>Light, fluffy sponge with a touch of lemon or vanilla.</p><span>KES 2,500</span><button onclick="openModal('Classic Sponge Cake')">Order Now</button></div>
+      </div>
+    </section>
+
+    <!-- Celebration Cakes -->
+    <section id="celebration" class="menu-section" data-aos="fade-up">
+      <h2>🎂 Celebration Cakes</h2>
+      <div class="celebration-list">
+        <div>
+          <h3>Wedding Cakes</h3>
+          <p>Multi-tiered, floral, minimalist or luxury designs.</p>
+          <span>Starting from KES 17,000</span>
+        </div>
+        <div>
+          <h3>Birthday Cakes</h3>
+          <p>Customized themes, edible toppers, name personalizations.</p>
+          <span>Starting from KES 2,500</span>
+        </div>
+        <div>
+          <h3>Graduation Cakes</h3>
+          <p>Hats, scrolls, school logos – celebrate success.</p>
+          <span>Starting from KES 3,000</span>
+        </div>
+        <div>
+          <h3>Baby Shower Cakes</h3>
+          <p>Gender reveal or pastel cakes with baby-themed décor.</p>
+          <span>Starting from KES 3,000</span>
+        </div>
+        <div>
+          <h3>Custom Cakes</h3>
+          <p>For proposals, anniversaries, retirements & more.</p>
+          <span>Starting from KES 2,000</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Mini Treats -->
+    <section id="mini" class="menu-section" data-aos="fade-up">
+      <h2>🧁 Mini Treats</h2>
+      <div class="menu-grid">
+        <div class="cake-card"><img src="images/Bentos-mini.webp" alt="Mini Bento"><h3>Mini Bento Cakes</h3><p>Perfect 1-serving cakes in gift boxes.</p><span>KES 1,500</span><button onclick="openModal('Mini Bento Cakes')">Order Now</button></div>
+        <div class="cake-card"><img src="images/Cupcakes.webp" alt="Cupcakes"><h3>Cupcake Box (6 pcs)</h3><p>Pick chocolate, vanilla, red velvet, or mixed.</p><span>KES 1,200</span><button onclick="openModal('Cupcake Box')">Order Now</button></div>
+        <div class="cake-card"><img src="images/Treat-box.webp" alt="Treat Box"><h3>Treat Box</h3><p>Cake slices, brownies, cookies & berries.</p><span>KES 2,000</span><button onclick="openModal('Treat Box')">Order Now</button></div>
+      </div>
+    </section>
+
+    <!-- Extras -->
+    <section id="extras" class="menu-section" data-aos="fade-up">
+      <h2>💡 Extras</h2>
+      <ul class="extras-list">
+        <li><strong>Cake Toppers:</strong> Custom acrylic or gold toppers – KES 300</li>
+        <li><strong>Extra Floral Decoration:</strong> Fresh/artificial – From KES 500</li>
+        <li><strong>Delivery:</strong> Nairobi & Kitui – From KES 300</li>
+      </ul>
+    </section>
+
+    <!-- Reviews -->
+    <section id="reviews" class="menu-section" data-aos="fade-up">
+      <h2>💬 Customer Reviews</h2>
+      <blockquote>“Absolutely stunning cakes. The Black Forest was a hit!” – Diana W.</blockquote>
+      <blockquote>“Smooth delivery and amazing flavors. Highly recommend!” – Kamau M.</blockquote>
+      <blockquote>“Ordered twice now – and they never disappoint.” – Ruth A.</blockquote>
     </section>
 
     <!-- Contact -->
-    <section id="contact" class="contact">
+    <section id="contact" class="menu-section contact" data-aos="fade-up">
       <h2>📞 Contact & Orders</h2>
-      <p>WhatsApp: <a href="https://wa.me/254710975805" target="_blank">+254 710 975 805</a></p>
-      <p>Instagram: <a href="https://instagram.com/husseinbakes" target="_blank">@husseinbakes</a></p>
-      <p>Email: <a href="mailto:2025salimh@gmail.com">2025salimh@gmail.com</a></p>
+      <p><strong>WhatsApp:</strong> <a href="https://wa.me/254710975805" target="_blank">+254 710 975 805</a></p>
+      <p><strong>Email:</strong> <a href="mailto:2025salimh@gmail.com">2025salimh@gmail.com</a></p>
+      <p><strong>Instagram:</strong> <a href="https://instagram.com/husseinbakes" target="_blank">@husseinbakes</a></p>
     </section>
   </main>
 
-  <!-- Order Modal -->
-  <div id="orderModal" class="modal">
+  <!-- Order Now Modal -->
+  <div id="orderModal" class="modal hidden">
     <div class="modal-content">
-      <span onclick="closeModal()" class="close">&times;</span>
-      <h2>Order: <span id="modalCakeName"></span></h2>
+      <span class="close-btn" onclick="closeModal()">&times;</span>
+      <h3 id="modalCakeTitle">Order Now</h3>
       <form>
         <input type="text" placeholder="Your Name" required />
         <input type="tel" placeholder="Phone Number" required />
-        <input type="date" placeholder="Pickup Date" required />
-        <textarea placeholder="Any custom requests..."></textarea>
+        <input type="date" placeholder="Preferred Date" required />
+        <textarea placeholder="Message or cake instructions..."></textarea>
         <button type="submit">Send Order</button>
       </form>
     </div>
   </div>
 
+  <!-- Footer -->
   <footer>
-    <p>© 2025 Hussein Bakes. All rights reserved.</p>
+    <p>© 2025 Hussein Bakes – Nairobi & Kitui</p>
+    <div class="socials">
+      <a href="https://wa.me/254710975805"><img src="images/whatsapp-icon.webp" alt="WhatsApp" /></a>
+      <a href="https://g.page/r/CeJ9H8jRYjRGEAE/review" target="_blank">Google Reviews</a>
+      <a href="https://husseinbakes.my.canva.site" target="_blank">Main Website</a>
+    </div>
     <a href="#" class="back-to-top">↑ Back to Top</a>
   </footer>
 
   <!-- Scripts -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>AOS.init();</script>
-  <script src="script.js"></script>
+  <script src="js/script.js"></script>
 </body>
 </html>
