@@ -1,0 +1,160 @@
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Great+Vibes&family=Montserrat&display=swap');
+
+/* Root Variables */
+:root {
+  --background: #000000;
+  --primary-gold: #d4af37;
+  --text-light: #f5f5f5;
+  --font-heading: 'Cinzel', serif;
+  --font-body: 'Montserrat', sans-serif;
+}
+
+/* Global Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--text-light);
+  font-family: var(--font-body);
+  line-height: 1.6;
+  scroll-behavior: smooth;
+}
+
+/* Headings */
+h2 {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  color: var(--primary-gold);
+  text-align: center;
+  margin: 2rem auto;
+  position: relative;
+}
+
+h3 {
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  color: var(--primary-gold);
+  margin-top: 1rem;
+}
+
+/* Main Menu Section */
+.menu-main {
+  padding: 2rem 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Cake Section */
+.menu-section {
+  margin-bottom: 3rem;
+}
+
+/* Cake Cards */
+.cake-card {
+  background-color: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin: 1rem auto;
+  max-width: 400px;
+  text-align: center;
+  box-shadow: 0 0 12px rgba(212, 175, 55, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.cake-card:hover {
+  transform: translateY(-5px);
+}
+
+.cake-card img {
+  width: 100%;
+  max-height: 260px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.cake-card p {
+  margin: 0.5rem 0;
+  color: var(--text-light);
+  font-size: 0.95rem;
+}
+
+/* Order Button */
+.order-button {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.6rem 1.2rem;
+  background-color: var(--primary-gold);
+  color: #000;
+  border: none;
+  border-radius: 25px;
+  font-weight: bold;
+  font-family: var(--font-body);
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.order-button:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+/* Fade-in Animation */
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 0.8s ease-in-out forwards;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Back to Top Button */
+.back-to-top {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  font-size: 2rem;
+  color: var(--primary-gold);
+  text-decoration: none;
+  display: none;
+}
+
+.back-to-top:hover {
+  color: #fff;
+}
+
+/* WhatsApp Floating Button */
+.whatsapp-float {
+  position: fixed;
+  bottom: 25px;
+  left: 25px;
+  z-index: 999;
+}
+
+.whatsapp-float img {
+  width: 48px;
+  height: 48px;
+}
+
+/* Responsive Grid for Large Screens */
+@media (min-width: 768px) {
+  .menu-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+  }
+
+  h2 {
+    grid-column: 1/-1;
+  }
+}
