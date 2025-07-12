@@ -1,91 +1,178 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="Elegant Wedding Cakes crafted by Hussein Bakes, designed to make your special day even more memorable with exquisite flavors and designs." />
-  <meta name="keywords" content="Hussein Bakes, wedding cakes, custom wedding cake, tiered wedding cake, bridal cakes, wedding cake Nairobi, elegant wedding cakes" />
-  <meta name="author" content="Hussein Salim" />
-  <meta name="robots" content="index, follow" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hussein Bakes - Wedding Cakes</title>
+    <meta name="description" content="Exquisite multi-tier wedding cakes designed to make your special day unforgettable. Explore our single, 2-tier, 3-tier, and 4-tier wedding cake collections.">
+    <meta name="keywords" content="wedding cakes, tiered cakes, custom wedding cakes, single tier, 2 tier, 3 tier, 4 tier, Nairobi, Kenya, luxury cakes, celebration cakes">
+    <meta name="author" content="Hussein Bakes">
 
-  <meta property="og:title" content="Hussein Bakes – Wedding Cakes" />
-  <meta property="og:description" content="Discover our elegant Wedding Cake designs, customized for your big day." />
-  <meta property="og:image" content="https://husseinbakes.github.io/husseinbakes/images/Wedding-cake.webp" />
-  <meta property="og:url" content="https://husseinbakes.github.io/husseinbakes/wedding-cakes.html" />
-  <meta property="og:type" content="website" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..700&family=Great+Vibes&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Hussein Bakes – Wedding Cakes" />
-  <meta name="twitter:description" content="Your dream wedding cake brought to life with exquisite taste and design." />
-  <meta name="twitter:image" content="https://husseinbakes.github.io/husseinbakes/images/Wedding-cake.webp" />
-
-  <title>Hussein Bakes | Wedding Cakes</title>
-  <link rel="icon" href="images/logo.webp" type="image/webp" />
-
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Great+Vibes&family=Montserrat&display=swap" rel="stylesheet" />
-
-  <link rel="stylesheet" href="styles.css" />
-
-</head>
+    <link rel="stylesheet" href="styles.min.css"> 
+    
+    </head>
 <body>
-  <header class="fade-in">
-    <nav>
-      <div class="nav-container">
-        <a href="index.html" class="nav-logo">
-          <img src="images/logo.webp" alt="Hussein Bakes Logo" />
-        </a>
-        <h1>Hussein Bakes</h1>
-      </div>
-    </nav>
-  </header>
+    <header>
+        <nav class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <img src="images/logo.webp" alt="Hussein Bakes Logo">
+            </a>
+            <h1>Hussein Bakes</h1>
+            <button id="themeToggle" aria-label="Toggle dark/light theme">🌙</button>
+        </nav>
+    </header>
 
-  <main class="menu-main fade-in">
-    <div class="back-to-menu-container">
-        <a href="index.html" class="back-to-menu-btn order-button">← Back to All Cakes</a>
-    </div>
+    <main>
+        <section class="hero wedding-hero">
+            <img src="images/hero-weddingcake.webp" alt="Stunning Wedding Cake for a Wedding Day" class="hero-image" loading="eager">
+            <div class="hero-content">
+                <h1 class="tagline">Your Dream Wedding Cake Awaits</h1>
+            </div>
+        </section>
 
-    <section class="menu-section" id="wedding-category">
-      <h2>💍 Wedding Cakes</h2>
-      <div class="cake-grid">
-        <div class="cake-card">
-          <img src="images/Wedding-cake.webp" alt="Wedding Cake" loading="lazy" />
-          <h3>Wedding Cake</h3>
-          <p>From Ksh 17,000.00</p>
-          <p>Elegant tiered cakes customized for your big day. Choose luxury floral or classic white.</p>
-          <button class="order-button" data-cake-name="Wedding Cake">Place Order</button>
+        <section class="menu-main">
+            <div class="back-to-menu-container">
+                <a href="index.html" class="order-button back-to-menu-btn">Back to All Cakes</a>
+            </div>
+
+            <section class="menu-section" id="single-tier-cakes">
+                <h2>🎂 Single Tier Wedding Cakes</h2>
+                <p class="section-price-info">From KES 6,000/- | Serves 24–78 guests</p>
+                <p class="section-description">A beautiful expression of simplicity and elegance. Our single-tier wedding cakes are crafted for intimate celebrations, elopements, or traditional ceremonies. Available in multiple sizes, each cake features handcrafted fondant finishes, delicate floral details, and a choice of metallic accents. From soft ivory to romantic blush, each design is a perfect centerpiece on its own — adorned with edible pearls, gold leaf, or sugar blossoms.</p>
+
+                <div class="image-slider" id="single-tier-slider">
+                    <div class="image-wrapper">
+                        <div class="image-slide">
+                            <img src="images/single-cake.webp" alt="Elegant single tier wedding cake with delicate details" loading="lazy">
+                        </div>
+                        <div class="image-slide">
+                            <img src="images/single-cake2.webp" alt="Modern single tier wedding cake with floral accents" loading="lazy">
+                        </div>
+                    </div>
+                    <button class="slider-btn prev-btn">&lsaquo;</button>
+                    <button class="slider-btn next-btn">&rsaquo;</button>
+                    <div class="slider-dots"></div>
+                </div>
+                <button class="order-button" data-cake-name="Single Tier Wedding Cake">Place Order</button>
+            </section>
+            <hr class="section-divider">
+
+            <section class="menu-section" id="two-tier-cakes">
+                <h2>🎂 2-Tier Wedding Cakes</h2>
+                <p class="section-price-info">KES 17,000/- | Serves ~62 guests</p>
+                <p class="section-description">Balancing beauty and size, our 2-tier wedding cakes are designed for stylish receptions and intimate gatherings. Featuring elegant layering and modern symmetry, each tier is finished with smooth fondant or textured buttercream. Decorative touches include edible lace, floral arrangements (real or sugar), pearl detailing, and golden accents. Ideal for couples seeking refinement without going grand.</p>
+
+                <div class="image-slider" id="two-tier-slider">
+                    <div class="image-wrapper">
+                        <div class="image-slide">
+                            <img src="images/2tier-cake1.webp" alt="Classic 2-tier wedding cake with floral decorations" loading="lazy">
+                        </div>
+                        <div class="image-slide">
+                            <img src="images/2tier-cake2.webp" alt="Minimalist 2-tier wedding cake" loading="lazy">
+                        </div>
+                        <div class="image-slide">
+                            <img src="images/2tier-cake3.webp" alt="Rustic 2-tier wedding cake with fresh fruit" loading="lazy">
+                        </div>
+                        <div class="image-slide">
+                            <img src="images/2tier-cake4.webp" alt="Elegant 2-tier wedding cake with gold accents" loading="lazy">
+                        </div>
+                    </div>
+                    <button class="slider-btn prev-btn">&lsaquo;</button>
+                    <button class="slider-btn next-btn">&rsaquo;</button>
+                    <div class="slider-dots"></div>
+                </div>
+                <button class="order-button" data-cake-name="2-Tier Wedding Cake">Place Order</button>
+            </section>
+            <hr class="section-divider">
+
+            <section class="menu-section" id="three-tier-cakes">
+                <h2>🎂 3-Tier Wedding Cakes</h2>
+                <p class="section-price-info">KES 25,000/- | Serves ~118 guests</p>
+                <p class="section-description">Our 3-tier cakes are showpieces — made for memorable moments and elegant receptions. With a harmonious blend of flavors and textures, each tier is individually designed yet visually cohesive. Expect intricate sugar work, handmade floral cascades, and edible textures like quilted fondant, lace piping, or golden shimmer. Designed to elevate your décor while delighting your guests.</p>
+
+                <div class="image-slider" id="three-tier-slider">
+                    <div class="image-wrapper">
+                        <div class="image-slide">
+                            <img src="images/3tier-cake1.webp" alt="Grand 3-tier wedding cake with intricate details" loading="lazy">
+                        </div>
+                        <div class="image-slide">
+                            <img src="images/3tier-cake2.webp" alt="Romantic 3-tier wedding cake with roses" loading="lazy">
+                        </div>
+                        <div class="image-slide">
+                            <img src="images/3tier-cake3.webp" alt="Modern minimalist 3-tier wedding cake" loading="lazy">
+                        </div>
+                        <div class="image-slide">
+                            <img src="images/3tier-cake4.webp" alt="Luxurious 3-tier wedding cake with gold leaf" loading="lazy">
+                        </div>
+                    </div>
+                    <button class="slider-btn prev-btn">&lsaquo;</button>
+                    <button class="slider-btn next-btn">&rsaquo;</button>
+                    <div class="slider-dots"></div>
+                </div>
+                <button class="order-button" data-cake-name="3-Tier Wedding Cake">Place Order</button>
+            </section>
+            <hr class="section-divider">
+
+            <section class="menu-section" id="four-tier-cakes">
+                <h2>🎂 4-Tier Wedding Cakes</h2>
+                <p class="section-price-info">KES 28,000/- | Serves ~196 guests</p>
+                <p class="section-description">Crafted for grand celebrations, our 4-tier wedding cakes are the ultimate in elegance and scale. Each tier is a canvas of craftsmanship — featuring gold leaf, florals, fondant sculpting, textured finishes, and luxury design patterns. From modern glam to classic romance, this cake is for couples who want to make a majestic statement and treat a large guest list to something unforgettable.</p>
+
+                <div class="image-slider" id="four-tier-slider">
+                    <div class="image-wrapper">
+                        <div class="image-slide">
+                            <img src="images/4tier-cake.webp" alt="Magnificent 4-tier wedding cake for large celebrations" loading="lazy">
+                        </div>
+                        <div class="image-slide">
+                            <img src="images/4tier-cake1.webp" alt="Ornate 4-tier wedding cake with intricate piping" loading="lazy">
+                        </div>
+                        <div class="image-slide">
+                            <img src="images/4tier-cake2.webp" alt="Custom 4-tier wedding cake with unique design" loading="lazy">
+                        </div>
+                        <div class="image-slide">
+                            <img src="images/4tier-cake3.webp" alt="Floral draped 4-tier wedding cake" loading="lazy">
+                        </div>
+                        <div class="image-slide">
+                            <img src="images/4tier-cake4.webp" alt="Geometric pattern 4-tier wedding cake" loading="lazy">
+                        </div>
+                        <div class="image-slide">
+                            <img src="images/4tier-cake5.webp" alt="Elegant white and gold 4-tier wedding cake" loading="lazy">
+                        </div>
+                    </div>
+                    <button class="slider-btn prev-btn">&lsaquo;</button>
+                    <button class="slider-btn next-btn">&rsaquo;</button>
+                    <div class="slider-dots"></div>
+                </div>
+                <button class="order-button" data-cake-name="4-Tier Wedding Cake">Place Order</button>
+            </section>
+            <hr class="section-divider">
+
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; <span id="currentYear"></span> Hussein Bakes. All rights reserved.</p>
+        <p>Follow us on <a href="https://www.instagram.com/husseinbakes/" target="_blank" rel="noopener noreferrer">Instagram</a></p>
+        <p>Contact: +254 7XX XXX XXX</p>
+    </footer>
+
+    <div id="order-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>Order Confirmation</h2>
+            <p>You're about to order the <span id="modal-cake-name"></span>.</p>
+            <p>Please contact us via WhatsApp to finalize your order details and discuss customization options.</p>
+            <a href="https://wa.me/2547XXXXXXXX?text=I'm%20interested%20in%20ordering%20the%20[CakeName]%20cake." target="_blank" rel="noopener noreferrer" class="whatsapp-float">
+                <img src="images/whatsapp-icon.webp" alt="WhatsApp Icon">
+            </a>
+            <p class="small-text">WhatsApp us for a personalized quote!</p>
         </div>
-      </div>
-    </section>
-
-  </main>
-
-  <footer class="fade-in">
-    <p>📍 Kitui, Kenya | 📞 <a href="tel:+254710975805">+254 710 975805</a></p>
-    <p>
-      <a href="https://instagram.com/husseinbakes" target="_blank" rel="noopener noreferrer">Instagram</a> |
-      <a href="https://facebook.com/husseinbakes" target="_blank" rel="noopener noreferrer">Facebook</a> |
-      <a href="https://wa.me/254710975805" target="_blank" rel="noopener noreferrer">WhatsApp</a>
-    </p>
-    <p>© 2025 Hussein Bakes. All rights reserved.</p>
-  </footer>
-
-  <button id="themeToggle" class="toggle-theme" aria-label="Toggle light and dark theme">☀️</button>
-
-  <div id="order-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
-    <div class="modal-content">
-      <span class="close-btn" aria-label="Close Order Modal">×</span>
-      <h2 id="modal-title">Order: <span id="modal-cake-name"></span></h2>
-      <p>Ready to indulge? Click below to place your order via WhatsApp!</p>
-      <a href="https://wa.me/254710975805" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
-        <img src="images/whatsapp-icon.webp" alt="WhatsApp Icon" />
-      </a>
-      <p style="margin-top: 1rem; font-size: 0.9em; color: var(--gold-light);">
-        For custom requests or specific details, please include them in your WhatsApp message.
-      </p>
     </div>
-  </div>
 
-  <script src="script.js" defer></script>
+    <script src="script.min.js" defer></script>
 </body>
 </html>
-
