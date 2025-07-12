@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Explore our Signature Cakes collection from Hussein Bakes – handcrafted with unique flavors and elegant designs." />
+  <meta name="keywords" content="Hussein Bakes, signature cakes, custom cake Kitui, vanilla cake, chocolate cake, tuxedo cake, funfetti cake" />
+  <meta name="author" content="Hussein Salim" />
+  <meta name="robots" content="index, follow" />
+
+  <meta property="og:title" content="Hussein Bakes – Signature Cakes" />
+  <meta property="og:description" content="Discover our best-selling Signature Cakes, crafted with passion and elegance." />
+  <meta property="og:image" content="https://husseinbakes.github.io/husseinbakes/images/Very-vanilla.webp" /> <meta property="og:url" content="https://husseinbakes.github.io/husseinbakes/signature-cakes.html" />
+  <meta property="og:type" content="website" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Hussein Bakes – Signature Cakes" />
+  <meta name="twitter:description" content="Indulge in our classic and beloved Signature Cake creations." />
+  <meta name="twitter:image" content="https://husseinbakes.github.io/husseinbakes/images/Very-vanilla.webp" />
+
+  <title>Hussein Bakes | Signature Cakes</title>
+  <link rel="icon" href="images/logo.webp" type="image/webp" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Great+Vibes&family=Montserrat&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.min.css" />
+
+</head>
+<body>
+  <header class="fade-in">
+    <nav>
+      <div class="nav-container">
+        <a href="index.html" class="nav-logo">
+          <img src="images/logo.webp" alt="Hussein Bakes Logo" />
+        </a>
+        <h1>Hussein Bakes</h1>
+      </div>
+    </nav>
+  </header>
+
+  <main class="menu-main fade-in">
+    <div class="back-to-menu-container">
+        <a href="index.html" class="back-to-menu-btn order-button">← Back to All Cakes</a>
+    </div>
+
+    <section class="menu-section" id="signature-category">
+      <h2>🎂 Signature Cakes</h2>
+      <div class="cake-grid">
+        <div class="cake-card">
+          <img src="images/Very-vanilla.webp" alt="Very Vanilla Cake" loading="lazy" />
+          <h3>Very Vanilla Cake</h3>
+          <p>Ksh 2,000.00</p>
+          <p>Moist vanilla sponge layered with silky vanilla buttercream and colorful sprinkles. Perfect for all ages.</p>
+          <button class="order-button" data-cake-name="Very Vanilla Cake">Place Order</button>
+        </div>
+
+        <div class="cake-card">
+          <img src="images/Chocolate-obsession.webp" alt="Chocolate Obsession" loading="lazy" />
+          <h3>Chocolate Obsession</h3>
+          <p>Ksh 3,000.00</p>
+          <p>Rich chocolate cake frosted with smooth buttercream. Deep, decadent, and unforgettable.</p>
+          <button class="order-button" data-cake-name="Chocolate Obsession">Place Order</button>
+        </div>
+
+        <div class="cake-card">
+          <img src="images/tuxedo.webp" alt="Tuxedo Cake" loading="lazy" />
+          <h3>Tuxedo Cake</h3>
+          <p>Ksh 3,000.00</p>
+          <p>Elegant mix of chocolate and vanilla layers with smooth dual buttercream.</p>
+          <button class="order-button" data-cake-name="Tuxedo Cake">Place Order</button>
+        </div>
+
+        <div class="cake-card">
+          <img src="images/Black-on-white.webp" alt="Black On White" loading="lazy" />
+          <h3>Black On White</h3>
+          <p>Ksh 3,500.00</p>
+          <p>Vanilla sponge with chocolate buttercream, sprinkles, and rosettes. A classy twist.</p>
+          <button class="order-button" data-cake-name="Black On White">Place Order</button>
+        </div>
+
+        <div class="cake-card">
+          <img src="images/Funfetti.webp" alt="Funfetti Cake" loading="lazy" />
+          <h3>Funfetti Cake</h3>
+          <p>Ksh 3,000.00</p>
+          <p>Colorful vanilla sprinkle cake with matching sprinkle buttercream. Perfect for parties.</p>
+          <button class="order-button" data-cake-name="Funfetti Cake">Place Order</button>
+        </div>
+      </div>
+    </section>
+
+    </main>
+
+  <footer class="fade-in">
+    <p>📍 Kitui, Kenya | 📞 <a href="tel:+254710975805">+254 710 975805</a></p>
+    <p>
+      <a href="https://instagram.com/husseinbakes" target="_blank" rel="noopener noreferrer">Instagram</a> |
+      <a href="https://facebook.com/husseinbakes" target="_blank" rel="noopener noreferrer">Facebook</a> |
+      <a href="https://wa.me/254710975805" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+    </p>
+    <p>© 2025 Hussein Bakes. All rights reserved.</p>
+  </footer>
+
+  <button id="themeToggle" class="toggle-theme" aria-label="Toggle light and dark theme">☀️</button>
+
+  <div id="order-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal-content">
+      <span class="close-btn" aria-label="Close Order Modal">×</span>
+      <h2 id="modal-title">Order: <span id="modal-cake-name"></span></h2>
+      <p>Ready to indulge? Click below to place your order via WhatsApp!</p>
+      <a href="https://wa.me/254710975805" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
+        <img src="images/whatsapp-icon.webp" alt="WhatsApp Icon" />
+      </a>
+      <p style="margin-top: 1rem; font-size: 0.9em; color: var(--gold-light);">
+        For custom requests or specific details, please include them in your WhatsApp message.
+      </p>
+    </div>
+  </div>
+
+  <script src="script.min.js" defer></script>
+</body>
+</html>
