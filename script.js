@@ -1,46 +1,53 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const filterButtons = document.querySelectorAll(".filter-btn");
-  const cakeSections = document.querySelectorAll(".menu-section");
-  const searchInput = document.getElementById("searchInput");
+// Toggle Light/Dark Mode
+const toggleButton = document.getElementById('themeToggle');
+toggleButton.addEventListener('click', () => {
+  document.body.classList.toggle('light-mode');
+  toggleButton.textContent = document.body.classList.contains('light-mode') ? '🌙' : '☀️';
+});
 
-  // Filter by category
-  filterButtons.forEach(button => {
-    button.addEventListener("click", () => {
-      document.querySelector(".filter-btn.active").classList.remove("active");
-      button.classList.add("active");
+// Filter Buttons
+const filterButtons = document.querySelectorAll('.filter-btn');
+const cakeSections = document.querySelectorAll('.menu-section');
 
-      const category = button.dataset.category;
+filterButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    filterButtons.forEach(btn => btn.classList.remove('active'));
+    button.classList.add('active');
+    const category = button.getAttribute('data-category');
 
-      cakeSections.forEach(section => {
-        if (category === "all" || section.id === category) {
-          section.style.display = "block";
-        } else {
-          section.style.display = "none";
-        }
-      });
-    });
-  });
-
-  // Search functionality
-  searchInput.addEventListener("input", () => {
-    const keyword = searchInput.value.toLowerCase();
-    const cards = document.querySelectorAll(".cake-card");
-
-    cards.forEach(card => {
-      const text = card.textContent.toLowerCase();
-      card.style.display = text.includes(keyword) ? "block" : "none";
-    });
-  });
-
-  // Animate on scroll
-  const fadeIns = document.querySelectorAll('.fade-in');
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
+    cakeSections.forEach(section => {
+      const sectionCategory = section.getAttribute('data-category');
+      if (category === 'all' || sectionCategory === category) {
+        section.style.display = 'block';
+      } else {
+        section.style.display = 'none';
       }
     });
-  }, { threshold: 0.1 });
-
-  fadeIns.forEach(el => observer.observe(el));
+  });
 });
+
+// Search Functionality
+const searchInput = document.getElementById('searchInput');
+
+searchInput.addEventListener('input', () => {
+  const searchTerm = searchInput.value.toLowerCase();
+  const cakeCards = document.querySelectorAll('.cake-card');
+
+  cakeCards.forEach(card => {
+    const text = card.textContent.toLowerCase();
+    card.style.display = text.includes(searchTerm) ? 'block' : 'none';
+  });
+});
+
+// Animate on Scroll
+const fadeInElements = document.querySelectorAll('.fade-in');
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.2 });
+
+fadeInElements.forEach(el => observer.observe(el));
