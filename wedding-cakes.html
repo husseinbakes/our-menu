@@ -1,1 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Elegant Wedding Cakes crafted by Hussein Bakes, designed to make your special day even more memorable with exquisite flavors and designs." />
+  <meta name="keywords" content="Hussein Bakes, wedding cakes, custom wedding cake, tiered wedding cake, bridal cakes, wedding cake Nairobi, elegant wedding cakes" />
+  <meta name="author" content="Hussein Salim" />
+  <meta name="robots" content="index, follow" />
+
+  <meta property="og:title" content="Hussein Bakes – Wedding Cakes" />
+  <meta property="og:description" content="Discover our elegant Wedding Cake designs, customized for your big day." />
+  <meta property="og:image" content="https://husseinbakes.github.io/husseinbakes/images/Wedding-cake.webp" />
+  <meta property="og:url" content="https://husseinbakes.github.io/husseinbakes/wedding-cakes.html" />
+  <meta property="og:type" content="website" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Hussein Bakes – Wedding Cakes" />
+  <meta name="twitter:description" content="Your dream wedding cake brought to life with exquisite taste and design." />
+  <meta name="twitter:image" content="https://husseinbakes.github.io/husseinbakes/images/Wedding-cake.webp" />
+
+  <title>Hussein Bakes | Wedding Cakes</title>
+  <link rel="icon" href="images/logo.webp" type="image/webp" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Great+Vibes&family=Montserrat&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.min.css" />
+
+</head>
+<body>
+  <header class="fade-in">
+    <nav>
+      <div class="nav-container">
+        <a href="index.html" class="nav-logo">
+          <img src="images/logo.webp" alt="Hussein Bakes Logo" />
+        </a>
+        <h1>Hussein Bakes</h1>
+      </div>
+    </nav>
+  </header>
+
+  <main class="menu-main fade-in">
+    <div class="back-to-menu-container">
+        <a href="index.html" class="back-to-menu-btn order-button">← Back to All Cakes</a>
+    </div>
+
+    <section class="menu-section" id="wedding-category">
+      <h2>💍 Wedding Cakes</h2>
+      <div class="cake-grid">
+        <div class="cake-card">
+          <img src="images/Wedding-cake.webp" alt="Wedding Cake" loading="lazy" />
+          <h3>Wedding Cake</h3>
+          <p>From Ksh 17,000.00</p>
+          <p>Elegant tiered cakes customized for your big day. Choose luxury floral or classic white.</p>
+          <button class="order-button" data-cake-name="Wedding Cake">Place Order</button>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="fade-in">
+    <p>📍 Kitui, Kenya | 📞 <a href="tel:+254710975805">+254 710 975805</a></p>
+    <p>
+      <a href="https://instagram.com/husseinbakes" target="_blank" rel="noopener noreferrer">Instagram</a> |
+      <a href="https://facebook.com/husseinbakes" target="_blank" rel="noopener noreferrer">Facebook</a> |
+      <a href="https://wa.me/254710975805" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+    </p>
+    <p>© 2025 Hussein Bakes. All rights reserved.</p>
+  </footer>
+
+  <button id="themeToggle" class="toggle-theme" aria-label="Toggle light and dark theme">☀️</button>
+
+  <div id="order-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal-content">
+      <span class="close-btn" aria-label="Close Order Modal">×</span>
+      <h2 id="modal-title">Order: <span id="modal-cake-name"></span></h2>
+      <p>Ready to indulge? Click below to place your order via WhatsApp!</p>
+      <a href="https://wa.me/254710975805" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
+        <img src="images/whatsapp-icon.webp" alt="WhatsApp Icon" />
+      </a>
+      <p style="margin-top: 1rem; font-size: 0.9em; color: var(--gold-light);">
+        For custom requests or specific details, please include them in your WhatsApp message.
+      </p>
+    </div>
+  </div>
+
+  <script src="script.min.js" defer></script>
+</body>
+</html>
 
