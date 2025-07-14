@@ -3,30 +3,29 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="Discover adorable Mini Treats and Bento Cakes from Hussein Bakes, perfect for small celebrations, gifts, or a personal indulgence." />
-  <meta name="keywords" content="Hussein Bakes, mini cakes, bento cakes, small cakes, cute cakes, individual cakes, desserts" />
+  <meta name="description" content="Explore our delightful Mini Cakes and Treats. Perfect for gifting, dessert tables, or small celebrations.">
+  <meta name="keywords" content="mini cakes, cupcakes, treat boxes, dessert shots, small cakes, party treats, Hussein Bakes Kitui" />
   <meta name="author" content="Hussein Salim" />
   <meta name="robots" content="index, follow" />
 
-  <meta property="og:title" content="Hussein Bakes – Mini Treats" />
-  <meta property="og:description" content="Compact, fun, and cute Mini Treats & Bento Cakes from Hussein Bakes." />
-  <meta property="og:image" content="https://husseinbakes.github.io/husseinbakes/images/Bentos-mini.webp" />
+  <meta property="og:title" content="Hussein Bakes – Mini Cakes & Treats" />
+  <meta property="og:description" content="Cupcakes, minis, dessert jars, and more — perfect for gifting or celebrations!" />
+  <meta property="og:image" content="https://husseinbakes.github.io/husseinbakes/images/Mini-cakes.webp" />
   <meta property="og:url" content="https://husseinbakes.github.io/husseinbakes/mini-cakes.html" />
   <meta property="og:type" content="website" />
 
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Hussein Bakes – Mini Treats" />
-  <meta name="twitter:description" content="Perfectly portioned mini cakes for any occasion." />
-  <meta name="twitter:image" content="https://husseinbakes.github.io/husseinbakes/images/Bentos-mini.webp" />
+  <meta name="twitter:title" content="Hussein Bakes – Mini Cakes & Treats" />
+  <meta name="twitter:description" content="Order bite-sized delights and mini cakes for any occasion!" />
+  <meta name="twitter:image" content="https://husseinbakes.github.io/husseinbakes/images/Mini-cakes.webp" />
 
-  <title>Hussein Bakes | Mini Treats</title>
+  <title>Hussein Bakes | Mini Cakes & Treats</title>
   <link rel="icon" href="images/logo.webp" type="image/webp" />
 
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Great+Vibes&family=Montserrat&display=swap" rel="stylesheet" />
-
   <link rel="stylesheet" href="styles.css" />
-
 </head>
+
 <body>
   <header class="fade-in">
     <nav>
@@ -35,28 +34,46 @@
           <img src="images/logo.webp" alt="Hussein Bakes Logo" />
         </a>
         <h1>Hussein Bakes</h1>
+        <button id="themeToggle" class="toggle-theme" aria-label="Toggle theme">☀️</button>
       </div>
     </nav>
   </header>
 
   <main class="menu-main fade-in">
     <div class="back-to-menu-container">
-        <a href="index.html" class="back-to-menu-btn order-button">← Back to All Cakes</a>
+      <a href="index.html" class="back-to-menu-btn order-button">← Back to All Cakes</a>
     </div>
 
-    <section class="menu-section" id="mini-category">
-      <h2>🧁 Mini Treats</h2>
+    <section class="menu-section" id="mini-cakes">
+      <h2>🧁 Mini Cakes & Treats</h2>
+      <p class="section-description">Perfect for dessert tables, party favors, or personal indulgence. Beautifully styled and portioned to delight.</p>
+
       <div class="cake-grid">
         <div class="cake-card">
-          <img src="images/Bentos-mini.webp" alt="Bento & Mini Cakes" loading="lazy" />
-          <h3>Bento & Mini Cakes</h3>
-          <p>Ksh 1,500.00</p>
-          <p>Compact, fun, and cute! Perfect for gifts or small celebrations. Available in various styles.</p>
-          <button class="order-button" data-cake-name="Bento & Mini Cakes">Place Order</button>
+          <img src="images/Mini-cakes.webp" alt="Mini Cake Selection" loading="lazy" />
+          <h3>Mini Cakes</h3>
+          <p>From KES 300/- each</p>
+          <p>Single-serve cakes available in a variety of flavors and finishes. Great for birthdays and gifting.</p>
+          <button class="order-button" data-cake-name="Mini Cakes">Order Now</button>
+        </div>
+
+        <div class="cake-card">
+          <img src="images/Mini-boxes.webp" alt="Mini Cake Box" loading="lazy" />
+          <h3>Mini Treat Boxes</h3>
+          <p>From KES 1,500/-</p>
+          <p>Includes assorted mini cakes, cupcakes, dessert shots, and chocolate-dipped items. Ideal as a gift box.</p>
+          <button class="order-button" data-cake-name="Mini Treat Box">Order Now</button>
+        </div>
+
+        <div class="cake-card">
+          <img src="images/Mini-bento.webp" alt="Mini Bento Cake" loading="lazy" />
+          <h3>Bento Cakes</h3>
+          <p>From KES 1,000/-</p>
+          <p>Trendy bento-style cakes in compact boxes. Ideal for two. Custom messages and colors available.</p>
+          <button class="order-button" data-cake-name="Bento Cake">Order Now</button>
         </div>
       </div>
     </section>
-
   </main>
 
   <footer class="fade-in">
@@ -66,21 +83,19 @@
       <a href="https://facebook.com/husseinbakes" target="_blank" rel="noopener noreferrer">Facebook</a> |
       <a href="https://wa.me/254710975805" target="_blank" rel="noopener noreferrer">WhatsApp</a>
     </p>
-    <p>© 2025 Hussein Bakes. All rights reserved.</p>
+    <p>© <span id="currentYear"></span> Hussein Bakes. All rights reserved.</p>
   </footer>
-
-  <button id="themeToggle" class="toggle-theme" aria-label="Toggle light and dark theme">☀️</button>
 
   <div id="order-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
     <div class="modal-content">
       <span class="close-btn" aria-label="Close Order Modal">×</span>
       <h2 id="modal-title">Order: <span id="modal-cake-name"></span></h2>
-      <p>Ready to indulge? Click below to place your order via WhatsApp!</p>
+      <p>Click below to place your order directly via WhatsApp.</p>
       <a href="https://wa.me/254710975805" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
         <img src="images/whatsapp-icon.webp" alt="WhatsApp Icon" />
       </a>
       <p style="margin-top: 1rem; font-size: 0.9em; color: var(--gold-light);">
-        For custom requests or specific details, please include them in your WhatsApp message.
+        Let us know your flavor, quantity, and event details in your message.
       </p>
     </div>
   </div>
@@ -88,4 +103,3 @@
   <script src="script.js" defer></script>
 </body>
 </html>
-
