@@ -180,7 +180,26 @@
       </p>
     </div>
   </div>
-
+<script src="https://unpkg.com/swiper@11/swiper-bundle.min.js"></script>
+<script>
+  const reviewSwiper = new Swiper('.review-swiper', {
+    loop: true,
+    autoplay: {
+      delay: 6000,
+      disableOnInteraction: false,
+    },
+    slidesPerView: 1,
+    spaceBetween: 30,
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+  });
+</script>
   <script src="script.js" defer></script>
 </body>
 </html>
