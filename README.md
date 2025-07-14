@@ -63,7 +63,7 @@ Please do not reuse without permission.
 For custom cake orders or questions, reach out:
 	•	📱 WhatsApp Hussein Bakes
 	•	📧 husseinbakes@gmail.com
-	•	🌐 Main Site
+	•	🌐 [Visit our main website](http://husseinbakes.github.io/husseinbakes_website/)
 	•	📍 Nairobi & Kitui, Kenya
 
 ⸻
