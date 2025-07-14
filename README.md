@@ -4,7 +4,7 @@ Welcome to the official cake menu for **Hussein Bakes**, where elegance meets fl
 
 ## 🖥️ Live Website
 
-🌐 [Visit the Live Cake Menu]([https://husseinbakes.github.io/our-menu/])
+🌐 [Visit the Live Cake Menu]([https://husseinbakes.github.io/our-menu/index.html])
 
 ## 📁 Folder Structure
 husseinbakes_website/
