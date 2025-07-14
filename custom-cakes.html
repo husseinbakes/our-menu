@@ -10,7 +10,8 @@
 
   <meta property="og:title" content="Hussein Bakes – Custom Celebration Cakes" />
   <meta property="og:description" content="Birthday? Graduation? Get a fully customized cake designed just for you." />
-  <meta property="og:image" content="https://husseinbakes.github.io/husseinbakes/images/Black-on-white.webp" /> <meta property="og:url" content="https://husseinbakes.github.io/husseinbakes/custom-cakes.html" />
+  <meta property="og:image" content="https://husseinbakes.github.io/husseinbakes/images/Black-on-white.webp" />
+  <meta property="og:url" content="https://husseinbakes.github.io/husseinbakes/custom-cakes.html" />
   <meta property="og:type" content="website" />
 
   <meta name="twitter:card" content="summary_large_image" />
@@ -22,10 +23,9 @@
   <link rel="icon" href="images/logo.webp" type="image/webp" />
 
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Great+Vibes&family=Montserrat&display=swap" rel="stylesheet" />
-
   <link rel="stylesheet" href="styles.css" />
-
 </head>
+
 <body>
   <header class="fade-in">
     <nav>
@@ -34,28 +34,30 @@
           <img src="images/logo.webp" alt="Hussein Bakes Logo" />
         </a>
         <h1>Hussein Bakes</h1>
+        <button id="themeToggle" class="toggle-theme" aria-label="Toggle theme">☀️</button>
       </div>
     </nav>
   </header>
 
   <main class="menu-main fade-in">
     <div class="back-to-menu-container">
-        <a href="index.html" class="back-to-menu-btn order-button">← Back to All Cakes</a>
+      <a href="index.html" class="back-to-menu-btn order-button">← Back to All Cakes</a>
     </div>
 
     <section class="menu-section" id="custom-category">
       <h2>🎉 Custom Celebration Cakes</h2>
+      <p class="section-description">Tailor-made for birthdays, graduations, baby showers, and more. We design to your theme, colors, and ideas.</p>
+
       <div class="cake-grid">
         <div class="cake-card">
-          <img src="images/Black-on-white.webp" alt="Custom Celebration Cakes" loading="lazy" />
+          <img src="images/Black-on-white.webp" alt="Custom Celebration Cake" loading="lazy" />
           <h3>Custom Celebration Cakes</h3>
-          <p>From Ksh 2,000.00</p>
-          <p>Birthday? Graduation? We'll match your theme, colors, and size. Fully custom designs!</p>
-          <button class="order-button" data-cake-name="Custom Celebration Cakes">Place Order</button>
+          <p>From KES 2,000/-</p>
+          <p>We'll match your party theme, size, and colors. Fully personalized and handcrafted for your special day.</p>
+          <button class="order-button" data-cake-name="Custom Celebration Cake">Place Order</button>
         </div>
       </div>
     </section>
-
   </main>
 
   <footer class="fade-in">
@@ -65,10 +67,8 @@
       <a href="https://facebook.com/husseinbakes" target="_blank" rel="noopener noreferrer">Facebook</a> |
       <a href="https://wa.me/254710975805" target="_blank" rel="noopener noreferrer">WhatsApp</a>
     </p>
-    <p>© 2025 Hussein Bakes. All rights reserved.</p>
+    <p>© <span id="currentYear"></span> Hussein Bakes. All rights reserved.</p>
   </footer>
-
-  <button id="themeToggle" class="toggle-theme" aria-label="Toggle light and dark theme">☀️</button>
 
   <div id="order-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
     <div class="modal-content">
@@ -79,7 +79,7 @@
         <img src="images/whatsapp-icon.webp" alt="WhatsApp Icon" />
       </a>
       <p style="margin-top: 1rem; font-size: 0.9em; color: var(--gold-light);">
-        For custom requests or specific details, please include them in your WhatsApp message.
+        For special requests or details, include them in your WhatsApp message.
       </p>
     </div>
   </div>
@@ -87,4 +87,3 @@
   <script src="script.js" defer></script>
 </body>
 </html>
-
