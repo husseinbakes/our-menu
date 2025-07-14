@@ -809,7 +809,6 @@ footer a:hover {
       background: none; /* Remove background gradient if no longer overlaying image */
       padding-top: 0;
   }
-}
 
 
 @media (max-width: 480px) {
@@ -849,4 +848,43 @@ footer a:hover {
   .scroll-prompt {
     margin-top: 2rem;
   }
+}
+.reviews-section {
+  background-color: #0a0a0a;
+  padding: 4rem 1rem;
+  text-align: center;
+  color: #ac9657;
+}
+
+.review-swiper {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.review-card {
+  background-color: #121212;
+  border: 1px solid #ac9657;
+  border-radius: 10px;
+  padding: 1.5rem;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #fff;
+  box-shadow: 0 0 15px rgba(172, 150, 87, 0.1);
+}
+
+.review-meta {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: #ac9657;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  color: #ac9657;
+}
+
+.swiper-pagination-bullet {
+  background: #ac9657;
+}
 }
