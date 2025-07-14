@@ -199,21 +199,23 @@
     <p>© 2025 Hussein Bakes. All rights reserved.</p>
   </footer>
 
-  <script>
-    document.querySelectorAll('.carousel').forEach(carousel => {
-      let scrollStep = 1;
-      let direction = 1;
+<script>
+  document.querySelectorAll('.carousel').forEach(carousel => {
+    let scrollAmount = 0;
+    const scrollStep = 1.5; // pixels per tick
+    const scrollLimit = 100; // pixels before direction change
+    let direction = 1;
 
-      setInterval(() => {
-        carousel.scrollLeft += scrollStep * direction;
+    setInterval(() => {
+      carousel.scrollLeft += scrollStep * direction;
+      scrollAmount += scrollStep;
 
-        if (carousel.scrollLeft + carousel.clientWidth >= carousel.scrollWidth) {
-          direction = -1;
-        } else if (carousel.scrollLeft <= 0) {
-          direction = 1;
-        }
-      }, 25);
-    });
-  </script>
+      if (scrollAmount >= scrollLimit) {
+        direction *= -1;
+        scrollAmount = 0;
+      }
+    }, 20); // Smoother scrolling
+  });
+</script>
 </body>
 </html>
