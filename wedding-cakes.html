@@ -3,107 +3,262 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Elegant Wedding Cakes by Hussein Bakes – Single to 4-Tier masterpieces made with love." />
-  <meta name="keywords" content="Wedding Cakes, Hussein Bakes, 2-tier cake, 3-tier cake, custom wedding cake Kenya, Kitui baker, Nairobi wedding cakes" />
+  <title>Hussein Bakes | Wedding Cakes</title>
+  <meta name="description" content="Explore elegant wedding cakes by Hussein Bakes – single to 4-tier custom creations for your big day." />
   <meta name="author" content="Hussein Salim" />
-  <meta name="robots" content="index, follow" />
-
-  <meta property="og:title" content="Elegant Wedding Cakes | Hussein Bakes" />
-  <meta property="og:image" content="https://husseinbakes.github.io/Husseinbakes-menu/images/hero-weddingcake.webp" />
-  <meta property="og:url" content="https://husseinbakes.github.io/Husseinbakes-menu/wedding.html" />
-  <meta property="og:type" content="website" />
-
-  <title>Wedding Cakes | Hussein Bakes</title>
   <link rel="icon" href="images/logo.webp" type="image/webp" />
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Great+Vibes&family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css" />
-</head>
+  <style>
+    :root {
+      --black: #0a0a0a;
+      --gold: #ac9657;
+      --gold-light: #d3b97f;
+      --white: #fff;
+      --font-primary: 'Cinzel', serif;
+      --font-secondary: 'Montserrat', sans-serif;
+    }
 
+    body {
+      margin: 0;
+      font-family: var(--font-secondary);
+      background-color: var(--black);
+      color: var(--gold);
+      scroll-behavior: smooth;
+    }
+
+    header {
+      text-align: center;
+      padding: 1rem;
+      background: var(--black);
+    }
+
+    header img {
+      width: 80px;
+    }
+
+    h1, h2 {
+      font-family: var(--font-primary);
+      margin-bottom: 0.5rem;
+      text-transform: none;
+    }
+
+    .hero {
+      background: url('images/hero-weddingcake.webp') center/cover no-repeat;
+      height: 60vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .hero h2 {
+      background: rgba(0,0,0,0.5);
+      padding: 1rem 2rem;
+      border-radius: 8px;
+      font-size: 2rem;
+      color: var(--gold-light);
+    }
+
+    section {
+      padding: 2rem 1rem;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .tier-section h2 {
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+
+    .carousel {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .carousel-track {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+    }
+
+    .carousel-slide {
+      min-width: 100%;
+      box-sizing: border-box;
+      padding: 1rem;
+    }
+
+    .carousel-slide img {
+      width: 100%;
+      border-radius: 10px;
+      max-height: 450px;
+      object-fit: cover;
+    }
+
+    .carousel-buttons {
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      transform: translateY(-50%);
+    }
+
+    .carousel-btn {
+      background: rgba(0,0,0,0.5);
+      border: none;
+      color: var(--gold-light);
+      font-size: 2rem;
+      cursor: pointer;
+      padding: 0.5rem 1rem;
+    }
+
+    .serving-guide {
+      border: 1px solid var(--gold);
+      border-radius: 8px;
+      padding: 1rem;
+      margin-top: 2rem;
+    }
+
+    .serving-guide table {
+      width: 100%;
+      border-collapse: collapse;
+      color: var(--white);
+    }
+
+    .serving-guide th, .serving-guide td {
+      border: 1px solid var(--gold);
+      padding: 0.5rem;
+      text-align: center;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 0.9rem;
+      padding: 2rem 1rem;
+      background: var(--black);
+      color: var(--gold);
+    }
+
+    .toggle-theme {
+      position: fixed;
+      bottom: 1rem;
+      right: 1rem;
+      background: var(--gold);
+      color: var(--black);
+      border: none;
+      padding: 0.6rem;
+      border-radius: 50%;
+      font-size: 1.2rem;
+      cursor: pointer;
+    }
+
+    @media (min-width: 600px) {
+      .carousel-slide {
+        padding: 2rem;
+      }
+
+      .hero h2 {
+        font-size: 2.5rem;
+      }
+    }
+  </style>
+</head>
 <body>
-  <header class="fade-in">
-    <nav class="nav-container">
-      <a href="index.html" class="nav-logo">
-        <img src="images/logo.webp" alt="Hussein Bakes Logo" />
-      </a>
-      <h1>Hussein Bakes</h1>
-      <button id="themeToggle" class="toggle-theme" aria-label="Toggle light and dark theme">☀️</button>
-    </nav>
+
+  <header>
+    <img src="images/logo.webp" alt="Hussein Bakes Logo" />
+    <h1>Hussein Bakes</h1>
   </header>
 
-  <section class="hero fade-in">
-    <img src="images/hero-weddingcake.webp" alt="Wedding Cakes Hero Image" class="hero-full" />
-    <h2 class="tagline">Your dream wedding deserves the perfect cake.</h2>
+  <section class="hero">
+    <h2>Timeless Wedding Cakes, Tailored for Your Love Story</h2>
   </section>
 
-  <main class="menu-main fade-in">
-    <section class="menu-section">
-      <h2>🎂 Single Tier Wedding Cakes</h2>
-      <p>Elegant and compact. Serves 10–20 guests. Fondant or buttercream finish with floral accents or toppers.</p>
-      <div class="review-carousel">
-        <div class="review-card"><img src="images/single-cake.webp" alt="Single Tier Cake 1" loading="lazy" /></div>
-        <div class="review-card"><img src="images/single-cake2.webp" alt="Single Tier Cake 2" loading="lazy" /></div>
+  <main>
+
+    <section class="tier-section" id="single-tier">
+      <h2>Single Tier Wedding Cakes</h2>
+      <div class="carousel" data-carousel>
+        <div class="carousel-track">
+          <div class="carousel-slide"><img src="images/single-cake.webp" alt="Single Cake 1"></div>
+          <div class="carousel-slide"><img src="images/single-cake2.webp" alt="Single Cake 2"></div>
+        </div>
+        <div class="carousel-buttons">
+          <button class="carousel-btn prev">❮</button>
+          <button class="carousel-btn next">❯</button>
+        </div>
       </div>
-      <button class="slider-btn prev-btn" aria-label="Previous">❮</button>
-      <button class="slider-btn next-btn" aria-label="Next">❯</button>
     </section>
 
-    <section class="menu-section">
-      <h2>🎂 2-Tier Wedding Cakes</h2>
-      <p>Perfect for medium gatherings. Serves 25–40 guests. Styled with lace textures, florals, or pearls.</p>
-      <div class="review-carousel">
-        <div class="review-card"><img src="images/2tier-cake1.webp" alt="2-Tier Cake 1" /></div>
-        <div class="review-card"><img src="images/2tier-cake2.webp" alt="2-Tier Cake 2" /></div>
-        <div class="review-card"><img src="images/2tier-cake3.webp" alt="2-Tier Cake 3" /></div>
-        <div class="review-card"><img src="images/2tier-cake4.webp" alt="2-Tier Cake 4" /></div>
+    <section class="tier-section" id="2-tier">
+      <h2>2-Tier Wedding Cakes</h2>
+      <div class="carousel" data-carousel>
+        <div class="carousel-track">
+          <div class="carousel-slide"><img src="images/2tier-cake1.webp" alt=""></div>
+          <div class="carousel-slide"><img src="images/2tier-cake2.webp" alt=""></div>
+          <div class="carousel-slide"><img src="images/2tier-cake3.webp" alt=""></div>
+          <div class="carousel-slide"><img src="images/2tier-cake4.webp" alt=""></div>
+        </div>
+        <div class="carousel-buttons">
+          <button class="carousel-btn prev">❮</button>
+          <button class="carousel-btn next">❯</button>
+        </div>
       </div>
-      <button class="slider-btn prev-btn">❮</button>
-      <button class="slider-btn next-btn">❯</button>
     </section>
 
-    <section class="menu-section">
-      <h2>🎂 3-Tier Wedding Cakes</h2>
-      <p>Designed for impact. Serves 50–70 guests. Great for centerpieces and photo moments.</p>
-      <div class="review-carousel">
-        <div class="review-card"><img src="images/3tier-cake1.webp" alt="3-Tier Cake 1" /></div>
-        <div class="review-card"><img src="images/3tier-cake2.webp" alt="3-Tier Cake 2" /></div>
-        <div class="review-card"><img src="images/3tier-cake3.webp" alt="3-Tier Cake 3" /></div>
+    <section class="tier-section" id="3-tier">
+      <h2>3-Tier Wedding Cakes</h2>
+      <div class="carousel" data-carousel>
+        <div class="carousel-track">
+          <div class="carousel-slide"><img src="images/3tier-cake1.webp" alt=""></div>
+          <div class="carousel-slide"><img src="images/3tier-cake2.webp" alt=""></div>
+          <div class="carousel-slide"><img src="images/3tier-cake3.webp" alt=""></div>
+        </div>
+        <div class="carousel-buttons">
+          <button class="carousel-btn prev">❮</button>
+          <button class="carousel-btn next">❯</button>
+        </div>
       </div>
-      <button class="slider-btn prev-btn">❮</button>
-      <button class="slider-btn next-btn">❯</button>
     </section>
 
-    <section class="menu-section">
-      <h2>🎂 4-Tier Wedding Cakes</h2>
-      <p>Grand and luxurious. Serves 80–120 guests. Perfect for large weddings and regal statements.</p>
-      <div class="review-carousel">
-        <div class="review-card"><img src="images/4tier-cake.welbp" alt="4-Tier Cake A" /></div>
-        <div class="review-card"><img src="images/4tier-cake1.webp" alt="4-Tier Cake 1" /></div>
-        <div class="review-card"><img src="images/4tier-cake2.webp" alt="4-Tier Cake 2" /></div>
-        <div class="review-card"><img src="images/4tier-cake3.webp" alt="4-Tier Cake 3" /></div>
-        <div class="review-card"><img src="images/4tier-cake4.welbp" alt="4-Tier Cake 4" /></div>
-        <div class="review-card"><img src="images/4tier-cake5.webp" alt="4-Tier Cake 5" /></div>
+    <section class="tier-section" id="4-tier">
+      <h2>4-Tier Wedding Cakes</h2>
+      <div class="carousel" data-carousel>
+        <div class="carousel-track">
+          <div class="carousel-slide"><img src="images/4tier-cake.welbp" alt=""></div>
+          <div class="carousel-slide"><img src="images/4tier-cake1.webp" alt=""></div>
+          <div class="carousel-slide"><img src="images/4tier-cake2.webp" alt=""></div>
+          <div class="carousel-slide"><img src="images/4tier-cake3.webp" alt=""></div>
+          <div class="carousel-slide"><img src="images/4tier-cake4.welbp" alt=""></div>
+          <div class="carousel-slide"><img src="images/4tier-cake5.webp" alt=""></div>
+        </div>
+        <div class="carousel-buttons">
+          <button class="carousel-btn prev">❮</button>
+          <button class="carousel-btn next">❯</button>
+        </div>
       </div>
-      <button class="slider-btn prev-btn">❮</button>
-      <button class="slider-btn next-btn">❯</button>
     </section>
 
-    <section class="menu-section fade-in">
-      <h2>🍰 Wedding Cake Size Guide</h2>
-      <table class="serving-table">
+    <section class="serving-guide">
+      <h2>🎂 Wedding Cake Serving Guide</h2>
+      <table>
         <thead>
-          <tr><th>Tier</th><th>Serving Size</th><th>Ideal For</th></tr>
+          <tr>
+            <th>Tier</th>
+            <th>Size (Inches)</th>
+            <th>Approx. Servings</th>
+          </tr>
         </thead>
         <tbody>
-          <tr><td>Single</td><td>10–20</td><td>Intimate gatherings</td></tr>
-          <tr><td>2-Tier</td><td>25–40</td><td>Small weddings</td></tr>
-          <tr><td>3-Tier</td><td>50–70</td><td>Standard weddings</td></tr>
-          <tr><td>4-Tier</td><td>80–120</td><td>Large weddings</td></tr>
+          <tr><td>Single Tier</td><td>6” or 8”</td><td>12–25</td></tr>
+          <tr><td>2 Tier</td><td>6” + 8”</td><td>30–40</td></tr>
+          <tr><td>3 Tier</td><td>6” + 8” + 10”</td><td>50–80</td></tr>
+          <tr><td>4 Tier</td><td>6” + 8” + 10” + 12”</td><td>100–150</td></tr>
         </tbody>
       </table>
     </section>
+
   </main>
 
-  <footer class="fade-in">
+  <footer>
     <p>📍 Kitui, Kenya | 📞 <a href="tel:+254710975805">+254 710 975805</a></p>
     <p>
       <a href="https://instagram.com/husseinbakes" target="_blank">Instagram</a> |
@@ -113,18 +268,46 @@
     <p>© 2025 Hussein Bakes. All rights reserved.</p>
   </footer>
 
-  <div id="order-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
-    <div class="modal-content">
-      <span class="close-btn" aria-label="Close Order Modal">×</span>
-      <h2 id="modal-title">Order: <span id="modal-cake-name"></span></h2>
-      <p>Ready to indulge? Click below to place your order via WhatsApp!</p>
-      <a href="https://wa.me/254710975805" class="whatsapp-float" target="_blank">
-        <img src="images/whatsapp-icon.webp" alt="WhatsApp Icon" />
-      </a>
-      <p class="small-text">Include tier, flavor & wedding date in your message.</p>
-    </div>
-  </div>
+  <button class="toggle-theme" id="themeToggle" aria-label="Toggle light/dark">☀️</button>
 
-  <script src="script.js" defer></script>
+  <script>
+    document.querySelectorAll('[data-carousel]').forEach(carousel => {
+      const track = carousel.querySelector('.carousel-track');
+      const slides = carousel.querySelectorAll('.carousel-slide');
+      const prevBtn = carousel.querySelector('.prev');
+      const nextBtn = carousel.querySelector('.next');
+      let index = 0;
+
+      const showSlide = (i) => {
+        const slideWidth = slides[0].clientWidth;
+        track.style.transform = `translateX(-${i * slideWidth}px)`;
+      };
+
+      prevBtn.addEventListener('click', () => {
+        index = (index === 0) ? slides.length - 1 : index - 1;
+        showSlide(index);
+      });
+
+      nextBtn.addEventListener('click', () => {
+        index = (index + 1) % slides.length;
+        showSlide(index);
+      });
+
+      // Autoplay
+      setInterval(() => {
+        index = (index + 1) % slides.length;
+        showSlide(index);
+      }, 4000);
+    });
+
+    // Theme toggle
+    const themeToggle = document.getElementById('themeToggle');
+    themeToggle.addEventListener('click', () => {
+      document.body.classList.toggle('light');
+      themeToggle.textContent = document.body.classList.contains('light') ? '🌙' : '☀️';
+      document.body.style.backgroundColor = document.body.classList.contains('light') ? '#fff' : '#0a0a0a';
+      document.body.style.color = document.body.classList.contains('light') ? '#333' : '#ac9657';
+    });
+  </script>
 </body>
 </html>
