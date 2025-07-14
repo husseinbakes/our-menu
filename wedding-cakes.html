@@ -13,11 +13,15 @@
       --gold: #ac9657;
       --white: #ffffff;
     }
+    * {
+      box-sizing: border-box;
+    }
     body {
       margin: 0;
       font-family: 'Montserrat', sans-serif;
       background-color: var(--black);
       color: var(--white);
+      overflow-x: hidden;
     }
     header {
       background-color: var(--black);
@@ -44,13 +48,14 @@
     }
     .back-btn {
       display: inline-block;
-      margin: 2rem;
+      margin: 2rem auto;
       background: var(--gold);
       color: var(--black);
       padding: 0.6rem 1.2rem;
       text-decoration: none;
       font-weight: bold;
       border-radius: 5px;
+      text-align: center;
     }
     section {
       padding: 2rem 1rem;
@@ -77,12 +82,18 @@
       gap: 1rem;
       scroll-behavior: smooth;
       padding: 1rem 0;
+      scrollbar-width: none; /* Firefox */
+      -ms-overflow-style: none;  /* IE/Edge */
+    }
+    .carousel::-webkit-scrollbar {
+      display: none;
     }
     .carousel img {
       height: 300px;
       border-radius: 10px;
       flex: 0 0 auto;
       transition: transform 0.3s;
+      object-fit: cover;
     }
     .carousel img:hover {
       transform: scale(1.03);
@@ -97,6 +108,11 @@
     a {
       color: var(--gold);
       text-decoration: none;
+    }
+    @media (max-width: 768px) {
+      .carousel img {
+        height: 220px;
+      }
     }
   </style>
 </head>
@@ -118,23 +134,23 @@
   <section>
     <h2>Single Tier Wedding Cakes</h2>
     <p class="cake-description">
-      Perfect for intimate weddings, elopements, or small gatherings. Our single-tier cakes serve 10–20 guests and feature handcrafted fondant finishes, sugar florals, and personalized toppers. A sophisticated choice for those who love understated elegance. <br>
+      Perfect for intimate weddings, elopements, or small gatherings. Our single-tier cakes serve 10–20 guests and feature handcrafted fondant finishes, sugar florals, and personalized toppers.<br>
       <strong>Price:</strong> <span style="color: var(--gold); font-weight: 600;">Ksh 5,000 – 7,000</span>
     </p>
-    <div class="carousel" id="single-carousel">
+    <div class="carousel" id="carousel-single">
       <img src="images/single-cake.webp" alt="Single Tier Cake 1" loading="lazy">
       <img src="images/single-cake2.webp" alt="Single Tier Cake 2" loading="lazy">
     </div>
   </section>
 
-  <!-- 2 TIER -->
+  <!-- 2-TIER -->
   <section>
     <h2>2-Tier Wedding Cakes</h2>
     <p class="cake-description">
-      Designed for medium-sized celebrations, these 2-tier cakes serve 30–50 guests. Styled with a blend of edible flowers, intricate lace detailing, and premium fondant or buttercream finishes. Ideal for engagement parties or modest wedding receptions. <br>
+      Designed for medium-sized celebrations, these 2-tier cakes serve 30–50 guests. Styled with a blend of edible flowers, intricate lace detailing, and premium fondant or buttercream finishes.<br>
       <strong>Price:</strong> <span style="color: var(--gold); font-weight: 600;">Ksh 9,000 – 12,000</span>
     </p>
-    <div class="carousel" id="2tier-carousel">
+    <div class="carousel" id="carousel-2tier">
       <img src="images/2tier-cake1.webp" alt="2-Tier Cake 1" loading="lazy">
       <img src="images/2tier-cake2.webp" alt="2-Tier Cake 2" loading="lazy">
       <img src="images/2tier-cake3.webp" alt="2-Tier Cake 3" loading="lazy">
@@ -142,29 +158,29 @@
     </div>
   </section>
 
-  <!-- 3 TIER -->
+  <!-- 3-TIER -->
   <section>
     <h2>3-Tier Wedding Cakes</h2>
     <p class="cake-description">
-      A classic centerpiece for most weddings, our 3-tier cakes serve 60–90 guests. Each layer showcases a distinct design with sugar pearls, florals, gold leaf, or traditional piping. Crafted for elegance, flavor, and unforgettable presentation. <br>
+      A classic centerpiece for most weddings, our 3-tier cakes serve 60–90 guests. Each layer showcases sugar pearls, florals, gold leaf, or traditional piping.<br>
       <strong>Price:</strong> <span style="color: var(--gold); font-weight: 600;">Ksh 14,000 – 18,000</span>
     </p>
-    <div class="carousel" id="3tier-carousel">
+    <div class="carousel" id="carousel-3tier">
       <img src="images/3tier-cake1.webp" alt="3-Tier Cake 1" loading="lazy">
       <img src="images/3tier-cake2.webp" alt="3-Tier Cake 2" loading="lazy">
       <img src="images/3tier-cake3.webp" alt="3-Tier Cake 3" loading="lazy">
     </div>
   </section>
 
-  <!-- 4 TIER -->
+  <!-- 4-TIER -->
   <section>
     <h2>4-Tier Wedding Cakes</h2>
     <p class="cake-description">
-      Our grandest wedding cakes — perfect for luxurious, large-scale weddings. Serving 100+ guests, these 4-tier masterpieces feature intricate sugarwork, themed embellishments, satin-smooth fondant or whipped buttercream, and elevated modern design. <br>
+      Our grandest wedding cakes — perfect for luxurious, large-scale weddings. Serving 100+ guests, with intricate sugarwork and elevated design.<br>
       <strong>Price:</strong> <span style="color: var(--gold); font-weight: 600;">Ksh 20,000 – 30,000+</span>
     </p>
-    <div class="carousel" id="4tier-carousel">
-      <img src="images/4tier-cake.webp" alt="4-Tier Cake 0" loading="lazy">
+    <div class="carousel" id="carousel-4tier">
+      <img src="images/4tier-cake.welbp" alt="4-Tier Cake 0" loading="lazy">
       <img src="images/4tier-cake1.webp" alt="4-Tier Cake 1" loading="lazy">
       <img src="images/4tier-cake2.webp" alt="4-Tier Cake 2" loading="lazy">
       <img src="images/4tier-cake3.webp" alt="4-Tier Cake 3" loading="lazy">
@@ -184,19 +200,20 @@
   </footer>
 
   <script>
-    // Auto-scroll all carousels
     document.querySelectorAll('.carousel').forEach(carousel => {
-      let scrollAmount = 0;
-      const scrollStep = 1;
-      const maxScroll = carousel.scrollWidth - carousel.clientWidth;
+      let scrollStep = 1;
+      let direction = 1;
 
       setInterval(() => {
-        scrollAmount += scrollStep;
-        if (scrollAmount >= maxScroll) scrollAmount = 0;
-        carousel.scrollTo({ left: scrollAmount, behavior: 'smooth' });
-      }, 40); // adjust speed
+        carousel.scrollLeft += scrollStep * direction;
+
+        if (carousel.scrollLeft + carousel.clientWidth >= carousel.scrollWidth) {
+          direction = -1;
+        } else if (carousel.scrollLeft <= 0) {
+          direction = 1;
+        }
+      }, 25);
     });
   </script>
-
 </body>
 </html>
