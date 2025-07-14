@@ -1,21 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">
+
   <url>
     <loc>https://husseinbakes.github.io/our-menu/</loc>
+    <lastmod>2025-07-15</lastmod>
   </url>
+
   <url>
     <loc>https://husseinbakes.github.io/our-menu/signature-cakes.html</loc>
+    <lastmod>2025-07-15</lastmod>
   </url>
+
   <url>
     <loc>https://husseinbakes.github.io/our-menu/specialty-cakes.html</loc>
+    <lastmod>2025-07-15</lastmod>
   </url>
+
   <url>
-    <loc>https://husseinbakes.github.io/our-menu/wedding-cakes.html</loc>
+    <loc>https://husseinbakes.github.io/our-menu/wedding.html</loc>
+    <lastmod>2025-07-15</lastmod>
   </url>
+
   <url>
     <loc>https://husseinbakes.github.io/our-menu/mini-cakes.html</loc>
+    <lastmod>2025-07-15</lastmod>
   </url>
+
   <url>
     <loc>https://husseinbakes.github.io/our-menu/custom-cakes.html</loc>
+    <lastmod>2025-07-15</lastmod>
   </url>
+
 </urlset>
