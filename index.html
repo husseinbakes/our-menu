@@ -3,220 +3,90 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="Custom cakes handcrafted by Hussein Bakes – from weddings to birthdays, every cake tells a story." />
-  <meta name="keywords" content="Hussein Bakes, cakes in Kenya, custom cake Kitui, wedding cake Nairobi, order birthday cake" />
-  <meta name="author" content="Hussein Salim" />
-  <meta name="robots" content="index, follow" />
+  <title>Hussein Bakes - Cake Menu</title>
+  <meta name="description" content="Explore our elegant and delicious cake menu featuring signature cakes, specialty cakes, celebration cakes, mini treats, and extras.">
+  <meta name="author" content="Hussein Bakes">
 
-  <meta property="og:title" content="Hussein Bakes – Custom Cakes in Kenya" />
-  <meta property="og:description" content="Handmade cakes crafted with elegance. Order from Kitui or Nairobi." />
-  <meta property="og:image" content="https://husseinbakes.github.io/husseinbakes/images/logo.webp" />
-  <meta property="og:url" content="https://husseinbakes.github.io/husseinbakes/" />
-  <meta property="og:type" content="website" />
-
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Hussein Bakes – Elegant Cakes" />
-  <meta name="twitter:description" content="From birthdays to weddings – order beautifully crafted cakes today." />
-  <meta name="twitter:image" content="https://husseinbakes.github.io/husseinbakes/images/logo.webp" />
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Bakery",
-  "name": "Hussein Bakes",
-  "image": "https://husseinbakes.github.io/Husseinbakes-menu/images/logo.webp",
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Kitui",
-    "addressRegion": "Kitui",
-    "postalCode": "90200",
-    "addressCountry": "KE"
-  },
-  "telephone": "+254710975805",
-  "email": "husseinbakes@gmail.com",
-  "url": "https://husseinbakes.github.io/Husseinbakes-menu/",
-  "priceRange": "$$",
-  "openingHours": "Mo-Su 00:00-23:59"
-}
-</script>
-  <title>Hussein Bakes | All Cakes Menu</title>
-  <link rel="icon" href="images/logo.webp" type="image/webp" />
-
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Great+Vibes&family=Montserrat&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="https://unpkg.com/swiper@11/swiper-bundle.min.css" />
-
-  <link rel="stylesheet" href="styles.css" />
-
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel&family=Great+Vibes&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="styles.css"/>
 </head>
 <body>
-  <header class="fade-in">
-    <nav>
-      <div class="nav-container">
-        <a href="index.html" class="nav-logo">
-          <img src="images/logo.webp" alt="Hussein Bakes Logo" />
-        </a>
-        <h1>Hussein Bakes</h1>
-      </div>
+  <header>
+    <nav class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <img src="images/logo.webp" alt="Hussein Bakes Logo" />
+      </a>
+      <h1>Hussein Bakes</h1>
+      <button id="themeToggle" aria-label="Toggle theme">🌙</button>
     </nav>
   </header>
 
-  <section class="hero fade-in">
-    <h2 class="tagline">Crafted with Passion. Delivered with Elegance.</h2>
-    <div class="scroll-prompt">
-      <span>Scroll to Explore</span>
-      <div class="arrow-down"></div>
-    </div>
-  </section>
-
-  <main class="menu-main fade-in">
-    <h2>Our Cake Menu</h2>
-
-<div class="back-to-menu-container">
-    <a href="index.html" class="back-to-menu-btn order-button">← Back to All Cakes</a>
-</div>
-
-
+  <main class="menu-main">
     <div class="search-bar">
-      <input type="text" id="searchInput" placeholder="Search cakes..." aria-label="Search cakes" />
+      <input type="text" id="searchInput" placeholder="Search cakes..." />
     </div>
 
-    <div class="filter-buttons" role="group" aria-label="Cake Categories">
-      <a href="index.html" class="filter-btn active" data-category="all">All</a>
-      <a href="signature-cakes.html" class="filter-btn" data-category="signature">Signature</a>
-      <a href="specialty-cakes.html" class="filter-btn" data-category="specialty">Specialty</a>
-      <a href="wedding-cakes.html" class="filter-btn" data-category="wedding">Wedding</a>
-      <a href="mini-cakes.html" class="filter-btn" data-category="mini">Mini</a>
-      <a href="custom-cakes.html" class="filter-btn" data-category="custom">Custom</a>
+    <div class="filter-buttons">
+      <button class="filter-btn active" data-category="all">All</button>
+      <button class="filter-btn" data-category="signature">Signature</button>
+      <button class="filter-btn" data-category="specialty">Specialty</button>
+      <button class="filter-btn" data-category="favorites">All-Time Favorites</button>
+      <button class="filter-btn" data-category="celebration">Celebration</button>
+      <button class="filter-btn" data-category="mini">Mini Treats</button>
+      <button class="filter-btn" data-category="extras">Extras</button>
     </div>
 
-    <section id="extras" class="menu-section fade-in">
-      <h2>🎁 Extras</h2>
-      <ul class="extras-list">
-        <li><strong>🎀 Toppers:</strong> KES 300+</li>
-        <li><strong>🌸 Floral Decoration:</strong> KES 500+</li>
-        <li><strong>🚚 Delivery:</strong> KES 300–1,000 (based on location)</li>
-      </ul>
+    <!-- Example Cake Category Section -->
+    <section class="menu-section" id="signature">
+      <h2>Signature Cakes</h2>
+      <p class="section-description">Our iconic range of Hussein Bakes' best-sellers — elegant, flavorful, and beautifully handcrafted.</p>
+      <div class="cake-grid">
+        <div class="cake-card" data-category="signature">
+          <img src="images/tuxedo.webp" alt="Tuxedo Cake"/>
+          <h3>Tuxedo Cake</h3>
+          <p>KES 3,000/-</p>
+          <p>Layers of dark chocolate and vanilla with buttercream frosting and tuxedo styling.</p>
+          <button class="order-button" data-cake-name="Tuxedo Cake">Order Now</button>
+        </div>
+        <!-- Add more cakes as needed -->
+      </div>
     </section>
 
-  <section id="reviews" class="menu-section fade-in reviews-section">
-  <h2>🌟 Customer Reviews</h2>
+    <!-- Repeat menu-section blocks for Specialty, Favorites, Celebration, Mini, Extras -->
 
-  <div class="swiper review-swiper">
-    <div class="swiper-wrapper">
-      <!-- 1 -->
-      <div class="swiper-slide review-card">
-        <p>"The cake was absolutely incredible! Flavors were spot on, the design perfect, and stunning presentation. Hussein listened to my ideas and nailed it!"</p>
-        <div class="review-meta">– Nassir Mariam | ⭐⭐⭐⭐⭐</div>
-      </div>
+    <section class="menu-section" id="extras">
+      <h2>Extras</h2>
+      <p class="section-description">Add-ons to elevate your cake experience: toppers, fresh florals, and more.</p>
+      <ul>
+        <li><strong>Toppers:</strong> From KES 300/-</li>
+        <li><strong>Fresh Flowers / Artificial Floral Decor:</strong> From KES 1,000/-</li>
+        <li><strong>Delivery (Nairobi & Environs):</strong> KES 500 – KES 1,200/-</li>
+      </ul>
+    </section>
+  </main>
 
-      <!-- 2 -->
-      <div class="swiper-slide review-card">
-        <p>"Beautiful moist chocolate cake, real chocolate flavor not just essence. Perfectly done. MashaAllah! Highly recommend."</p>
-        <div class="review-meta">– Halima Hassan | ⭐⭐⭐⭐⭐</div>
-      </div>
-
-      <!-- 3 -->
-      <div class="swiper-slide review-card">
-        <p>"Our wedding cake was stunning and exceeded all expectations! Attention to detail and professionalism was top-notch. Hussein is a true artist."</p>
-        <div class="review-meta">– Link Portrait | ⭐⭐⭐⭐⭐</div>
-      </div>
-
-      <!-- 4 -->
-      <div class="swiper-slide review-card">
-        <p>"Absolutely divine! The buttercream, the aesthetics, the flavor—perfection. Every cake is a statement piece."</p>
-        <div class="review-meta">– Fatma Abdulkadir | ⭐⭐⭐⭐⭐</div>
-      </div>
-
-      <!-- 5 -->
-      <div class="swiper-slide review-card">
-        <p>"My birthday was colorful thanks to Hussein Bakes. Great service, excellent flavor and design!"</p>
-        <div class="review-meta">– Jude Opiyo | ⭐⭐⭐⭐⭐</div>
-      </div>
-
-      <!-- 6 -->
-      <div class="swiper-slide review-card">
-        <p>"The treats were absolutely divine! Flavors, presentation, service – everything top-notch. 5 stars isn’t enough!"</p>
-        <div class="review-meta">– Jeanette Atieno | ⭐⭐⭐⭐⭐</div>
-      </div>
-
-      <!-- 7 -->
-      <div class="swiper-slide review-card">
-        <p>"The cake was marvelous. Kindly consider a low-sugar option too. Still, an excellent experience!"</p>
-        <div class="review-meta">– Hussein Mwange | ⭐⭐⭐⭐</div>
-      </div>
-    </div>
-
-    <!-- Navigation -->
-    <div class="swiper-button-next gold-arrow"></div>
-    <div class="swiper-button-prev gold-arrow"></div>
-    <div class="swiper-pagination"></div>
-  </div>
-
-  <p style="margin-top: 2rem; text-align: center;">
-    <a href="https://www.google.com/maps/place/Hussein+Bakes/" target="_blank" class="order-button">⭐ View More Reviews on Google</a>
-  </p>
-</section>
-  <footer class="fade-in">
-    <p>📍 Kitui, Kenya | 📞 <a href="tel:+254710975805">+254 710 975805</a></p>
-    <p>
-      <a href="https://instagram.com/husseinbakes" target="_blank" rel="noopener noreferrer">Instagram</a> |
-      <a href="https://facebook.com/husseinbakes" target="_blank" rel="noopener noreferrer">Facebook</a> |
-      <a href="https://wa.me/254710975805" target="_blank" rel="noopener noreferrer">WhatsApp</a>
-    </p>
-    <p>© 2025 Hussein Bakes. All rights reserved.</p>
-    <div style="margin-top: 2rem;">
-  <iframe 
-    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15955.427187428836!2d38.0085614!3d1.3755001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x18260f2e6d64c9cf%3A0x7ddcc0a28950a09e!2sKitui%2C%20Kenya!5e0!3m2!1sen!2ske!4v1689270367659!5m2!1sen!2ske" 
-    width="100%" 
-    height="200" 
-    style="border:0;" 
-    allowfullscreen 
-    loading="lazy" 
-    referrerpolicy="no-referrer-when-downgrade">
-  </iframe>
-</div>
+  <footer>
+    <p>&copy; <span id="currentYear"></span> Hussein Bakes. All rights reserved.</p>
+    <p>Follow us on <a href="https://www.instagram.com/husseinbakes/" target="_blank">Instagram</a></p>
+    <p>Contact: +254 710975805</p>
+    <a href="#" class="back-to-top" aria-label="Back to top">&#9650;</a>
   </footer>
 
-  <button id="themeToggle" class="toggle-theme" aria-label="Toggle light and dark theme">☀️</button>
-
-  <div id="order-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+  <div id="order-modal" class="modal">
     <div class="modal-content">
-      <span class="close-btn" aria-label="Close Order Modal">×</span>
-      <h2 id="modal-title">Order: <span id="modal-cake-name"></span></h2>
-      <p>Ready to indulge? Click below to place your order via WhatsApp!</p>
-      <a href="https://wa.me/254710975805" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
+      <span class="close-btn">&times;</span>
+      <h2>Order Confirmation</h2>
+      <p>You're about to order the <span id="modal-cake-name"></span>.</p>
+      <p>Please contact us via WhatsApp to finalize your order and customize your cake.</p>
+      <a href="#" id="whatsappLink" target="_blank" class="whatsapp-float">
         <img src="images/whatsapp-icon.webp" alt="WhatsApp Icon" />
       </a>
-      <p style="margin-top: 1rem; font-size: 0.9em; color: var(--gold-light);">
-        For custom requests or specific details, please include them in your WhatsApp message.
-      </p>
+      <p class="small-text">Chat with us directly on WhatsApp!</p>
     </div>
   </div>
-<script src="https://unpkg.com/swiper@11/swiper-bundle.min.js"></script>
-<script>
-  const reviewSwiper = new Swiper('.review-swiper', {
-    loop: true,
-    autoplay: {
-      delay: 6000,
-      disableOnInteraction: false,
-    },
-    slidesPerView: 1,
-    spaceBetween: 30,
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-    },
-    pagination: {
-      el: '.swiper-pagination',
-      clickable: true,
-    },
-  });
-</script>
-<a href="https://wa.me/254710975805?text=Hello%20Hussein%20Bakes!%20I’d%20love%20to%20inquire%20about%20a%20cake." 
-   class="whatsapp-float" 
-   target="_blank" 
-   aria-label="Chat on WhatsApp">
-  <img src="images/whatsapp-icon.webp" alt="WhatsApp Chat" />
-</a>
+
   <script src="script.js" defer></script>
 </body>
 </html>
