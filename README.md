@@ -7,7 +7,7 @@ This is a scrollable, interactive one-page HTML site featuring all our signature
 
 ## 🖥️ Live Website
 
-🌐 [Visit the Live Cake Menu](https://husseinbakes.github.io/Husseinbakes-menu/)
+🌐 [Visit the Live Cake Menu](https://husseinbakes.github.io/our-menu/)
 
 ---
 
