@@ -42,6 +42,7 @@
   <link rel="icon" href="images/logo.webp" type="image/webp" />
 
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Great+Vibes&family=Montserrat&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://unpkg.com/swiper@11/swiper-bundle.min.css" />
 
   <link rel="stylesheet" href="styles.css" />
 
@@ -96,44 +97,64 @@
       </ul>
     </section>
 
-    <section id="reviews" class="menu-section fade-in">
-      <h2>🌟 Customer Reviews</h2>
+  <section id="reviews" class="menu-section fade-in reviews-section">
+  <h2>🌟 Customer Reviews</h2>
 
-      <div class="reviews-slider">
-        <div class="reviews-wrapper">
-          <blockquote class="review-slide">
-            “Amazing experience! Hussein Bakes made my birthday cake and it was absolutely incredible!
-            The flavors were spot on, the design was perfect, and the presentation was stunning.
-            Hussein was super easy to work with and really listened to my ideas.
-            Highly recommend for anyone looking for a show-stopping dessert!
-            5 stars isn't enough 😊🎂”
-            <br><strong>– Maryam Nassir ⭐⭐⭐⭐⭐</strong>
-          </blockquote>
-
-          <blockquote class="review-slide">
-            “Hussein Bakes has beautiful cakes. The chocolate cake had a beautiful balance of real chocolate,
-            not just flavoring, and the cakes were moist — just the way we like them. MashaAllah, nice work Hussein Bakes.
-            I definitely recommend.
-            Food: 5/5 • Service: 5/5 • Atmosphere: 5/5
-            Wait time: 10–30 min”
-            <br><strong>– Halima Hassan ⭐⭐⭐⭐</strong>
-          </blockquote>
-
-          </div>
-        <button class="slider-btn prev-btn" aria-label="Previous review">❮</button>
-        <button class="slider-btn next-btn" aria-label="Next review">❯</button>
+  <div class="swiper review-swiper">
+    <div class="swiper-wrapper">
+      <!-- 1 -->
+      <div class="swiper-slide review-card">
+        <p>"The cake was absolutely incredible! Flavors were spot on, the design perfect, and stunning presentation. Hussein listened to my ideas and nailed it!"</p>
+        <div class="review-meta">– Nassir Mariam | ⭐⭐⭐⭐⭐</div>
       </div>
 
-      <div class="slider-dots"></div>
+      <!-- 2 -->
+      <div class="swiper-slide review-card">
+        <p>"Beautiful moist chocolate cake, real chocolate flavor not just essence. Perfectly done. MashaAllah! Highly recommend."</p>
+        <div class="review-meta">– Halima Hassan | ⭐⭐⭐⭐⭐</div>
+      </div>
 
-      <p style="margin-top: 1rem; text-align: center;">
-        <a href="https://www.google.com/maps/place/Hussein+Bakes/" target="_blank" class="order-button">
-          ⭐ View More Reviews on Google
-        </a>
-      </p>
-    </section>
-  </main>
+      <!-- 3 -->
+      <div class="swiper-slide review-card">
+        <p>"Our wedding cake was stunning and exceeded all expectations! Attention to detail and professionalism was top-notch. Hussein is a true artist."</p>
+        <div class="review-meta">– Link Portrait | ⭐⭐⭐⭐⭐</div>
+      </div>
 
+      <!-- 4 -->
+      <div class="swiper-slide review-card">
+        <p>"Absolutely divine! The buttercream, the aesthetics, the flavor—perfection. Every cake is a statement piece."</p>
+        <div class="review-meta">– Fatma Abdulkadir | ⭐⭐⭐⭐⭐</div>
+      </div>
+
+      <!-- 5 -->
+      <div class="swiper-slide review-card">
+        <p>"My birthday was colorful thanks to Hussein Bakes. Great service, excellent flavor and design!"</p>
+        <div class="review-meta">– Jude Opiyo | ⭐⭐⭐⭐⭐</div>
+      </div>
+
+      <!-- 6 -->
+      <div class="swiper-slide review-card">
+        <p>"The treats were absolutely divine! Flavors, presentation, service – everything top-notch. 5 stars isn’t enough!"</p>
+        <div class="review-meta">– Jeanette Atieno | ⭐⭐⭐⭐⭐</div>
+      </div>
+
+      <!-- 7 -->
+      <div class="swiper-slide review-card">
+        <p>"The cake was marvelous. Kindly consider a low-sugar option too. Still, an excellent experience!"</p>
+        <div class="review-meta">– Hussein Mwange | ⭐⭐⭐⭐</div>
+      </div>
+    </div>
+
+    <!-- Navigation -->
+    <div class="swiper-button-next gold-arrow"></div>
+    <div class="swiper-button-prev gold-arrow"></div>
+    <div class="swiper-pagination"></div>
+  </div>
+
+  <p style="margin-top: 2rem; text-align: center;">
+    <a href="https://www.google.com/maps/place/Hussein+Bakes/" target="_blank" class="order-button">⭐ View More Reviews on Google</a>
+  </p>
+</section>
   <footer class="fade-in">
     <p>📍 Kitui, Kenya | 📞 <a href="tel:+254710975805">+254 710 975805</a></p>
     <p>
