@@ -1,176 +1,107 @@
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener("DOMContentLoaded", function () {
+  // Theme Toggle
+  const themeToggle = document.getElementById("themeToggle");
+  themeToggle?.addEventListener("click", () => {
+    document.body.classList.toggle("light-theme");
+    themeToggle.textContent = document.body.classList.contains("light-theme") ? "🌙" : "☀️";
+  });
 
-    // --- Theme Toggle Logic ---
-    const themeToggle = document.getElementById('themeToggle');
-    const currentTheme = localStorage.getItem('theme');
+  // Set current year in footer
+  const yearSpan = document.getElementById("currentYear");
+  if (yearSpan) yearSpan.textContent = new Date().getFullYear();
 
-    if (currentTheme) {
-        document.body.classList.add(currentTheme);
-        themeToggle.textContent = currentTheme === 'dark-theme' ? '☀️' : '🌙';
-    }
+  // Order Modal Logic
+  const modal = document.getElementById("order-modal");
+  const modalCakeName = document.getElementById("modal-cake-name");
+  const whatsappLink = document.getElementById("whatsappLink");
+  const closeBtn = document.querySelector(".close-btn");
 
-    themeToggle.addEventListener('click', () => {
-        document.body.classList.toggle('dark-theme');
-        let theme = 'light-theme';
-        if (document.body.classList.contains('dark-theme')) {
-            theme = 'dark-theme';
-            themeToggle.textContent = '☀️'; // Sun icon for dark theme
-        } else {
-            themeToggle.textContent = '🌙'; // Moon icon for light theme
-        }
-        localStorage.setItem('theme', theme);
+  document.querySelectorAll(".order-button").forEach(button => {
+    button.addEventListener("click", () => {
+      const cakeName = button.getAttribute("data-cake-name");
+      modalCakeName.textContent = cakeName;
+      if (whatsappLink) {
+        const encodedName = encodeURIComponent(cakeName);
+        whatsappLink.href = `https://wa.me/254710975805?text=I'm%20interested%20in%20ordering%20the%20${encodedName}%20cake.`;
+      }
+      modal.classList.add("show");
+    });
+  });
+
+  closeBtn?.addEventListener("click", () => modal.classList.remove("show"));
+  window.addEventListener("click", e => {
+    if (e.target === modal) modal.classList.remove("show");
+  });
+
+  // Smooth scroll back to top
+  document.querySelector(".back-to-top")?.addEventListener("click", function (e) {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+
+  // Image Slider (for each slider)
+  document.querySelectorAll(".image-slider").forEach(slider => {
+    const wrapper = slider.querySelector(".image-wrapper");
+    const slides = wrapper.querySelectorAll(".image-slide");
+    const prevBtn = slider.querySelector(".prev-btn");
+    const nextBtn = slider.querySelector(".next-btn");
+    const dotsContainer = slider.querySelector(".slider-dots");
+    let currentIndex = 0;
+
+    // Create dots
+    slides.forEach((_, i) => {
+      const dot = document.createElement("span");
+      dot.classList.add("dot");
+      if (i === 0) dot.classList.add("active");
+      dot.addEventListener("click", () => {
+        currentIndex = i;
+        updateSlider();
+      });
+      dotsContainer?.appendChild(dot);
     });
 
-    // --- Order Modal Logic ---
-    const orderButtons = document.querySelectorAll('.order-button');
-    const modal = document.getElementById('order-modal');
-    const closeModalBtn = document.querySelector('.close-btn');
-    const modalCakeName = document.getElementById('modal-cake-name');
-    const whatsappLink = modal.querySelector('.whatsapp-float'); // Get the WhatsApp link inside the modal
+    const updateSlider = () => {
+      wrapper.style.transform = `translateX(-${currentIndex * 100}%)`;
+      dotsContainer.querySelectorAll(".dot").forEach((dot, i) =>
+        dot.classList.toggle("active", i === currentIndex)
+      );
+    };
 
-    orderButtons.forEach(button => {
-        button.addEventListener('click', (event) => {
-            const cakeName = event.target.dataset.cakeName || "a Custom Cake"; // Default if data-cake-name is missing
-            modalCakeName.textContent = cakeName;
-
-            // Update WhatsApp link with the cake name
-            const whatsappBaseUrl = "https://wa.me/2547XXXXXXXX"; // Replace XXXXXXXX with your actual number
-            const whatsappMessage = `I'm interested in ordering the ${encodeURIComponent(cakeName)} cake.`;
-            whatsappLink.href = `${whatsappBaseUrl}?text=${whatsappMessage}`;
-
-            modal.classList.add('visible');
-        });
+    prevBtn?.addEventListener("click", () => {
+      currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+      updateSlider();
     });
 
-    closeModalBtn.addEventListener('click', () => {
-        modal.classList.remove('visible');
+    nextBtn?.addEventListener("click", () => {
+      currentIndex = (currentIndex + 1) % slides.length;
+      updateSlider();
     });
+  });
 
-    window.addEventListener('click', (event) => {
-        if (event.target === modal) {
-            modal.classList.remove('visible');
-        }
+  // Search Functionality
+  const searchInput = document.getElementById("searchInput");
+  if (searchInput) {
+    searchInput.addEventListener("input", () => {
+      const filter = searchInput.value.toLowerCase();
+      document.querySelectorAll(".cake-card").forEach(card => {
+        const text = card.textContent.toLowerCase();
+        card.style.display = text.includes(filter) ? "" : "none";
+      });
     });
+  }
 
-    // --- Dynamic Year for Footer ---
-    const currentYearSpan = document.getElementById('currentYear');
-    if (currentYearSpan) {
-        currentYearSpan.textContent = new Date().getFullYear();
-    }
+  // Category Filtering
+  const filterButtons = document.querySelectorAll(".filter-btn");
+  filterButtons.forEach(button => {
+    button.addEventListener("click", () => {
+      const category = button.getAttribute("data-category");
+      document.querySelectorAll(".cake-card").forEach(card => {
+        const matches = category === "all" || card.dataset.category === category;
+        card.style.display = matches ? "block" : "none";
+      });
 
-
-    // --- Generalized Image Slider Logic ---
-    // This class encapsulates the logic for each individual slideshow instance.
-    class ImageSlider {
-        constructor(sliderElement) {
-            this.slider = sliderElement;
-            this.wrapper = this.slider.querySelector('.image-wrapper');
-            this.slides = this.slider.querySelectorAll('.image-slide');
-            this.prevBtn = this.slider.querySelector('.prev-btn');
-            this.nextBtn = this.slider.querySelector('.next-btn');
-            this.dotsContainer = this.slider.querySelector('.slider-dots');
-
-            if (!this.wrapper || !this.slides.length || !this.prevBtn || !this.nextBtn || !this.dotsContainer) {
-                console.error("Missing essential elements for slider:", this.slider.id || this.slider);
-                return; // Don't proceed if critical elements are missing
-            }
-
-            this.currentSlideIndex = 0;
-            this.totalSlides = this.slides.length;
-            this.autoSlideInterval = null; // To hold the interval ID
-
-            this.initDots();
-            this.attachEventListeners();
-            this.updateSlider(); // Show initial slide and dot
-
-            // Start auto-slide only for the reviews slider (if present on index.html)
-            if (this.slider.id === 'reviews-slider') {
-                this.startAutoSlide(5000); // 5 seconds for reviews
-            }
-        }
-
-        initDots() {
-            this.dotsContainer.innerHTML = ''; // Clear existing dots
-            for (let i = 0; i < this.totalSlides; i++) {
-                const dot = document.createElement('span');
-                dot.classList.add('dot');
-                dot.dataset.index = i;
-                dot.addEventListener('click', () => this.goToSlide(i));
-                this.dotsContainer.appendChild(dot);
-            }
-        }
-
-        updateSlider() {
-            // Adjust currentSlideIndex to be within bounds
-            if (this.currentSlideIndex < 0) {
-                this.currentSlideIndex = this.totalSlides - 1;
-            } else if (this.currentSlideIndex >= this.totalSlides) {
-                this.currentSlideIndex = 0;
-            }
-
-            const offset = -this.currentSlideIndex * 100;
-            this.wrapper.style.transform = `translateX(${offset}%)`;
-
-            this.updateDots();
-        }
-
-        updateDots() {
-            const dots = this.dotsContainer.querySelectorAll('.dot');
-            dots.forEach((dot, index) => {
-                dot.classList.toggle('active', index === this.currentSlideIndex);
-            });
-        }
-
-        showNextSlide() {
-            this.currentSlideIndex++;
-            this.updateSlider();
-            this.resetAutoSlide();
-        }
-
-        showPrevSlide() {
-            this.currentSlideIndex--;
-            this.updateSlider();
-            this.resetAutoSlide();
-        }
-
-        goToSlide(index) {
-            this.currentSlideIndex = index;
-            this.updateSlider();
-            this.resetAutoSlide();
-        }
-
-        startAutoSlide(intervalTime) {
-            this.stopAutoSlide(); // Clear any existing interval first
-            this.autoSlideInterval = setInterval(() => {
-                this.showNextSlide();
-            }, intervalTime);
-        }
-
-        stopAutoSlide() {
-            if (this.autoSlideInterval) {
-                clearInterval(this.autoSlideInterval);
-                this.autoSlideInterval = null;
-            }
-        }
-
-        resetAutoSlide() {
-            // Only reset if auto-slide was already active
-            if (this.slider.id === 'reviews-slider' && this.autoSlideInterval) {
-                this.stopAutoSlide();
-                this.startAutoSlide(5000); // Restart auto-slide after manual interaction
-            }
-        }
-
-        attachEventListeners() {
-            this.prevBtn.addEventListener('click', () => this.showPrevSlide());
-            this.nextBtn.addEventListener('click', () => this.showNextSlide());
-        }
-    }
-
-    // Initialize all slideshows found on the page
-    const allSliders = document.querySelectorAll('.image-slider');
-    allSliders.forEach(sliderElement => {
-        new ImageSlider(sliderElement);
+      filterButtons.forEach(btn => btn.classList.remove("active"));
+      button.classList.add("active");
     });
-
-}); // End DOMContentLoaded
+  });
+});
