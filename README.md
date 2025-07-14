@@ -4,7 +4,7 @@ Welcome to the official cake menu for **Hussein Bakes**, where elegance meets fl
 
 ## 🖥️ Live Website
 
-🌐 [Visit the Live Cake Menu](https://yourusername.github.io/husseinbakes_website/menu.html)
+🌐 [Visit the Live Cake Menu]([https://husseinbakes.github.io/our-menu/])
 
 ## 📁 Folder Structure
 husseinbakes_website/
@@ -50,7 +50,7 @@ All images used are custom or generated for the Hussein Bakes brand. Please do n
 For custom cake orders or questions, reach out:
 	•	📱 WhatsApp Hussein Bakes
 	•	📧 2025salimh@gmail.com
-	•	🌍 Main Website
+	🌎http://husseinbakes.github.io/husseinbakes_website/
 	•	📍 Nairobi & Kitui, Kenya
 
 ⸻
