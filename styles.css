@@ -1,900 +1,336 @@
-/* Universal Box-Sizing */
-*, *::before, *::after {
-  box-sizing: border-box;
+:root {
+  --black: #0a0a0a;
+  --gold: #ac9657;
+  --white: #ffffff;
+  --light-bg: #f7f5f0;
+  --gold-light: #e3cfa4;
+  --font-primary: 'Montserrat', sans-serif;
+  --font-accent: 'Cinzel', serif;
+  --font-script: 'Great Vibes', cursive;
+}
+
+* {
   margin: 0;
   padding: 0;
-}
-.whatsapp-float {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  z-index: 999;
-  width: 60px;
-  transition: transform 0.3s ease;
-}
-.whatsapp-float:hover {
-  transform: scale(1.1);
-}
-/* CSS Variables for Theming */
-:root {
-  --primary-color: #f8f8f8; /* Light theme background */
-  --secondary-color: #ffffff; /* Light theme card background */
-  --text-color: #333; /* Light theme text */
-  --light-text-color: #555; /* Lighter text for light theme */
-  --border-color: #e0e0e0; /* Light theme border */
-  --shadow-color: rgba(0, 0, 0, 0.1); /* Light theme shadow */
-
-  --dark: #1a1a1a; /* Dark theme background */
-  --dark-secondary: #2c2c2c; /* Dark theme card background */
-  --dark-text: #f0f0f0; /* Dark theme text */
-  --dark-light-text: #cccccc; /* Lighter text for dark theme */
-  --dark-border: #444; /* Dark theme border */
-  --dark-shadow: rgba(0, 0, 0, 0.5); /* Dark theme shadow */
-
-  --gold: #ac9657; /* Primary accent gold */
-  --gold-light: #d4af37; /* Lighter gold for highlights */
-  --gold-light-rgb: 212, 175, 55; /* RGB for rgba use */
-  --dark-rgb: 26, 26, 26; /* RGB for rgba use */
-
-  --transition-speed: 0.3s;
+  box-sizing: border-box;
 }
 
-/* Dark Theme Variables (applied when .dark-theme is active) */
-body.dark-theme {
-  --primary-color: var(--dark);
-  --secondary-color: var(--dark-secondary);
-  --text-color: var(--dark-text);
-  --light-text-color: var(--dark-light-text);
-  --border-color: var(--dark-border);
-  --shadow-color: var(--dark-shadow);
+html {
+  scroll-behavior: smooth;
 }
 
-/* General Body Styles */
 body {
-  font-family: 'Montserrat', sans-serif;
+  font-family: var(--font-primary);
+  background-color: var(--black);
+  color: var(--white);
   line-height: 1.6;
-  color: var(--text-color);
-  background-color: var(--primary-color);
-  transition: background-color var(--transition-speed), color var(--transition-speed);
-  scroll-behavior: smooth; /* Smooth scrolling for anchor links */
-  -webkit-font-smoothing: antialiased; /* Smoother fonts on WebKit browsers */
-  -moz-osx-font-smoothing: grayscale; /* Smoother fonts on Firefox */
+  transition: background-color 0.3s, color 0.3s;
+}
+
+body.light-theme {
+  background-color: var(--light-bg);
+  color: var(--black);
 }
 
 a {
-  color: var(--gold-light);
+  color: var(--gold);
   text-decoration: none;
-  transition: color var(--transition-speed);
 }
 
 a:hover {
+  text-decoration: underline;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-accent);
   color: var(--gold);
-}
-
-/* Header & Navigation */
-header {
-  background-color: var(--secondary-color);
-  padding: 1.5rem 0;
-  border-bottom: 1px solid var(--border-color);
-  box-shadow: 0 2px 5px var(--shadow-color);
-  position: sticky;
-  top: 0;
-  z-index: 50; /* Ensure header stays on top */
-  transition: background-color var(--transition-speed), border-color var(--transition-speed), box-shadow var(--transition-speed);
-}
-
-nav .nav-container {
-  display: flex;
-  align-items: center;
-  justify-content: center; /* Center the entire nav content */
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 2rem;
-}
-
-.nav-logo img {
-  height: 50px;
-  width: auto;
-  margin-right: 1rem;
-  vertical-align: middle;
-}
-
-nav h1 {
-  font-family: 'Cinzel', serif;
-  color: var(--text-color);
-  font-size: 2.2rem;
-  white-space: nowrap; /* Prevent title from wrapping */
-  transition: color var(--transition-speed);
-}
-
-/* Hero Section (General for Index.html) */
-.hero {
-  text-align: center;
-  padding: 5rem 2rem; /* Default padding for text-based hero */
-  background: linear-gradient(145deg, var(--dark) 0%, #111 100%); /* Deep dark background */
-  position: relative;
-  overflow: hidden;
-  isolation: isolate;
-  display: flex; /* Use flexbox for content alignment */
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.hero .tagline {
-  font-family: 'Great Vibes', cursive;
-  font-size: 3.2rem;
-  color: var(--gold-light);
-  text-shadow: 0 0 10px rgba(var(--gold-light-rgb), 0.5), 0 0 20px rgba(var(--gold-light-rgb), 0.3);
-  line-height: 1.2;
-  z-index: 1; /* Ensure tagline is above pseudo-element */
-}
-
-/* Hero Section Glow Effect (for Index.html hero) */
-.hero:not(.wedding-hero)::before { /* Apply only if NOT wedding-hero */
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 120%;
-  height: 120%;
-  background: radial-gradient(circle at center, rgba(var(--gold-light-rgb), 0.08) 0%, transparent 70%);
-  transform: translate(-50%, -50%) scale(1);
-  animation: glowPulse 8s infinite alternate ease-in-out;
-  z-index: -1;
-  pointer-events: none;
-}
-
-@keyframes glowPulse {
-  0% { transform: translate(-50%, -50%) scale(1); opacity: 0.8; }
-  100% { transform: translate(-50%, -50%) scale(1.05); opacity: 1; }
-}
-
-/* NEW: Wedding Hero Section (Image-based) */
-.wedding-hero {
-    padding: 0; /* Remove default padding as image will fill */
-    height: 400px; /* Adjust height as needed */
-    position: relative;
-    overflow: hidden;
-    background-color: var(--dark); /* Fallback background */
-}
-
-.wedding-hero .hero-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Cover the container, cropping if necessary */
-    object-position: center; /* Center the image within the container */
-    filter: brightness(0.6); /* Slightly dim the image for text readability */
-    transition: filter var(--transition-speed);
-}
-
-.wedding-hero .hero-content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 90%; /* Content takes up most width */
-    max-width: 800px;
-    z-index: 2; /* Above the image */
-    color: white; /* Ensure text is visible on dark image */
-    text-shadow: 0 0 15px rgba(0,0,0,0.7); /* Stronger shadow for readability */
-}
-
-/* Ensure tagline in wedding hero is styled correctly */
-.wedding-hero .tagline {
-    font-size: 4rem; /* Larger for hero image impact */
-    text-shadow: 0 0 15px rgba(var(--gold-light-rgb), 0.6), 0 0 30px rgba(var(--gold-light-rgb), 0.4);
-    color: var(--gold-light);
-}
-
-/* Scroll Prompt */
-.scroll-prompt {
-  margin-top: 3rem;
-  color: var(--gold-light);
-  font-size: 0.9rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  opacity: 0;
-  animation: fadeInFromBottom 1.5s ease-out 1s forwards;
-}
-
-.scroll-prompt span {
   margin-bottom: 0.5rem;
 }
 
-.arrow-down {
-  width: 0;
-  height: 0;
-  border-left: 8px solid transparent;
-  border-right: 8px solid transparent;
-  border-top: 10px solid var(--gold-light);
-  animation: bounce 2s infinite;
+h2 {
+  font-size: 1.8rem;
 }
 
-@keyframes bounce {
-  0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-  40% { transform: translateY(-5px); }
-  60% { transform: translateY(-3px); }
+p {
+  margin: 0.5rem 0;
 }
 
-@keyframes fadeInFromBottom {
-  0% { opacity: 0; transform: translateY(20px); }
-  100% { opacity: 1; transform: translateY(0); }
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: var(--black);
+  border-bottom: 1px solid var(--gold);
+  padding: 0.5rem 1rem;
 }
 
-/* Main Content Area */
-.menu-main {
+body.light-theme header {
+  background-color: var(--white);
+}
+
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-logo img {
+  height: 40px;
+}
+
+header h1 {
+  font-size: 1.5rem;
+}
+
+#themeToggle {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: var(--gold);
+}
+
+main.menu-main {
+  padding: 2rem 1rem;
   max-width: 1200px;
-  margin: 2rem auto;
-  padding: 0 2rem;
+  margin: 0 auto;
 }
 
-.menu-main h2 {
-  font-family: 'Cinzel', serif;
-  color: var(--text-color);
-  text-align: center;
-  margin-bottom: 1rem; /* Adjusted for new text elements */
-  font-size: 2rem;
-  transition: color var(--transition-speed);
+.menu-section {
+  margin-bottom: 3rem;
 }
 
-/* NEW: Section Specific Text Styling */
+.section-description,
 .section-price-info {
-    font-size: 1.15rem;
-    font-weight: 600;
-    color: var(--gold);
-    text-align: center;
-    margin-bottom: 1rem;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  color: var(--gold-light);
 }
 
-.section-description {
-    font-size: 0.95rem;
-    line-height: 1.7;
-    color: var(--light-text-color);
-    text-align: center;
-    max-width: 800px; /* Limit width for readability */
-    margin: 0 auto 2rem auto; /* Center and add bottom margin */
+.cake-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
 }
 
-/* Search Bar */
+.cake-card {
+  background-color: #1a1a1a;
+  padding: 1rem;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(172, 150, 87, 0.2);
+  transition: transform 0.3s ease;
+}
+
+body.light-theme .cake-card {
+  background-color: #fffdf7;
+}
+
+.cake-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.cake-card:hover {
+  transform: scale(1.02);
+}
+
+.order-button {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background-color: var(--gold);
+  color: var(--black);
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.order-button:hover {
+  background-color: #c7a34d;
+}
+
 .search-bar {
   text-align: center;
   margin-bottom: 2rem;
 }
 
-.search-bar input {
-  padding: 0.8rem 1.2rem;
-  width: 100%;
+#searchInput {
+  padding: 0.5rem 1rem;
+  width: 90%;
   max-width: 400px;
-  border: 1px solid var(--border-color);
-  border-radius: 25px;
-  font-size: 1rem;
-  background-color: var(--secondary-color);
-  color: var(--text-color);
-  transition: border-color var(--transition-speed), background-color var(--transition-speed), color var(--transition-speed);
+  border-radius: 6px;
+  border: 1px solid var(--gold);
+  background-color: #1a1a1a;
+  color: var(--white);
 }
 
-.search-bar input:focus {
-  outline: none;
-  border-color: var(--gold-light);
-  box-shadow: 0 0 5px rgba(var(--gold-light-rgb), 0.5);
+body.light-theme #searchInput {
+  background-color: #fff;
+  color: #000;
 }
 
-/* Filter Buttons (now links) */
 .filter-buttons {
   text-align: center;
-  margin-bottom: 3rem;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 0.5rem; /* Space between buttons */
+  margin-bottom: 2rem;
 }
 
 .filter-btn {
-  padding: 0.7rem 1.6rem;
-  border: 2px solid var(--gold);
-  background: transparent;
+  background-color: transparent;
+  border: 1px solid var(--gold);
   color: var(--gold);
-  font-weight: 600;
-  border-radius: 30px;
+  padding: 0.5rem 1rem;
+  margin: 0.25rem;
+  border-radius: 4px;
   cursor: pointer;
-  transition: all var(--transition-speed);
-  font-size: 0.95rem;
-  text-decoration: none; /* Crucial: Remove underline from links */
-  display: inline-flex; /* Allows vertical centering of text */
-  align-items: center; /* Centers text vertically */
-  justify-content: center; /* Centers text horizontally */
-  white-space: nowrap; /* Prevent text wrapping within a button */
+  font-weight: 500;
 }
 
 .filter-btn.active,
 .filter-btn:hover {
-  background: var(--gold);
-  color: var(--dark);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-}
-
-/* Back to All Cakes Button (for category pages) */
-.back-to-menu-container {
-    text-align: center;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-}
-
-.back-to-menu-btn {
-    display: inline-block;
-    margin: 0 auto;
-    padding: 0.8rem 1.8rem;
-    /* Inherits styling from .order-button which is defined later */
-}
-
-/* Specific Menu Section Heading on Category Pages */
-.menu-main .menu-section h2 {
-    margin-top: 2rem; /* Ensure consistent spacing if no search/filter above */
-    margin-bottom: 1rem; /* Adjusted */
-}
-
-/* Cake Grid Layout (for other categories like Signature, Specialty etc.) */
-.cake-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
-  justify-content: center;
-  padding-bottom: 3rem;
-}
-
-.cake-card {
-  background-color: var(--secondary-color);
-  border: 1px solid var(--border-color);
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 4px 8px var(--shadow-color);
-  text-align: center;
-  transition: transform var(--transition-speed), box-shadow var(--transition-speed), background-color var(--transition-speed), border-color var(--transition-speed);
-  display: flex;
-  flex-direction: column;
-}
-
-.cake-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 12px var(--shadow-color);
-}
-
-.cake-card img {
-  width: 100%;
-  height: 250px;
-  object-fit: cover;
-  display: block;
-}
-
-.cake-card h3 {
-  font-family: 'Cinzel', serif;
-  color: var(--gold-light);
-  margin: 1.2rem 1rem 0.5rem;
-  font-size: 1.4rem;
-  transition: color var(--transition-speed);
-}
-
-.cake-card p {
-  padding: 0 1rem;
-  font-size: 0.95rem;
-  color: var(--light-text-color);
-  flex-grow: 1;
-}
-
-.cake-card p:nth-of-type(1) { /* Price paragraph */
-  font-weight: bold;
-  font-size: 1.1rem;
-  color: var(--text-color);
-  margin-top: 0.5rem;
-}
-
-.order-button {
-  display: inline-block;
   background-color: var(--gold);
-  color: var(--dark);
-  padding: 0.8rem 1.5rem;
-  border-radius: 25px;
-  margin: 1.5rem auto 1.5rem;
-  font-weight: bold;
-  transition: background-color var(--transition-speed), transform var(--transition-speed), box-shadow var(--transition-speed);
-  border: none;
-  cursor: pointer;
-  font-size: 1rem;
-  text-align: center;
+  color: var(--black);
 }
 
-.order-button:hover {
-  background-color: var(--gold-light);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-}
-
-/* Extras Section */
-#extras ul {
-  list-style: none;
-  padding: 0;
-  text-align: center;
-  margin-bottom: 3rem;
-}
-
-#extras li {
-  margin-bottom: 0.8rem;
-  font-size: 1.1rem;
-  color: var(--light-text-color);
-  transition: color var(--transition-speed);
-}
-
-#extras li strong {
-  color: var(--text-color);
-  transition: color var(--transition-speed);
-}
-
-/* Generalized Image Slideshow (for Reviews and Wedding Cakes) */
 .image-slider {
   position: relative;
-  width: 100%;
-  max-width: 600px; /* Adjusted max-width for image content */
-  margin: 2rem auto 2.5rem auto; /* Spacing for the slider */
   overflow: hidden;
-  padding: 0; /* Remove padding if added previously */
-  background-color: var(--dark-secondary); /* Background for the slider itself */
-  border-radius: 8px;
-  box-shadow: 0 4px 10px var(--shadow-color);
+  margin-top: 1rem;
 }
 
 .image-wrapper {
   display: flex;
   transition: transform 0.5s ease-in-out;
-  will-change: transform;
 }
 
 .image-slide {
   flex: 0 0 100%;
-  min-width: 100%;
-  box-sizing: border-box;
-  text-align: center;
+  max-width: 100%;
 }
 
 .image-slide img {
-    width: 100%;
-    height: 400px; /* Set a fixed height for consistency in the slider */
-    object-fit: cover; /* Ensure images fill the space */
-    border-radius: 8px; /* Match slider container border-radius */
+  width: 100%;
+  border-radius: 8px;
 }
 
-/* Slideshow navigation buttons */
 .slider-btn {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(var(--dark-rgb), 0.7);
-  color: var(--gold-light);
-  border: 1px solid var(--gold);
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  background: var(--black);
+  border: none;
+  color: var(--gold);
+  font-size: 2rem;
+  padding: 0.2rem 0.6rem;
   cursor: pointer;
-  font-size: 1.5rem;
-  font-weight: bold;
-  transition: background 0.3s ease, color 0.3s ease;
-  z-index: 10;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+  z-index: 1;
 }
 
 .slider-btn:hover {
-  background: var(--gold);
-  color: var(--dark);
-  border-color: var(--gold-light);
+  background: rgba(172, 150, 87, 0.5);
 }
 
 .prev-btn {
-  left: 10px;
+  left: 5px;
 }
 
 .next-btn {
-  right: 10px;
+  right: 5px;
 }
 
-/* Slideshow dots */
 .slider-dots {
-  display: flex;
-  justify-content: center;
-  margin-top: 1.5rem; /* Adjusted to be inside .image-slider for reviews */
-  padding-bottom: 1rem; /* Padding for dots inside slider */
-  gap: 0.8rem;
-  position: absolute; /* Position dots over the bottom of the slider */
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: linear-gradient(to top, rgba(var(--dark-rgb), 0.7), transparent); /* Faded background for dots */
-  padding-top: 2rem; /* Ensure dots are not obscured */
-  border-bottom-left-radius: 8px;
-  border-bottom-right-radius: 8px;
-}
-
-.dot {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background: var(--gold);
-  opacity: 0.4;
-  cursor: pointer;
-  transition: opacity 0.3s ease, transform 0.2s ease;
-}
-
-.dot.active {
-  opacity: 1;
-  transform: scale(1.2);
-}
-
-/* NEW: Section Divider */
-.section-divider {
-    border: none;
-    border-top: 1px solid var(--border-color);
-    margin: 4rem auto; /* Spacing around the divider */
-    width: 60%; /* Width of the divider */
-    max-width: 800px;
-}
-
-
-/* Footer */
-footer {
-  background-color: var(--secondary-color);
-  color: var(--light-text-color);
   text-align: center;
-  padding: 2rem 1rem;
-  border-top: 1px solid var(--border-color);
-  box-shadow: 0 -2px 5px var(--shadow-color);
-  margin-top: 3rem;
-  transition: background-color var(--transition-speed), color var(--transition-speed), border-color var(--transition-speed), box-shadow var(--transition-speed);
+  margin-top: 0.5rem;
 }
 
-footer p {
-  margin-bottom: 0.5rem;
-  font-size: 0.9rem;
-}
-
-footer a {
-  color: var(--gold-light);
-  text-decoration: none;
-  margin: 0 0.5rem;
-  transition: color var(--transition-speed);
-}
-
-footer a:hover {
-  color: var(--gold);
-}
-
-/* Theme Toggle Button */
-#themeToggle {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background-color: var(--gold-light);
-  color: var(--dark);
-  border: none;
+.slider-dots .dot {
+  height: 10px;
+  width: 10px;
+  margin: 0 5px;
+  background-color: #888;
   border-radius: 50%;
-  width: 50px;
-  height: 50px;
-  font-size: 1.8rem;
+  display: inline-block;
   cursor: pointer;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-  transition: background-color var(--transition-speed), transform var(--transition-speed);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 100;
 }
 
-#themeToggle:hover {
-  transform: translateY(-3px);
+.slider-dots .active {
   background-color: var(--gold);
 }
 
-/* Order Modal */
+footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.9rem;
+  background-color: #111;
+  color: var(--gold-light);
+}
+
+.back-to-top {
+  display: inline-block;
+  margin-top: 1rem;
+  font-size: 1.5rem;
+}
+
 .modal {
   display: none;
   position: fixed;
-  z-index: 1000;
+  z-index: 10000;
   left: 0;
   top: 0;
   width: 100%;
   height: 100%;
   overflow: auto;
-  background-color: rgba(0, 0, 0, 0.7);
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
-  justify-content: center;
-  align-items: center;
-  padding: 1rem;
-  box-sizing: border-box;
+  background-color: rgba(10, 10, 10, 0.8);
 }
 
-.modal.visible {
+.modal.show {
   display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .modal-content {
-  background-color: var(--dark-secondary);
-  margin: auto;
+  background-color: var(--black);
+  color: var(--white);
   padding: 2rem;
-  border: 1px solid var(--gold);
-  border-radius: 8px;
+  border-radius: 12px;
   width: 90%;
-  max-width: 500px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+  max-width: 400px;
   position: relative;
   text-align: center;
-  animation: fadeInZoom 0.3s ease-out;
-  color: var(--dark-text);
 }
 
-@keyframes fadeInZoom {
-  from {
-    opacity: 0;
-    transform: scale(0.9);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-.modal-content h2 {
-  font-family: 'Cinzel', serif;
-  color: var(--gold-light);
-  margin-bottom: 1rem;
-  font-size: 1.8rem;
-}
-
-.modal-content p {
-  margin-bottom: 1rem;
-  font-size: 1rem;
-  color: var(--dark-light-text);
+body.light-theme .modal-content {
+  background-color: #fff;
+  color: #000;
 }
 
 .close-btn {
-  color: var(--gold-light);
-  font-size: 2rem;
-  font-weight: bold;
   position: absolute;
   top: 10px;
-  right: 20px;
+  right: 15px;
+  font-size: 1.5rem;
   cursor: pointer;
-  transition: color 0.3s ease;
-}
-
-.close-btn:hover,
-.close-btn:focus {
   color: var(--gold);
-  text-decoration: none;
-  cursor: pointer;
-}
-
-.whatsapp-float {
-  display: inline-block;
-  margin: 1.5rem auto;
-  background-color: #25D366;
-  border-radius: 50%;
-  width: 60px;
-  height: 60px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .whatsapp-float img {
-  width: 35px;
-  height: 35px;
-  vertical-align: middle;
-}
-
-.whatsapp-float:hover {
-  transform: scale(1.05);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
-}
-
-/* Fade-in Animation for Sections (from initial project) */
-.fade-in {
-  opacity: 0;
-  animation: fadeIn 1s ease-out forwards;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-@media (max-width: 768px) {
-  nav h1 {
-    font-size: 1.8rem;
-  }
-
-  .hero .tagline {
-    font-size: 2.5rem;
-    padding: 0 1rem;
-  }
-
-  .wedding-hero {
-      height: 300px; /* Shorter hero on smaller screens */
-  }
-  .wedding-hero .tagline {
-      font-size: 3rem; /* Adjusted for smaller screens */
-  }
-  .hero-content {
-      width: 95%;
-  }
-
-  .menu-main {
-    padding: 0 1rem;
-  }
-
-  .menu-main h2 {
-    font-size: 1.8rem;
-  }
-
-  .section-price-info {
-      font-size: 1.05rem;
-  }
-  .section-description {
-      font-size: 0.9rem;
-      margin-left: 1rem;
-      margin-right: 1rem;
-  }
-
-  .filter-btn {
-    font-size: 0.9rem;
-    padding: 0.6rem 1.2rem;
-  }
-
-  .cake-card h3 {
-    font-size: 1.2rem;
-  }
-
-  .cake-card p {
-    font-size: 0.85rem;
-  }
-
-  .order-button {
-    padding: 0.7rem 1.2rem;
-    font-size: 0.9rem;
-  }
-
-  .modal-content {
-    width: 95%;
-    padding: 1.5rem;
-  }
-
-  .close-btn {
-    font-size: 1.8rem;
-    top: 5px;
-    right: 15px;
-  }
-
-  .whatsapp-float {
-    width: 50px;
-    height: 50px;
-  }
-
-  .whatsapp-float img {
-    width: 30px;
-    height: 30px;
-  }
-
-  footer p {
-    font-size: 0.8rem;
-  }
-
-  /* Slideshow adjustments for smaller screens */
-  .image-slider {
-      max-width: 100%; /* Take full width on small screens */
-      margin-left: 1rem;
-      margin-right: 1rem;
-      display: flex; /* KEEP THIS LINE */
-      /* REMOVED: flex-direction: column; */
-      /* REMOVED: align-items: center; */
-  }
-  .image-slide img {
-      height: 300px; /* Shorter image height on small screens */
-  }
-  .slider-btn {
-    position: static; /* Allows them to flow with content below slides */
-    transform: none;
-    margin: 1rem 0.5rem;
-  }
-  /* The image-wrapper doesn't need a specific flex-direction here as it relies on the non-mobile default */
-  .image-wrapper {
-    width: 100%; /* Ensure wrapper takes full width */
-  }
-  .slider-dots {
-      position: static; /* Move dots below slider content */
-      background: none; /* Remove background gradient if no longer overlaying image */
-      padding-top: 0;
-  }
-
-
-@media (max-width: 480px) {
-  nav .nav-container {
-    flex-direction: column;
-    text-align: center;
-  }
-  nav .nav-logo {
-    margin-right: 0;
-    margin-bottom: 0.5rem;
-  }
-
-  .hero {
-    padding: 3rem 1rem;
-  }
-
-  .hero .tagline {
-    font-size: 2rem;
-  }
-  .wedding-hero .tagline {
-      font-size: 2.2rem; /* Even smaller for very small screens */
-  }
-
-  .filter-buttons {
-    flex-direction: column;
-    gap: 0.8rem;
-  }
-  .filter-btn {
-    width: 80%;
-    margin: 0.4rem auto;
-  }
-
-  .cake-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .scroll-prompt {
-    margin-top: 2rem;
-  }
-}
-.reviews-section {
-  background-color: #0a0a0a;
-  padding: 4rem 1rem;
-  text-align: center;
-  color: #ac9657;
-}
-
-.review-swiper {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 2rem 1rem;
-}
-
-.review-card {
-  background-color: #121212;
-  border: 1px solid #ac9657;
-  border-radius: 10px;
-  padding: 1.5rem;
-  font-size: 1rem;
-  line-height: 1.6;
-  color: #fff;
-  box-shadow: 0 0 15px rgba(172, 150, 87, 0.1);
-}
-
-.review-meta {
+  width: 40px;
   margin-top: 1rem;
-  font-size: 0.9rem;
-  color: #ac9657;
 }
 
-.swiper-button-prev,
-.swiper-button-next {
-  color: #ac9657;
+.back-to-menu-btn {
+  display: inline-block;
+  margin: 1rem 0 2rem 0;
+  font-size: 0.95rem;
+  background-color: transparent;
+  border: 1px solid var(--gold);
+  color: var(--gold);
 }
 
-.swiper-pagination-bullet {
-  background: #ac9657;
-}
+.back-to-menu-btn:hover {
+  background-color: var(--gold);
+  color: var(--black);
 }
