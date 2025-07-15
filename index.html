@@ -161,6 +161,7 @@
       background: transparent;
       color: var(--gold);
       border-radius: 5px;
+      transition: background 0.3s, color 0.3s;
     }
 
     .filter-btn.active,
@@ -225,6 +226,12 @@
       background: var(--gold);
       color: #000;
       font-weight: bold;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    .order-button:hover {
+      background: #fff;
+      color: var(--gold);
     }
 
     @media (max-width: 600px) {
@@ -246,7 +253,7 @@
     <h2>Our Cake Menu</h2>
 
     <div class="search-bar">
-      <input type="text" placeholder="Search cakes..." />
+      <input type="text" placeholder="Search cakes..." aria-label="Search cakes" />
     </div>
 
     <div class="filter-buttons">
