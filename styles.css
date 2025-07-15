@@ -2,11 +2,11 @@
   --primary-gold: #ac9657;
   --primary-gold-light: #f0e3b1;
   --background-dark: #0a0a0a;
-  --text-light: #ffffff;
-  --text-muted: #ccc;
-  --card-bg: #111;
-  --modal-bg: rgba(0, 0, 0, 0.85);
-  --shadow: rgba(172, 150, 87, 0.3);
+  --text-light: #f9f9f9;
+  --text-muted: #b0a993;
+  --card-bg: #141414;
+  --modal-bg: rgba(0, 0, 0, 0.92);
+  --shadow: rgba(172, 150, 87, 0.2);
   --accent: #f0e3b1;
 }
 
@@ -15,51 +15,58 @@ body {
   font-family: 'Montserrat', sans-serif;
   background-color: var(--background-dark);
   color: var(--text-light);
-  line-height: 1.6;
+  line-height: 1.7;
   scroll-behavior: smooth;
 }
 
 a {
   color: var(--primary-gold);
   text-decoration: none;
+  transition: color 0.3s ease;
+}
+a:hover {
+  color: var(--accent);
 }
 
 h2 {
   font-family: 'Cinzel', serif;
   color: var(--primary-gold);
-  font-size: 2rem;
-  margin-bottom: 1rem;
+  font-size: 2.2rem;
+  margin-bottom: 1.2rem;
+  letter-spacing: 0.5px;
 }
 
 section {
-  padding: 60px 20px;
+  padding: 60px 24px;
   text-align: center;
 }
 
 .hero {
   height: 100vh;
+  background: linear-gradient(to bottom, #000, var(--background-dark));
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(to bottom, #000, #0a0a0a);
+  text-align: center;
 }
 
 .tagline {
   font-family: 'Great Vibes', cursive;
-  font-size: 2.2rem;
+  font-size: 2.4rem;
   color: var(--accent);
   margin-bottom: 1rem;
+  letter-spacing: 0.8px;
 }
 
 .scroll-prompt {
   color: var(--text-muted);
-  font-size: 0.9rem;
+  font-size: 0.95rem;
 }
 
 .arrow-down {
-  width: 12px;
-  height: 12px;
+  width: 14px;
+  height: 14px;
   border-left: 2px solid var(--primary-gold);
   border-bottom: 2px solid var(--primary-gold);
   transform: rotate(-45deg);
@@ -78,15 +85,16 @@ section {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 12px;
+  gap: 14px;
 }
 .filter-btn {
-  padding: 10px 20px;
+  padding: 12px 24px;
   border: 1px solid var(--primary-gold);
   background: transparent;
   color: var(--primary-gold);
-  border-radius: 5px;
-  transition: background 0.3s ease;
+  border-radius: 6px;
+  font-weight: 500;
+  transition: all 0.3s ease;
 }
 .filter-btn:hover,
 .filter-btn.active {
@@ -96,14 +104,15 @@ section {
 
 /* Search */
 .search-bar input {
-  padding: 10px;
+  padding: 12px;
   width: 90%;
-  max-width: 400px;
+  max-width: 420px;
   border: 1px solid var(--primary-gold);
-  border-radius: 6px;
+  border-radius: 8px;
   background: var(--card-bg);
   color: var(--text-light);
-  margin-bottom: 20px;
+  margin-bottom: 24px;
+  font-size: 1rem;
 }
 
 /* Menu Layout */
@@ -111,10 +120,10 @@ section {
   padding: 40px 20px;
 }
 .menu-section {
-  margin: 40px auto;
+  margin: 50px auto;
 }
 .menu-section h2 {
-  font-size: 1.8rem;
+  font-size: 2rem;
 }
 
 /* Extras */
@@ -122,48 +131,51 @@ section {
   list-style: none;
   padding: 0;
   color: var(--text-muted);
+  font-size: 1.05rem;
 }
 .extras-list li {
-  margin: 10px 0;
-  font-size: 1rem;
+  margin: 12px 0;
 }
 
 /* Review Carousel */
 .review-carousel {
   display: flex;
-  overflow-x: scroll;
-  gap: 20px;
+  overflow-x: auto;
+  gap: 24px;
   padding: 20px 10px;
   scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
 }
 .review-card {
-  flex: 0 0 90%;
+  flex: 0 0 85%;
   max-width: 500px;
   background: var(--card-bg);
-  padding: 30px;
-  border-radius: 10px;
+  padding: 32px;
+  border-radius: 12px;
   color: var(--text-muted);
-  box-shadow: 0 4px 20px var(--shadow);
+  box-shadow: 0 6px 20px var(--shadow);
   scroll-snap-align: center;
   font-style: italic;
 }
 .review-card h4 {
   margin-top: 20px;
   font-style: normal;
+  font-size: 1.1rem;
   color: var(--primary-gold);
 }
 
-/* Review Navigation Buttons */
+/* Carousel Buttons */
 .slider-btn {
   background: transparent;
   border: 2px solid var(--primary-gold);
   color: var(--primary-gold);
   border-radius: 50%;
-  font-size: 1.5rem;
-  width: 40px;
-  height: 40px;
+  font-size: 1.4rem;
+  width: 42px;
+  height: 42px;
   cursor: pointer;
-  margin: 10px;
+  margin: 12px;
+  transition: background 0.3s ease;
 }
 .slider-btn:hover {
   background: var(--primary-gold);
@@ -186,9 +198,9 @@ section {
 .modal-content {
   background: var(--card-bg);
   padding: 40px 30px;
-  border-radius: 10px;
+  border-radius: 12px;
   text-align: center;
-  max-width: 400px;
+  max-width: 420px;
   position: relative;
 }
 .close-btn {
@@ -202,33 +214,28 @@ section {
   color: var(--primary-gold);
   margin-bottom: 20px;
 }
-.modal-content a {
-  display: inline-block;
-  margin: 20px auto;
-}
 .modal-content .small-text {
-  font-size: 0.8rem;
+  font-size: 0.85rem;
   color: var(--text-muted);
 }
-
-/* WhatsApp Button inside modal */
 .modal .whatsapp-float {
   position: static;
   background: #25d366;
-  padding: 12px;
+  padding: 14px;
   border-radius: 50%;
 }
 
 /* Footer */
 footer {
-  padding: 40px 20px;
+  padding: 50px 20px;
   background: var(--card-bg);
   color: var(--text-muted);
   text-align: center;
+  font-size: 0.95rem;
 }
 footer a {
   color: var(--primary-gold);
-  margin: 0 5px;
+  margin: 0 6px;
 }
 
 /* Animations */
@@ -244,7 +251,7 @@ footer a {
   }
 }
 
-/* Responsive */
+/* Responsive Improvements */
 @media (max-width: 600px) {
   .review-card {
     padding: 20px;
@@ -254,7 +261,13 @@ footer a {
     flex-direction: column;
   }
   .filter-btn {
-    width: 90%;
+    width: 100%;
     max-width: 300px;
+  }
+  h2 {
+    font-size: 1.6rem;
+  }
+  .hero .tagline {
+    font-size: 1.8rem;
   }
 }
