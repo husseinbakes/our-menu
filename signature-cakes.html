@@ -197,6 +197,15 @@
       color: #000;
       font-weight: bold;
     }
+    .nav-links a {
+  margin: 0 0.5rem;
+  color: var(--gold);
+  text-decoration: none;
+  font-weight: 500;
+}
+.nav-links a:hover {
+  text-decoration: underline;
+}
   </style>
 
   <!-- JSON-LD Schema for Key Products -->
@@ -225,6 +234,20 @@
       <h1>Hussein Bakes</h1>
       <button id="themeToggle" class="toggle-theme" aria-label="Toggle Theme">🌙</button>
     </nav>
+    <nav class="nav-container">
+  <a href="index.html" class="nav-logo">
+    <img src="images/logo.webp" alt="Hussein Bakes Logo" />
+  </a>
+  <h1>Hussein Bakes</h1>
+  <div class="nav-links">
+    <a href="signature-cakes.html">Signature</a>
+    <a href="specialty-cakes.html">Specialty</a>
+    <a href="custom-cakes.html">Custom</a>
+    <a href="mini-cakes.html">Mini</a>
+    <a href="wedding.html">Wedding</a>
+  </div>
+  <button id="themeToggle" class="toggle-theme" aria-label="Toggle theme">🌙</button>
+</nav>
   </header>
 
   <main>
