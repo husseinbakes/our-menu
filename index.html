@@ -47,34 +47,11 @@
     "email": "husseinbakes@gmail.com",
     "url": "https://husseinbakes.github.io/our-menu/",
     "priceRange": "$$",
-    "openingHours": "Mo-Su 00:00-23:59"
-  }
-  </script>
-
-  <!-- Multiple Reviews Schema -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "ItemList",
-    "itemListElement": [
-      {
-        "@type": "Review",
-        "author": { "@type": "Person", "name": "Nassir Mariam" },
-        "reviewRating": { "@type": "Rating", "ratingValue": "5" },
-        "reviewBody": "Amazing experience! Hussein Bakes made my birthday cake and it was absolutely incredible!"
-      },
-      {
-        "@type": "Review",
-        "author": { "@type": "Person", "name": "Jeanette Atieno" },
-        "reviewRating": { "@type": "Rating", "ratingValue": "5" },
-        "reviewBody": "5 stars isn't enough! The treats are divine! Flavors, presentation, and service top-notch."
-      },
-      {
-        "@type": "Review",
-        "author": { "@type": "Person", "name": "Halima Hassan" },
-        "reviewRating": { "@type": "Rating", "ratingValue": "5" },
-        "reviewBody": "The chocolate cake had real chocolate flavor. Moist and perfectly done. Mashaallah."
-      }
+    "openingHours": "Mo-Su 00:00-23:59",
+    "menu": "https://husseinbakes.github.io/our-menu/",
+    "sameAs": [
+      "https://instagram.com/husseinbakes",
+      "https://facebook.com/husseinbakes"
     ]
   }
   </script>
@@ -103,6 +80,7 @@
     h2 {
       font-family: 'Cinzel', serif;
       color: var(--gold);
+      margin: 20px 0;
     }
 
     .hero {
@@ -111,20 +89,22 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      background: linear-gradient(to bottom, #000, #0a0a0a);
+      background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)), url('images/hero-cake.jpg') no-repeat center/cover;
       text-align: center;
+      color: var(--light);
     }
 
     .tagline {
       font-family: 'Great Vibes', cursive;
-      font-size: 2.5rem;
-      color: var(--gold);
+      font-size: 3rem;
       margin-bottom: 10px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
     }
 
     .scroll-prompt {
       color: var(--muted);
-      font-size: 0.9rem;
+      font-size: 1rem;
+      margin-top: 20px;
     }
 
     .arrow-down {
@@ -145,6 +125,23 @@
     .menu-main {
       padding: 40px 20px;
       text-align: center;
+    }
+
+    .search-bar input {
+      padding: 10px;
+      width: 90%;
+      max-width: 400px;
+      border: 1px solid var(--gold);
+      border-radius: 6px;
+      background: var(--card);
+      color: var(--light);
+      margin-bottom: 20px;
+      outline: none;
+      transition: border 0.3s;
+    }
+
+    .search-bar input:focus {
+      border-color: var(--gold);
     }
 
     .filter-buttons {
@@ -170,21 +167,19 @@
       color: #000;
     }
 
-    .search-bar input {
-      padding: 10px;
-      width: 90%;
-      max-width: 400px;
-      border: 1px solid var(--gold);
-      border-radius: 6px;
-      background: var(--card);
-      color: var(--light);
-      margin-bottom: 20px;
-    }
-
     .extras-list {
       list-style: none;
       padding: 0;
       color: var(--muted);
+      margin: 20px 0;
+    }
+
+    .extras-list li {
+      margin: 5px 0;
+    }
+
+    .reviews-section {
+      margin-top: 40px;
     }
 
     .review-carousel {
@@ -239,14 +234,18 @@
         font-size: 0.9rem;
         padding: 15px;
       }
+
+      .tagline {
+        font-size: 2rem;
+      }
     }
   </style>
 </head>
 
 <body>
   <section class="hero">
-    <h2 class="tagline">Crafted with passion. Delivered with elegance.</h2>
-    <div class="scroll-prompt">Scroll to explore<div class="arrow-down"></div></div>
+    <h2 class="tagline">Crafted with Passion. Delivered with Elegance.</h2>
+    <div class="scroll-prompt">Scroll to explore<div class="arrow-down" aria-hidden="true"></div></div>
   </section>
 
   <main class="menu-main">
@@ -256,8 +255,8 @@
       <input type="text" placeholder="Search cakes..." aria-label="Search cakes" />
     </div>
 
-    <div class="filter-buttons">
-      <a href="index.html" class="filter-btn active">All</a>
+    <div class="filter-buttons" role="group" aria-label="Filter cake types">
+      <a href="index.html" class="filter-btn active" aria-current="page">All</a>
       <a href="signature-cakes.html" class="filter-btn">Signature</a>
       <a href="specialty-cakes.html" class="filter-btn">Specialty</a>
       <a href="wedding-cakes.html" class="filter-btn">Wedding</a>
@@ -267,7 +266,7 @@
 
     <section>
       <h2>Extras</h2>
-      <ul class="extras-list">
+      <ul class="extras-list" aria-label="Additional services">
         <li><strong>Toppers:</strong> KES 300+</li>
         <li><strong>Floral Decoration:</strong> KES 500+</li>
         <li><strong>Delivery:</strong> KES 300–1,000 (based on location)</li>
@@ -276,7 +275,7 @@
 
     <section class="reviews-section">
       <h2>🌟 Customer Reviews</h2>
-      <div class="review-carousel">
+      <div class="review-carousel" aria-label="Customer reviews">
         <div class="review-card">
           <p>“Amazing experience! Hussein Bakes made my birthday cake and it was absolutely incredible!”</p>
           <h4>— Nassir Mariam ⭐⭐⭐⭐⭐</h4>
@@ -297,9 +296,9 @@
   <footer>
     <p>📍 Kitui, Kenya | 📞 <a href="tel:+254710975805">+254 710 975805</a></p>
     <p>
-      <a href="https://instagram.com/husseinbakes" target="_blank">Instagram</a> |
-      <a href="https://facebook.com/husseinbakes" target="_blank">Facebook</a> |
-      <a href="https://wa.me/254710975805" target="_blank">WhatsApp</a>
+      <a href="https://instagram.com/husseinbakes" target="_blank" rel="noopener noreferrer">Instagram</a> |
+      <a href="https://facebook.com/husseinbakes" target="_blank" rel="noopener noreferrer">Facebook</a> |
+      <a href="https://wa.me/254710975805" target="_blank" rel="noopener noreferrer">WhatsApp</a>
     </p>
     <p>© 2025 Hussein Bakes. All rights reserved.</p>
   </footer>
