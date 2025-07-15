@@ -8,143 +8,324 @@
   <meta name="keywords" content="Hussein Bakes, signature cakes, vanilla cake, chocolate, tuxedo cake, funfetti" />
   <meta name="author" content="Hussein Salim" />
   <meta name="robots" content="index, follow" />
-
   <link rel="icon" href="images/logo.webp" type="image/webp" />
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Great+Vibes&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css" />
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org/",
-  "@type": "Product",
-  "name": "Tuxedo Chocolate Cake",
-  "image": "https://husseinbakes.github.io/our-menu/images/tuxedo.webp",
-  "description": "Elegant layers of rich chocolate sponge, ganache, and cream – our bestselling signature cake.",
-  "offers": {
-    "@type": "Offer",
-    "price": "3500",
-    "priceCurrency": "KES",
-    "availability": "https://schema.org/InStock"
-  }
-}
-</script>
+
+  <meta property="og:title" content="Hussein Bakes – Signature Cakes" />
+  <meta property="og:description" content="Classic, timeless cakes like Tuxedo, Vanilla, Chocolate, and more — handcrafted by Hussein Bakes." />
+  <meta property="og:image" content="https://husseinbakes.github.io/our-menu/images/tuxedo.webp" />
+  <meta property="og:url" content="https://husseinbakes.github.io/our-menu/signature-cakes.html" />
+  <meta property="og:type" content="website" />
+  
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Hussein Bakes – Signature Cakes" />
+  <meta name="twitter:description" content="Explore handcrafted signature cakes by Hussein Bakes. Order now." />
+  <meta name="twitter:image" content="https://husseinbakes.github.io/our-menu/images/tuxedo.webp" />
+
+  <!-- Fonts & CSS -->
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Great+Vibes&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --gold: #ac9657;
+      --black: #0a0a0a;
+      --white: #fff;
+      --gold-light: #e0c88e;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Montserrat', sans-serif;
+      background-color: var(--black);
+      color: var(--gold);
+      transition: background-color 0.4s, color 0.4s;
+    }
+
+    body.light-mode {
+      background: #fff;
+      color: #111;
+    }
+
+    header, footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: transparent;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .nav-logo img {
+      height: 50px;
+    }
+
+    h1 {
+      font-family: 'Cinzel', serif;
+      font-size: 1.8rem;
+      margin: 0;
+    }
+
+    .toggle-theme {
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+      color: var(--gold);
+    }
+
+    main {
+      max-width: 1000px;
+      margin: auto;
+      padding: 1rem;
+    }
+
+    .menu-section h2 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 2.5rem;
+      text-align: center;
+      margin-top: 1rem;
+    }
+
+    .section-description {
+      text-align: center;
+      font-size: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .cake-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .cake-card {
+      background-color: rgba(255,255,255,0.05);
+      padding: 1rem;
+      border-radius: 8px;
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+
+    .cake-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .cake-card img {
+      width: 100%;
+      border-radius: 5px;
+    }
+
+    .cake-card h3 {
+      margin: 0.8rem 0 0.4rem;
+      font-size: 1.2rem;
+    }
+
+    .cake-card p {
+      margin: 0.2rem 0;
+      font-size: 0.95rem;
+    }
+
+    .order-button {
+      margin-top: 0.8rem;
+      padding: 0.6rem 1.2rem;
+      background-color: var(--gold);
+      border: none;
+      border-radius: 4px;
+      color: #000;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .order-button:hover {
+      background-color: var(--gold-light);
+    }
+
+    footer a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.8);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal-content {
+      background: #fff;
+      color: #000;
+      padding: 2rem;
+      border-radius: 8px;
+      max-width: 400px;
+      text-align: center;
+      position: relative;
+    }
+
+    .modal-content img {
+      width: 50px;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 8px;
+      right: 12px;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    .back-to-menu-container {
+      text-align: center;
+      margin: 1rem 0;
+    }
+
+    .back-to-menu-btn {
+      text-decoration: none;
+      background: var(--gold);
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      color: #000;
+      font-weight: bold;
+    }
+  </style>
+
+  <!-- JSON-LD Schema for Key Products -->
   <script type="application/ld+json">
-{
-  "@context": "https://schema.org/",
-  "@type": "Product",
-  "name": "Tuxedo Chocolate Cake",
-  "image": "https://husseinbakes.github.io/our-menu/images/tuxedo.webp",
-  "description": "Elegant layers of rich chocolate sponge, ganache, and cream – our bestselling signature cake.",
-  "offers": {
-    "@type": "Offer",
-    "price": "3500",
-    "priceCurrency": "KES",
-    "availability": "https://schema.org/InStock"
+  {
+    "@context": "https://schema.org/",
+    "@type": "Product",
+    "name": "Tuxedo Cake",
+    "image": "https://husseinbakes.github.io/our-menu/images/tuxedo.webp",
+    "description": "Elegant mix of chocolate and vanilla layers with smooth dual buttercream finish.",
+    "offers": {
+      "@type": "Offer",
+      "price": "3000",
+      "priceCurrency": "KES",
+      "availability": "https://schema.org/InStock"
+    }
   }
-}
-</script>
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org/",
-  "@type": "Product",
-  "name": "Carrot Cake",
-  "image": "https://husseinbakes.github.io/our-menu/images/Carrot-cake.webp",
-  "description": "Moist spiced carrot sponge layered with cream cheese frosting. A timeless classic.",
-  "offers": {
-    "@type": "Offer",
-    "price": "3200",
-    "priceCurrency": "KES",
-    "availability": "https://schema.org/InStock"
-  }
-}
-</script>
+  </script>
 </head>
 <body>
-  <header class="fade-in">
+  <header>
     <nav class="nav-container">
       <a href="index.html" class="nav-logo">
         <img src="images/logo.webp" alt="Hussein Bakes Logo" />
       </a>
       <h1>Hussein Bakes</h1>
-      <button id="themeToggle" class="toggle-theme" aria-label="Toggle theme">🌙</button>
+      <button id="themeToggle" class="toggle-theme" aria-label="Toggle Theme">🌙</button>
     </nav>
   </header>
 
-  <main class="menu-main fade-in">
+  <main>
     <div class="back-to-menu-container">
-      <a href="index.html" class="back-to-menu-btn order-button">← Back to All Cakes</a>
+      <a href="index.html" class="back-to-menu-btn">← Back to All Cakes</a>
     </div>
 
     <section class="menu-section" id="signature-category">
       <h2>🎂 Signature Cakes</h2>
       <p class="section-description">Classic, timeless, and irresistibly delicious—our handcrafted signature cakes never disappoint.</p>
       <div class="cake-grid">
-        <div class="cake-card" data-category="signature">
-          <img src="images/Very-vanilla.webp" alt="Very Vanilla Cake" loading="lazy" />
+        <div class="cake-card">
+          <img src="images/Very-vanilla.webp" alt="Very Vanilla Cake" />
           <h3>Very Vanilla Cake</h3>
           <p>KES 2,000/-</p>
           <p>Moist vanilla sponge layered with silky vanilla buttercream and colorful sprinkles.</p>
-          <button class="order-button" data-cake-name="Very Vanilla Cake">Place Order</button>
+          <button class="order-button" data-cake="Very Vanilla Cake">Order</button>
         </div>
-
-        <div class="cake-card" data-category="signature">
-          <img src="images/Chocolate-obsession.webp" alt="Chocolate Obsession Cake" loading="lazy" />
+        <div class="cake-card">
+          <img src="images/Chocolate-obsession.webp" alt="Chocolate Obsession" />
           <h3>Chocolate Obsession</h3>
           <p>KES 3,000/-</p>
           <p>Rich chocolate layers with silky chocolate buttercream—decadent and unforgettable.</p>
-          <button class="order-button" data-cake-name="Chocolate Obsession">Place Order</button>
+          <button class="order-button" data-cake="Chocolate Obsession">Order</button>
         </div>
-
-        <div class="cake-card" data-category="signature">
-          <img src="images/tuxedo.webp" alt="Tuxedo Cake" loading="lazy" />
+        <div class="cake-card">
+          <img src="images/tuxedo.webp" alt="Tuxedo Cake" />
           <h3>Tuxedo Cake</h3>
           <p>KES 3,000/-</p>
           <p>Elegant mix of chocolate and vanilla layers with smooth dual buttercream finish.</p>
-          <button class="order-button" data-cake-name="Tuxedo Cake">Place Order</button>
+          <button class="order-button" data-cake="Tuxedo Cake">Order</button>
         </div>
-
-        <div class="cake-card" data-category="signature">
-          <img src="images/Black-on-white.webp" alt="Black On White Cake" loading="lazy" />
+        <div class="cake-card">
+          <img src="images/Black-on-white.webp" alt="Black On White Cake" />
           <h3>Black On White</h3>
           <p>KES 3,500/-</p>
           <p>Vanilla sponge with chocolate buttercream, sprinkles, and rosette detailing.</p>
-          <button class="order-button" data-cake-name="Black On White Cake">Place Order</button>
+          <button class="order-button" data-cake="Black On White">Order</button>
         </div>
-
-        <div class="cake-card" data-category="signature">
-          <img src="images/Funfetti.webp" alt="Funfetti Cake" loading="lazy" />
+        <div class="cake-card">
+          <img src="images/Funfetti.webp" alt="Funfetti Cake" />
           <h3>Funfetti Cake</h3>
           <p>KES 3,000/-</p>
           <p>Colorful sprinkle-filled vanilla cake with matching sprinkle buttercream—party-perfect!</p>
-          <button class="order-button" data-cake-name="Funfetti Cake">Place Order</button>
+          <button class="order-button" data-cake="Funfetti Cake">Order</button>
         </div>
       </div>
     </section>
   </main>
 
-  <footer class="fade-in">
+  <footer>
     <p>📍 Kitui, Kenya | 📞 <a href="tel:+254710975805">+254 710 975805</a></p>
     <p>
-      <a href="https://instagram.com/husseinbakes" target="_blank" rel="noopener">Instagram</a> |
-      <a href="https://facebook.com/husseinbakes" target="_blank" rel="noopener">Facebook</a> |
-      <a href="https://wa.me/254710975805" target="_blank" rel="noopener">WhatsApp</a>
+      <a href="https://instagram.com/husseinbakes" target="_blank">Instagram</a> |
+      <a href="https://facebook.com/husseinbakes" target="_blank">Facebook</a> |
+      <a href="https://wa.me/254710975805" target="_blank">WhatsApp</a>
     </p>
     <p>© 2025 Hussein Bakes. All rights reserved.</p>
   </footer>
 
+  <!-- Modal -->
   <div id="order-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
     <div class="modal-content">
-      <span class="close-btn" aria-label="Close Order Modal">×</span>
+      <span class="close-btn" aria-label="Close Modal">&times;</span>
       <h2 id="modal-title">Order: <span id="modal-cake-name"></span></h2>
-      <p>Ready to place your order? Click below to chat on WhatsApp.</p>
-      <a href="https://wa.me/254710975805" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
+      <p>Click below to place your order on WhatsApp.</p>
+      <a id="whatsapp-link" href="#" target="_blank" aria-label="WhatsApp Order">
         <img src="images/whatsapp-icon.webp" alt="WhatsApp Icon" />
       </a>
-      <p style="margin-top: 1rem; font-size: 0.9em; color: var(--gold-light);">
-        Tell us flavor preferences or design ideas in your message.
-      </p>
+      <p style="margin-top:1rem;font-size:0.9em;color:#555;">Include flavor, size, and preferred delivery date in your message.</p>
     </div>
   </div>
 
-  <script src="script.js" defer></script>
+  <!-- JS -->
+  <script>
+    document.getElementById("themeToggle").addEventListener("click", () => {
+      document.body.classList.toggle("light-mode");
+    });
+
+    const modal = document.getElementById("order-modal");
+    const modalCakeName = document.getElementById("modal-cake-name");
+    const whatsappLink = document.getElementById("whatsapp-link");
+
+    document.querySelectorAll(".order-button").forEach(button => {
+      button.addEventListener("click", () => {
+        const cake = button.getAttribute("data-cake");
+        modalCakeName.textContent = cake;
+        whatsappLink.href = `https://wa.me/254710975805?text=I'm%20interested%20in%20ordering%20the%20${encodeURIComponent(cake)}%20cake.`;
+        modal.style.display = "flex";
+      });
+    });
+
+    document.querySelector(".close-btn").addEventListener("click", () => {
+      modal.style.display = "none";
+    });
+
+    window.addEventListener("click", (e) => {
+      if (e.target === modal) {
+        modal.style.display = "none";
+      }
+    });
+  </script>
 </body>
 </html>
