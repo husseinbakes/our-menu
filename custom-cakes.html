@@ -7,27 +7,213 @@
   <meta name="keywords" content="Hussein Bakes, custom cakes, celebration cakes, birthday cakes, graduation cakes, personalized cakes, bespoke cakes Kitui" />
   <meta name="author" content="Hussein Salim" />
   <meta name="robots" content="index, follow" />
+  <title>Hussein Bakes | Custom Celebration Cakes</title>
+  <link rel="icon" href="images/logo.webp" type="image/webp" />
 
+  <!-- Open Graph / Twitter Cards -->
   <meta property="og:title" content="Hussein Bakes – Custom Celebration Cakes" />
   <meta property="og:description" content="Birthday? Graduation? Get a fully customized cake designed just for you." />
   <meta property="og:image" content="https://husseinbakes.github.io/husseinbakes/images/Black-on-white.webp" />
   <meta property="og:url" content="https://husseinbakes.github.io/husseinbakes/custom-cakes.html" />
   <meta property="og:type" content="website" />
-
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Hussein Bakes – Custom Celebration Cakes" />
   <meta name="twitter:description" content="Your dream celebration cake, tailor-made by Hussein Bakes." />
   <meta name="twitter:image" content="https://husseinbakes.github.io/husseinbakes/images/Black-on-white.webp" />
 
-  <title>Hussein Bakes | Custom Celebration Cakes</title>
-  <link rel="icon" href="images/logo.webp" type="image/webp" />
-
+  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Great+Vibes&family=Montserrat&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css" />
+
+  <!-- Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "Custom Celebration Cake",
+    "description": "Tailor-made cakes for birthdays, graduations, and celebrations.",
+    "brand": { "@type": "Organization", "name": "Hussein Bakes" },
+    "image": "https://husseinbakes.github.io/husseinbakes/images/Black-on-white.webp",
+    "offers": {
+      "@type": "Offer",
+      "priceCurrency": "KES",
+      "price": "2000",
+      "availability": "https://schema.org/InStock",
+      "url": "https://husseinbakes.github.io/husseinbakes/custom-cakes.html"
+    }
+  }
+  </script>
+
+  <style>
+    :root {
+      --gold: #ac9657;
+      --gold-light: #f0e3b1;
+      --dark: #0a0a0a;
+      --light: #fff;
+      --muted: #ccc;
+      --card: #111;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Montserrat', sans-serif;
+      background: var(--dark);
+      color: var(--light);
+      line-height: 1.6;
+    }
+
+    h1, h2 {
+      font-family: 'Cinzel', serif;
+      color: var(--gold);
+    }
+
+    a {
+      color: var(--gold);
+      text-decoration: none;
+    }
+
+    header {
+      background: #000;
+      padding: 1rem;
+    }
+
+    .nav-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-logo img {
+      height: 50px;
+    }
+
+    .toggle-theme {
+      background: none;
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      padding: 5px 10px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .menu-main {
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .back-to-menu-container {
+      margin-bottom: 20px;
+    }
+
+    .back-to-menu-btn {
+      display: inline-block;
+      background: var(--gold);
+      color: #000;
+      padding: 10px 15px;
+      border-radius: 5px;
+      font-weight: bold;
+    }
+
+    .cake-grid {
+      display: grid;
+      gap: 30px;
+      justify-content: center;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      margin-top: 2rem;
+    }
+
+    .cake-card {
+      background: var(--card);
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(172, 150, 87, 0.3);
+    }
+
+    .cake-card img {
+      max-width: 100%;
+      border-radius: 10px;
+      height: auto;
+    }
+
+    .cake-card h3 {
+      margin: 15px 0 5px;
+      color: var(--gold);
+    }
+
+    .order-button {
+      background: var(--gold);
+      color: #000;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 5px;
+      margin-top: 10px;
+      cursor: pointer;
+    }
+
+    footer {
+      background: var(--card);
+      padding: 30px 20px;
+      text-align: center;
+      color: var(--muted);
+    }
+
+    footer a {
+      margin: 0 8px;
+      color: var(--gold);
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.85);
+      backdrop-filter: blur(5px);
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+    }
+
+    .modal-content {
+      background: var(--card);
+      padding: 40px 30px;
+      border-radius: 10px;
+      text-align: center;
+      max-width: 400px;
+      position: relative;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 10px; right: 15px;
+      font-size: 28px;
+      cursor: pointer;
+      color: var(--gold);
+    }
+
+    .whatsapp-float {
+      display: inline-block;
+      margin-top: 20px;
+      background: #25d366;
+      padding: 10px;
+      border-radius: 50%;
+    }
+
+    .whatsapp-float img {
+      height: 32px;
+      width: 32px;
+    }
+
+    .section-description {
+      max-width: 600px;
+      margin: auto;
+      color: var(--muted);
+    }
+  </style>
 </head>
 
 <body>
-  <header class="fade-in">
+  <header>
     <nav>
       <div class="nav-container">
         <a href="index.html" class="nav-logo">
@@ -39,9 +225,9 @@
     </nav>
   </header>
 
-  <main class="menu-main fade-in">
+  <main class="menu-main">
     <div class="back-to-menu-container">
-      <a href="index.html" class="back-to-menu-btn order-button">← Back to All Cakes</a>
+      <a href="index.html" class="back-to-menu-btn">← Back to All Cakes</a>
     </div>
 
     <section class="menu-section" id="custom-category">
@@ -60,16 +246,17 @@
     </section>
   </main>
 
-  <footer class="fade-in">
+  <footer>
     <p>📍 Kitui, Kenya | 📞 <a href="tel:+254710975805">+254 710 975805</a></p>
     <p>
-      <a href="https://instagram.com/husseinbakes" target="_blank" rel="noopener noreferrer">Instagram</a> |
-      <a href="https://facebook.com/husseinbakes" target="_blank" rel="noopener noreferrer">Facebook</a> |
-      <a href="https://wa.me/254710975805" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+      <a href="https://instagram.com/husseinbakes" target="_blank">Instagram</a> |
+      <a href="https://facebook.com/husseinbakes" target="_blank">Facebook</a> |
+      <a href="https://wa.me/254710975805" target="_blank">WhatsApp</a>
     </p>
     <p>© <span id="currentYear"></span> Hussein Bakes. All rights reserved.</p>
   </footer>
 
+  <!-- Order Modal -->
   <div id="order-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
     <div class="modal-content">
       <span class="close-btn" aria-label="Close Order Modal">×</span>
@@ -84,6 +271,34 @@
     </div>
   </div>
 
-  <script src="script.js" defer></script>
+  <script>
+    document.getElementById("currentYear").textContent = new Date().getFullYear();
+
+    const modal = document.getElementById("order-modal");
+    const modalCakeName = document.getElementById("modal-cake-name");
+    const closeBtn = document.querySelector(".close-btn");
+
+    document.querySelectorAll(".order-button").forEach(btn => {
+      btn.addEventListener("click", () => {
+        const name = btn.getAttribute("data-cake-name");
+        modalCakeName.textContent = name;
+        modal.style.display = "flex";
+      });
+    });
+
+    closeBtn.addEventListener("click", () => {
+      modal.style.display = "none";
+    });
+
+    window.addEventListener("click", (e) => {
+      if (e.target === modal) {
+        modal.style.display = "none";
+      }
+    });
+
+    document.getElementById("themeToggle").addEventListener("click", () => {
+      document.body.classList.toggle("light-theme");
+    });
+  </script>
 </body>
 </html>
