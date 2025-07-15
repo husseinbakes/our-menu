@@ -13,7 +13,6 @@
   <meta property="og:image" content="https://husseinbakes.github.io/husseinbakes/images/Mini-cakes.webp" />
   <meta property="og:url" content="https://husseinbakes.github.io/husseinbakes/mini-cakes.html" />
   <meta property="og:type" content="website" />
-
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Hussein Bakes – Mini Cakes & Treats" />
   <meta name="twitter:description" content="Order bite-sized delights and mini cakes for any occasion!" />
@@ -22,12 +21,217 @@
   <title>Hussein Bakes | Mini Cakes & Treats</title>
   <link rel="icon" href="images/logo.webp" type="image/webp" />
 
+  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Great+Vibes&family=Montserrat&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css" />
+
+  <!-- Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProductCollection",
+    "name": "Mini Cakes and Treats",
+    "description": "Mini cakes, bento cakes, and treat boxes handcrafted by Hussein Bakes.",
+    "url": "https://husseinbakes.github.io/husseinbakes/mini-cakes.html",
+    "brand": { "@type": "Organization", "name": "Hussein Bakes" },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Mini Cakes",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Product",
+            "name": "Mini Cakes",
+            "image": "https://husseinbakes.github.io/husseinbakes/images/Mini-cakes.webp"
+          },
+          "price": "300",
+          "priceCurrency": "KES"
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Product",
+            "name": "Mini Treat Boxes",
+            "image": "https://husseinbakes.github.io/husseinbakes/images/Mini-bentos.webp"
+          },
+          "price": "1500",
+          "priceCurrency": "KES"
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Product",
+            "name": "Bento Cakes",
+            "image": "https://husseinbakes.github.io/husseinbakes/images/Mini-boxes.webp"
+          },
+          "price": "1000",
+          "priceCurrency": "KES"
+        }
+      ]
+    }
+  }
+  </script>
+
+  <style>
+    :root {
+      --gold: #ac9657;
+      --gold-light: #f0e3b1;
+      --dark: #0a0a0a;
+      --card: #111;
+      --text: #fff;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Montserrat', sans-serif;
+      background-color: var(--dark);
+      color: var(--text);
+    }
+
+    h1, h2, h3 {
+      font-family: 'Cinzel', serif;
+      color: var(--gold);
+    }
+
+    header {
+      background: #000;
+      padding: 1rem 1.5rem;
+    }
+
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .nav-logo img {
+      height: 50px;
+    }
+
+    .toggle-theme {
+      background: none;
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      padding: 5px 10px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .menu-main {
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .back-to-menu-btn {
+      display: inline-block;
+      background: var(--gold);
+      color: #000;
+      padding: 10px 15px;
+      border-radius: 5px;
+      font-weight: bold;
+      margin-bottom: 2rem;
+    }
+
+    .section-description {
+      max-width: 600px;
+      margin: auto;
+      color: #ccc;
+    }
+
+    .cake-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      margin-top: 2rem;
+    }
+
+    .cake-card {
+      background: var(--card);
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 4px 15px rgba(172, 150, 87, 0.2);
+    }
+
+    .cake-card img {
+      max-width: 100%;
+      border-radius: 10px;
+    }
+
+    .cake-card p {
+      color: #ddd;
+    }
+
+    .order-button {
+      background: var(--gold);
+      color: #000;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 5px;
+      margin-top: 10px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    footer {
+      background: var(--card);
+      padding: 30px 20px;
+      text-align: center;
+      color: #999;
+    }
+
+    footer a {
+      color: var(--gold);
+      margin: 0 8px;
+      text-decoration: none;
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.85);
+      justify-content: center;
+      align-items: center;
+      z-index: 999;
+    }
+
+    .modal-content {
+      background: var(--card);
+      padding: 30px 25px;
+      border-radius: 10px;
+      max-width: 400px;
+      width: 90%;
+      text-align: center;
+      position: relative;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 10px; right: 15px;
+      font-size: 28px;
+      cursor: pointer;
+      color: var(--gold);
+    }
+
+    .whatsapp-float img {
+      height: 32px;
+      width: 32px;
+    }
+
+    .whatsapp-float {
+      background: #25d366;
+      padding: 10px;
+      border-radius: 50%;
+      display: inline-block;
+      margin-top: 20px;
+    }
+  </style>
 </head>
 
 <body>
-  <header class="fade-in">
+  <header>
     <nav>
       <div class="nav-container">
         <a href="index.html" class="nav-logo">
@@ -39,10 +243,8 @@
     </nav>
   </header>
 
-  <main class="menu-main fade-in">
-    <div class="back-to-menu-container">
-      <a href="index.html" class="back-to-menu-btn order-button">← Back to All Cakes</a>
-    </div>
+  <main class="menu-main">
+    <a href="index.html" class="back-to-menu-btn">← Back to All Cakes</a>
 
     <section class="menu-section" id="mini-cakes">
       <h2>🧁 Mini Cakes & Treats</h2>
@@ -58,7 +260,7 @@
         </div>
 
         <div class="cake-card">
-          <img src="images/Mini-bentos.webp" alt="Mini Cake Box" loading="lazy" />
+          <img src="images/Mini-bentos.webp" alt="Mini Treat Box" loading="lazy" />
           <h3>Mini Treat Boxes</h3>
           <p>From KES 1,500/-</p>
           <p>Includes assorted mini cakes, cupcakes, dessert shots, and chocolate-dipped items. Ideal as a gift box.</p>
@@ -66,7 +268,7 @@
         </div>
 
         <div class="cake-card">
-          <img src="images/Mini-boxes.webp" alt="Mini Bento Cake" loading="lazy" />
+          <img src="images/Mini-boxes.webp" alt="Bento Cake" loading="lazy" />
           <h3>Bento Cakes</h3>
           <p>From KES 1,000/-</p>
           <p>Trendy bento-style cakes in compact boxes. Ideal for two. Custom messages and colors available.</p>
@@ -76,16 +278,17 @@
     </section>
   </main>
 
-  <footer class="fade-in">
+  <footer>
     <p>📍 Kitui, Kenya | 📞 <a href="tel:+254710975805">+254 710 975805</a></p>
     <p>
-      <a href="https://instagram.com/husseinbakes" target="_blank" rel="noopener noreferrer">Instagram</a> |
-      <a href="https://facebook.com/husseinbakes" target="_blank" rel="noopener noreferrer">Facebook</a> |
-      <a href="https://wa.me/254710975805" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+      <a href="https://instagram.com/husseinbakes" target="_blank">Instagram</a> |
+      <a href="https://facebook.com/husseinbakes" target="_blank">Facebook</a> |
+      <a href="https://wa.me/254710975805" target="_blank">WhatsApp</a>
     </p>
     <p>© <span id="currentYear"></span> Hussein Bakes. All rights reserved.</p>
   </footer>
 
+  <!-- Order Modal -->
   <div id="order-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
     <div class="modal-content">
       <span class="close-btn" aria-label="Close Order Modal">×</span>
@@ -100,6 +303,30 @@
     </div>
   </div>
 
-  <script src="script.js" defer></script>
+  <script>
+    document.getElementById("currentYear").textContent = new Date().getFullYear();
+
+    const modal = document.getElementById("order-modal");
+    const modalCakeName = document.getElementById("modal-cake-name");
+
+    document.querySelectorAll(".order-button").forEach(button => {
+      button.addEventListener("click", () => {
+        modalCakeName.textContent = button.dataset.cakeName;
+        modal.style.display = "flex";
+      });
+    });
+
+    document.querySelector(".close-btn").addEventListener("click", () => {
+      modal.style.display = "none";
+    });
+
+    window.addEventListener("click", e => {
+      if (e.target === modal) modal.style.display = "none";
+    });
+
+    document.getElementById("themeToggle").addEventListener("click", () => {
+      document.body.classList.toggle("light-theme");
+    });
+  </script>
 </body>
 </html>
