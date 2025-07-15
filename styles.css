@@ -2,12 +2,13 @@
   --primary-gold: #ac9657;
   --primary-gold-light: #f0e3b1;
   --background-dark: #0a0a0a;
-  --text-light: #f9f9f9;
-  --text-muted: #b0a993;
-  --card-bg: #141414;
-  --modal-bg: rgba(0, 0, 0, 0.92);
-  --shadow: rgba(172, 150, 87, 0.2);
+  --text-light: #ffffff;
+  --text-muted: #ccc;
+  --card-bg: #111;
+  --modal-bg: rgba(0, 0, 0, 0.85);
+  --shadow: rgba(172, 150, 87, 0.3);
   --accent: #f0e3b1;
+  --font-base: 16px;
 }
 
 body {
@@ -16,16 +17,8 @@ body {
   background-color: var(--background-dark);
   color: var(--text-light);
   line-height: 1.7;
+  font-size: var(--font-base);
   scroll-behavior: smooth;
-}
-
-a {
-  color: var(--primary-gold);
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-a:hover {
-  color: var(--accent);
 }
 
 h2 {
@@ -33,22 +26,25 @@ h2 {
   color: var(--primary-gold);
   font-size: 2.2rem;
   margin-bottom: 1.2rem;
-  letter-spacing: 0.5px;
+}
+
+a {
+  color: var(--primary-gold);
+  text-decoration: none;
 }
 
 section {
-  padding: 60px 24px;
+  padding: 60px 20px;
   text-align: center;
 }
 
 .hero {
   height: 100vh;
-  background: linear-gradient(to bottom, #000, var(--background-dark));
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  text-align: center;
+  background: linear-gradient(to bottom, #000, #0a0a0a);
 }
 
 .tagline {
@@ -56,12 +52,11 @@ section {
   font-size: 2.4rem;
   color: var(--accent);
   margin-bottom: 1rem;
-  letter-spacing: 0.8px;
 }
 
 .scroll-prompt {
   color: var(--text-muted);
-  font-size: 0.95rem;
+  font-size: 1rem;
 }
 
 .arrow-down {
@@ -70,7 +65,7 @@ section {
   border-left: 2px solid var(--primary-gold);
   border-bottom: 2px solid var(--primary-gold);
   transform: rotate(-45deg);
-  margin: 10px auto 0;
+  margin-top: 12px;
   animation: bounce 2s infinite;
 }
 
@@ -79,9 +74,9 @@ section {
   50% { transform: translateY(10px) rotate(-45deg); }
 }
 
-/* Filter Buttons */
+/* 🎛 Filter Buttons */
 .filter-buttons {
-  margin: 30px auto;
+  margin: 40px auto;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -93,8 +88,7 @@ section {
   background: transparent;
   color: var(--primary-gold);
   border-radius: 6px;
-  font-weight: 500;
-  transition: all 0.3s ease;
+  transition: background 0.3s ease;
 }
 .filter-btn:hover,
 .filter-btn.active {
@@ -102,20 +96,20 @@ section {
   color: #000;
 }
 
-/* Search */
+/* 🔍 Search */
 .search-bar input {
   padding: 12px;
-  width: 90%;
+  width: 95%;
   max-width: 420px;
   border: 1px solid var(--primary-gold);
-  border-radius: 8px;
+  border-radius: 6px;
   background: var(--card-bg);
   color: var(--text-light);
   margin-bottom: 24px;
   font-size: 1rem;
 }
 
-/* Menu Layout */
+/* 🧁 Menu Layout */
 .menu-main {
   padding: 40px 20px;
 }
@@ -126,63 +120,63 @@ section {
   font-size: 2rem;
 }
 
-/* Extras */
+/* 🌸 Extras */
 .extras-list {
   list-style: none;
   padding: 0;
   color: var(--text-muted);
-  font-size: 1.05rem;
+  font-size: 1.1rem;
 }
 .extras-list li {
   margin: 12px 0;
 }
 
-/* Review Carousel */
+/* 🌟 Review Carousel */
 .review-carousel {
   display: flex;
   overflow-x: auto;
-  gap: 24px;
-  padding: 20px 10px;
+  gap: 20px;
+  padding: 30px 10px;
   scroll-snap-type: x mandatory;
-  -webkit-overflow-scrolling: touch;
 }
 .review-card {
-  flex: 0 0 85%;
+  flex: 0 0 90%;
   max-width: 500px;
   background: var(--card-bg);
-  padding: 32px;
+  padding: 40px 30px;
   border-radius: 12px;
   color: var(--text-muted);
-  box-shadow: 0 6px 20px var(--shadow);
+  box-shadow: 0 4px 20px var(--shadow);
   scroll-snap-align: center;
   font-style: italic;
+  font-size: 1.05rem;
+  line-height: 1.8;
 }
 .review-card h4 {
   margin-top: 20px;
   font-style: normal;
-  font-size: 1.1rem;
   color: var(--primary-gold);
+  font-size: 1rem;
 }
 
-/* Carousel Buttons */
+/* ⬅️➡️ Review Nav Buttons */
 .slider-btn {
   background: transparent;
   border: 2px solid var(--primary-gold);
   color: var(--primary-gold);
   border-radius: 50%;
-  font-size: 1.4rem;
-  width: 42px;
-  height: 42px;
+  font-size: 1.5rem;
+  width: 40px;
+  height: 40px;
   cursor: pointer;
-  margin: 12px;
-  transition: background 0.3s ease;
+  margin: 10px;
 }
 .slider-btn:hover {
   background: var(--primary-gold);
   color: #000;
 }
 
-/* Modal */
+/* 🛍 Modal */
 .modal {
   display: none;
   position: fixed;
@@ -198,9 +192,9 @@ section {
 .modal-content {
   background: var(--card-bg);
   padding: 40px 30px;
-  border-radius: 12px;
+  border-radius: 10px;
   text-align: center;
-  max-width: 420px;
+  max-width: 400px;
   position: relative;
 }
 .close-btn {
@@ -214,31 +208,41 @@ section {
   color: var(--primary-gold);
   margin-bottom: 20px;
 }
+.modal-content a {
+  display: inline-block;
+  margin: 20px auto;
+}
 .modal-content .small-text {
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   color: var(--text-muted);
 }
 .modal .whatsapp-float {
   position: static;
   background: #25d366;
-  padding: 14px;
+  padding: 12px;
   border-radius: 50%;
 }
 
-/* Footer */
+/* 🖼️ Fix Images */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* 🔻 Footer */
 footer {
-  padding: 50px 20px;
+  padding: 40px 20px;
   background: var(--card-bg);
   color: var(--text-muted);
   text-align: center;
-  font-size: 0.95rem;
 }
 footer a {
   color: var(--primary-gold);
-  margin: 0 6px;
+  margin: 0 5px;
 }
 
-/* Animations */
+/* ✨ Animation */
 .fade-in {
   opacity: 0;
   transform: translateY(20px);
@@ -251,23 +255,20 @@ footer a {
   }
 }
 
-/* Responsive Improvements */
+/* 📱 Responsive Fixes */
 @media (max-width: 600px) {
-  .review-card {
-    padding: 20px;
-    font-size: 14px;
-  }
-  .filter-buttons {
-    flex-direction: column;
-  }
-  .filter-btn {
-    width: 100%;
-    max-width: 300px;
-  }
   h2 {
     font-size: 1.6rem;
   }
-  .hero .tagline {
+  .review-card {
+    padding: 20px;
+    font-size: 1rem;
+  }
+  .filter-btn {
+    width: 90%;
+    max-width: 300px;
+  }
+  .tagline {
     font-size: 1.8rem;
   }
 }
