@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="Explore our delightful Mini Cakes and Treats. Perfect for gifting, dessert tables, or small celebrations.">
+  <meta name="description" content="Explore our delightful Mini Cakes and Treats. Perfect for gifting, dessert tables, or small celebrations." />
   <meta name="keywords" content="mini cakes, cupcakes, treat boxes, dessert shots, small cakes, party treats, Hussein Bakes Kitui" />
   <meta name="author" content="Hussein Salim" />
   <meta name="robots" content="index, follow" />
@@ -21,7 +21,7 @@
   <title>Hussein Bakes | Mini Cakes & Treats</title>
   <link rel="icon" href="images/logo.webp" type="image/webp" />
 
-  <!-- Fonts -->
+  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Great+Vibes&family=Montserrat&display=swap" rel="stylesheet" />
 
   <!-- Schema -->
@@ -77,6 +77,8 @@
       --gold: #ac9657;
       --gold-light: #f0e3b1;
       --dark: #0a0a0a;
+      --light: #fff;
+      --muted: #ccc;
       --card: #111;
       --text: #fff;
     }
@@ -86,6 +88,7 @@
       font-family: 'Montserrat', sans-serif;
       background-color: var(--dark);
       color: var(--text);
+      line-height: 1.6;
     }
 
     h1, h2, h3 {
@@ -135,7 +138,7 @@
     .section-description {
       max-width: 600px;
       margin: auto;
-      color: #ccc;
+      color: var(--muted);
     }
 
     .cake-grid {
@@ -158,7 +161,7 @@
     }
 
     .cake-card p {
-      color: #ddd;
+      color: var(--muted);
     }
 
     .order-button {
@@ -176,7 +179,7 @@
       background: var(--card);
       padding: 30px 20px;
       text-align: center;
-      color: #999;
+      color: var(--muted);
     }
 
     footer a {
