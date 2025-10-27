@@ -230,6 +230,48 @@
       display: inline-block;
       margin-top: 20px;
     }
+    /* ADD THIS TO THE <style> BLOCK IN signature-cakes.html, specialty-cakes.html, mini-cakes.html, AND custom-cakes.html */
+
+/* --- Cake Grid Layout Fix --- */
+.cake-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  max-width: 1200px;
+  margin: 2rem auto; /* Ensures it is centered */
+}
+
+/* --- Image Sizing Fix for Consistency --- */
+.cake-card img {
+  width: 100%; /* Image fills its container */
+  /* Fix 1: Ensures all images maintain a 1:1 aspect ratio */
+  aspect-ratio: 1 / 1; 
+  /* Fix 2: Crops the image to fill the 1:1 area without distortion */
+  object-fit: cover; 
+  border-radius: 8px;
+  display: block; /* Removes any unwanted space below the image */
+}
+
+/* Optional: Ensure card height remains consistent */
+.cake-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.cake-card .order-button {
+  margin-top: auto; /* Pushes the button to the bottom of the card */
+}
+
+/* --- Wedding Carousel Fix --- */
+/* (For wedding-cakes.html only) */
+.carousel img {
+    height: 300px; 
+    width: auto; /* Ensure width adjusts to maintain aspect ratio */
+    /* Add this if not already present: */
+    object-fit: cover;
+}
+
   </style>
 </head>
 
