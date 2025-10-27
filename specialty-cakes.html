@@ -22,9 +22,161 @@
   <title>Hussein Bakes | Specialty Cakes</title>
   <link rel="icon" href="images/logo.webp" type="image/webp" />
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Great+Vibes&family=Montserrat&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css" />
+  
+  <style>
+    :root {
+      --primary-gold: #ac9657;
+      --primary-gold-light: #f0e3b1;
+      --background-dark: #0a0a0a;
+      --text-light: #ffffff;
+      --text-muted: #ccc;
+      --card-bg: #111;
+      --modal-bg: rgba(0, 0, 0, 0.85);
+    }
+    
+    body {
+      margin: 0;
+      font-family: 'Montserrat', sans-serif;
+      background-color: var(--background-dark);
+      color: var(--text-light);
+      line-height: 1.7;
+      scroll-behavior: smooth;
+    }
+    
+    h1, h2, h3 {
+      font-family: 'Cinzel', serif;
+      color: var(--primary-gold);
+    }
 
-  <!-- Structured Data for Specialty Cakes -->
+    a {
+      color: var(--primary-gold);
+      text-decoration: none;
+    }
+    
+    /* Header/Nav Styles */
+    header {
+      padding: 1rem;
+      text-align: center;
+    }
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: auto;
+    }
+    .nav-logo img {
+      height: 50px;
+    }
+
+    /* Back Button Style */
+    .back-to-menu-btn {
+        display: inline-block;
+        margin: 20px auto;
+        padding: 10px 20px;
+        background: var(--primary-gold);
+        color: var(--background-dark);
+        border-radius: 5px;
+        font-weight: bold;
+    }
+
+    /* Cake Grid Layout Fix */
+    .cake-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      max-width: 1200px;
+      margin: 2rem auto; 
+      padding: 0 10px; /* Add padding for mobile view */
+    }
+
+    /* Image Sizing Fix for Consistency */
+    .cake-card {
+      background-color: var(--card-bg);
+      padding: 1rem;
+      border-radius: 8px;
+      text-align: center;
+      transition: transform 0.3s ease;
+      display: flex; /* Makes the card a flex container */
+      flex-direction: column; /* Stacks content vertically */
+      height: 100%; /* Ensures all cards in a row have the same height */
+    }
+
+    .cake-card img {
+      width: 100%;
+      /* FIX: Use aspect-ratio and object-fit for consistent sizing */
+      aspect-ratio: 1 / 1; 
+      object-fit: cover; 
+      border-radius: 5px;
+      margin-bottom: 10px;
+    }
+    
+    .cake-card p {
+        color: var(--text-muted);
+        font-size: 0.95rem;
+    }
+    
+    .cake-card .order-button {
+      margin-top: auto; /* Pushes the button to the bottom */
+      padding: 10px 20px;
+      background-color: var(--primary-gold);
+      color: #000;
+      border: none;
+      border-radius: 4px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    /* Modal Styles */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: var(--modal-bg);
+      backdrop-filter: blur(5px);
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+    }
+    .modal-content {
+      background: var(--card-bg);
+      padding: 40px 30px;
+      border-radius: 10px;
+      text-align: center;
+      max-width: 400px;
+      position: relative;
+    }
+    .close-btn {
+      position: absolute;
+      top: 10px; right: 15px;
+      font-size: 28px;
+      cursor: pointer;
+      color: var(--primary-gold);
+    }
+    .whatsapp-float {
+      background: #25d366;
+      padding: 12px;
+      border-radius: 50%;
+      display: inline-block;
+    }
+    .whatsapp-float img {
+        height: 32px;
+        width: 32px;
+    }
+
+    /* Footer and general styles */
+    footer {
+        padding: 40px 20px;
+        background: var(--card-bg);
+        color: var(--text-muted);
+        text-align: center;
+    }
+    
+  </style>
+  
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -157,7 +309,7 @@
 
   <main class="menu-main fade-in">
     <div class="back-to-menu-container">
-      <a href="index.html" class="back-to-menu-btn order-button">← Back to All Cakes</a>
+      <a href="index.html" class="back-to-menu-btn">← Back to All Cakes</a>
     </div>
 
     <section class="menu-section" id="specialty-category">
@@ -166,7 +318,7 @@
 
       <div class="cake-grid" role="region" aria-label="Specialty Cakes Gallery">
         <div class="cake-card" tabindex="0" role="article">
-          <img src="images/Salted-caramel.webp" alt="Salted Caramel Cake" loading="lazy" />
+          <img src="images/Salted-caramel.webp" alt="Salted Caramel Cake" loading="lazy" width="400" height="400" />
           <h3>Salted Caramel</h3>
           <p>Ksh 3,000.00</p>
           <p>Rich chocolate sponge layered with smooth salted caramel buttercream. Topped with drizzle, sea salt flakes, and caramel shards for a luxurious finish.</p>
@@ -174,7 +326,7 @@
         </div>
 
         <div class="cake-card" tabindex="0" role="article">
-          <img src="images/Cookie-dough.webp" alt="Cookie Dough Cake" loading="lazy" />
+          <img src="images/Cookie-dough.webp" alt="Cookie Dough Cake" loading="lazy" width="400" height="400" />
           <h3>Cookie Dough Cake</h3>
           <p>Ksh 3,000.00</p>
           <p>Vanilla and chocolate sponge paired with cookie dough buttercream and topped with mini cookie bites. A playful twist for sweet lovers.</p>
@@ -182,7 +334,7 @@
         </div>
 
         <div class="cake-card" tabindex="0" role="article">
-          <img src="images/Chocolate-Oreo.webp" alt="Chocolate Oreo Cake" loading="lazy" />
+          <img src="images/Chocolate-Oreo.webp" alt="Chocolate Oreo Cake" loading="lazy" width="400" height="400" />
           <h3>Chocolate Oreo Cake</h3>
           <p>Ksh 3,500.00</p>
           <p>Decadent chocolate layers filled with Oreo buttercream and topped with crushed cookies. The ultimate Oreo indulgence for chocoholics.</p>
@@ -190,7 +342,7 @@
         </div>
 
         <div class="cake-card" tabindex="0" role="article">
-          <img src="images/Chocolate-raspberry.webp" alt="Chocolate Raspberry Fudge Cake" loading="lazy" />
+          <img src="images/Chocolate-raspberry.webp" alt="Chocolate Raspberry Fudge Cake" loading="lazy" width="400" height="400" />
           <h3>Chocolate Raspberry Fudge</h3>
           <p>Ksh 3,500.00</p>
           <p>Moist chocolate sponge filled with raspberry compote, fudge buttercream, and fresh raspberries. Finished with ganache for that perfect bite.</p>
@@ -198,7 +350,7 @@
         </div>
 
         <div class="cake-card" tabindex="0" role="article">
-          <img src="images/White-chocolate-raspberry.webp" alt="White Chocolate Raspberry Cake" loading="lazy" />
+          <img src="images/White-chocolate-raspberry.webp" alt="White Chocolate Raspberry Cake" loading="lazy" width="400" height="400" />
           <h3>White Chocolate Raspberry</h3>
           <p>Ksh 3,500.00</p>
           <p>Velvety vanilla cake with layers of raspberry jam and whipped white chocolate ganache. A bright and fruity crowd-pleaser.</p>
@@ -206,7 +358,7 @@
         </div>
 
         <div class="cake-card" tabindex="0" role="article">
-          <img src="images/Strawberry-cream.webp" alt="Strawberries & Cream Cake" loading="lazy" />
+          <img src="images/Strawberry-cream.webp" alt="Strawberries & Cream Cake" loading="lazy" width="400" height="400" />
           <h3>Strawberries & Cream</h3>
           <p>Ksh 3,000.00</p>
           <p>Classic vanilla sponge soaked in strawberry syrup, layered with fresh cream and sliced strawberries. Light, fluffy, and timeless.</p>
@@ -214,7 +366,7 @@
         </div>
 
         <div class="cake-card" tabindex="0" role="article">
-          <img src="images/Carrot-cake.webp" alt="Carrot Cake" loading="lazy" />
+          <img src="images/Carrot-cake.webp" alt="Carrot Cake" loading="lazy" width="400" height="400" />
           <h3>Carrot Cake</h3>
           <p>Ksh 3,500.00</p>
           <p>Moist spiced carrot cake with a hint of cinnamon, topped with rich cream cheese frosting and roasted walnut crumble.</p>
@@ -241,15 +393,48 @@
       <span class="close-btn" aria-label="Close Order Modal">×</span>
       <h2 id="modal-title">Order: <span id="modal-cake-name"></span></h2>
       <p>Ready to indulge? Click below to place your order via WhatsApp!</p>
-      <a href="https://wa.me/254710975805" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
+      <a id="whatsapp-link-modal" href="https://wa.me/254710975805" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
         <img src="images/whatsapp-icon.webp" alt="WhatsApp Icon" />
       </a>
-      <p style="margin-top: 1rem; font-size: 0.9em; color: var(--gold-light);">
+      <p style="margin-top: 1rem; font-size: 0.9em; color: var(--primary-gold-light);">
         For custom requests or specific details, please include them in your WhatsApp message.
       </p>
     </div>
   </div>
 
-  <script src="script.js" defer></script>
+  <script>
+    const modal = document.getElementById("order-modal");
+    const modalCakeName = document.getElementById("modal-cake-name");
+    const closeBtn = document.querySelector(".close-btn");
+    const whatsappLink = document.getElementById("whatsapp-link-modal");
+
+    document.querySelectorAll(".order-button").forEach(button => {
+      button.addEventListener("click", () => {
+        const cake = button.getAttribute("data-cake-name");
+        modalCakeName.textContent = cake;
+        
+        // Update WhatsApp link with the cake name
+        whatsappLink.href = `https://wa.me/254710975805?text=I'm%20interested%20in%20ordering%20the%20${encodeURIComponent(cake)}%20Specialty%20Cake.`;
+        
+        modal.style.display = "flex";
+      });
+    });
+
+    closeBtn.addEventListener("click", () => {
+      modal.style.display = "none";
+    });
+
+    // Close modal when clicking outside
+    window.addEventListener("click", (e) => {
+      if (e.target === modal) {
+        modal.style.display = "none";
+      }
+    });
+
+    // Theme Toggle placeholder (as theme styles aren't fully defined)
+    document.getElementById("themeToggle").addEventListener("click", () => {
+        document.body.classList.toggle("light-theme");
+    });
+  </script>
 </body>
 </html>
